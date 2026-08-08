@@ -1,6 +1,8 @@
 # Smart Hospital Management System (Student Major Project Edition)
 
-A complete Java Full-Stack web application designed following standard academic software engineering guidelines, MVC architecture, DAO design patterns, secure database transactions, role-based security filters, and realistic hospital administration portal UI.
+Java web-based Hospital Management System — patients, appointments, billing, prescriptions, and staff management.
+
+Hospital Management System is a Java EE web application (Servlets + JSP) backed by MySQL. It provides user authentication and modules for patient registration, appointment scheduling, billing, prescription management, and basic reporting.
 
 ---
 

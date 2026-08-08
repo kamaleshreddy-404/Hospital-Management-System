@@ -1,0 +1,24 @@
+# Maven / Java
+target/
+*.class
+*.jar
+
+# IDEs
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# OS
+.DS_Store
+
+# Database properties (keep local secrets out of repo)
+src/main/resources/db.properties
+
+# Logs
+logs/
+
+# Build
+/target/
