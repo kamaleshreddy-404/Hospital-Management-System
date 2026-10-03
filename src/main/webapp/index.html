@@ -688,17 +688,56 @@
 
     <!-- Section: Login Portal -->
     <div id="sec-login" class="page-section" style="display: none;">
-        <div style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px;">
-            <div style="width: 100%; max-width: 480px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
-                <div style="text-align: center; margin-bottom: 24px;">
-                    <div style="width: 56px; height: 56px; background: rgba(2, 132, 199, 0.1); color: var(--brand-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 12px;">
+        <div style="min-height: 85vh; padding: 40px 20px; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; max-width: 760px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-xl);">
+                
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(13, 148, 136, 0.15)); color: var(--brand-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 12px; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);">
                         <i class="fa-solid fa-hospital-user"></i>
                     </div>
-                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
-                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Sign in to access your secure role-based medical dashboard</p>
+                    <h2 style="font-size: 24px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
+                    <p style="font-size: 14px; color: var(--gray-500); margin-top: 4px;">Click your role portal below to select and log in to your medical dashboard</p>
                 </div>
 
-                <form action="#" method="post" onsubmit="event.preventDefault(); handlePortalLogin(event); return false;">
+                <!-- Visual 5 Role Selector Cards Grid (Admin, Doctor, Reception, Pharma, Patients) -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 28px;">
+                    <!-- Admin Card -->
+                    <div class="role-selector-card" id="role-card-admin" onclick="selectRoleTab('admin', 'admin@hospital.com', 'admin123')" style="border: 2px solid var(--gray-200); background: var(--white); border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease;">
+                        <div style="font-size: 22px; color: #0F172A; margin-bottom: 6px;"><i class="fa-solid fa-user-gear"></i></div>
+                        <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Admin</div>
+                        <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Control Desk</div>
+                    </div>
+
+                    <!-- Doctor Card -->
+                    <div class="role-selector-card active" id="role-card-doctor" onclick="selectRoleTab('doctor', 'doctor@hospital.com', 'doctor123')" style="border: 2px solid var(--brand-blue); background: rgba(2, 132, 199, 0.06); border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease;">
+                        <div style="font-size: 22px; color: var(--brand-blue); margin-bottom: 6px;"><i class="fa-solid fa-stethoscope"></i></div>
+                        <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Doctor</div>
+                        <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">OPD Consults</div>
+                    </div>
+
+                    <!-- Reception Card -->
+                    <div class="role-selector-card" id="role-card-receptionist" onclick="selectRoleTab('receptionist', 'reception@hospital.com', 'reception123')" style="border: 2px solid var(--gray-200); background: var(--white); border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease;">
+                        <div style="font-size: 22px; color: var(--brand-teal); margin-bottom: 6px;"><i class="fa-solid fa-desktop"></i></div>
+                        <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Reception</div>
+                        <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Front Desk</div>
+                    </div>
+
+                    <!-- Pharma Card -->
+                    <div class="role-selector-card" id="role-card-pharmacist" onclick="selectRoleTab('pharmacist', 'pharma@hospital.com', 'pharma123')" style="border: 2px solid var(--gray-200); background: var(--white); border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease;">
+                        <div style="font-size: 22px; color: #7C3AED; margin-bottom: 6px;"><i class="fa-solid fa-pills"></i></div>
+                        <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Pharma</div>
+                        <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Stock Desk</div>
+                    </div>
+
+                    <!-- Patients Card -->
+                    <div class="role-selector-card" id="role-card-patient" onclick="selectRoleTab('patient', 'patient@hospital.com', 'patient123')" style="border: 2px solid var(--gray-200); background: var(--white); border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s ease;">
+                        <div style="font-size: 22px; color: var(--brand-emerald); margin-bottom: 6px;"><i class="fa-solid fa-user-injured"></i></div>
+                        <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Patients</div>
+                        <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">EHR Records</div>
+                    </div>
+                </div>
+
+                <form action="#" method="post" onsubmit="event.preventDefault(); handlePortalLogin(event); return false;" style="max-width: 480px; margin: 0 auto;">
                     <div class="form-group">
                         <label for="loginEmail"><i class="fa-solid fa-envelope" style="color: var(--brand-blue);"></i> Email Address *</label>
                         <input type="email" id="loginEmail" name="email" class="form-control" required placeholder="name@hospital.com" value="doctor@hospital.com">
@@ -710,8 +749,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="loginRole"><i class="fa-solid fa-user-shield" style="color: var(--brand-blue);"></i> User Role Portal *</label>
-                        <select id="loginRole" name="role" class="form-control" style="font-weight: 600;">
+                        <label for="loginRole"><i class="fa-solid fa-user-shield" style="color: var(--brand-blue);"></i> Selected User Role Portal *</label>
+                        <select id="loginRole" name="role" class="form-control" style="font-weight: 600;" onchange="syncRoleTabFromSelect(this.value)">
                             <option value="admin">Administrator Portal</option>
                             <option value="doctor" selected>Doctor Portal (Dr. Neha - Senior Heart Surgeon)</option>
                             <option value="receptionist">Receptionist Desk Portal</option>
@@ -720,26 +759,19 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 15px; margin-top: 8px;">
-                        <i class="fa-solid fa-right-to-bracket"></i> Login to Digital Portal
-                    </button>
+                    <div style="display: flex; gap: 12px; margin-top: 14px;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; justify-content: center; padding: 13px; font-size: 15px; font-weight: 700;">
+                            <i class="fa-solid fa-right-to-bracket"></i> Sign In to Portal Dashboard
+                        </button>
+                        <button type="button" onclick="showSection('sec-register')" class="btn btn-secondary" style="padding: 13px 20px;">
+                            <i class="fa-solid fa-user-plus"></i> Register
+                        </button>
+                    </div>
                 </form>
 
-                <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--gray-200); font-size: 13px;">
-                    <p style="font-weight: 700; color: var(--gray-700); margin-bottom: 10px; text-align: center;">⚡ Quick Demo Login Shortcuts:</p>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
-                        <button type="button" onclick="fillQuickLogin('admin@hospital.com', 'admin123', 'admin')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-user-gear"></i> Admin</button>
-                        <button type="button" onclick="fillQuickLogin('doctor@hospital.com', 'doctor123', 'doctor')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-stethoscope"></i> Doctor</button>
-                        <button type="button" onclick="fillQuickLogin('reception@hospital.com', 'reception123', 'receptionist')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-desktop"></i> Reception</button>
-                        <button type="button" onclick="fillQuickLogin('pharma@hospital.com', 'pharma123', 'pharmacist')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-pills"></i> Pharma</button>
-                        <button type="button" onclick="fillQuickLogin('patient@hospital.com', 'patient123', 'patient')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-user-injured"></i> Patient</button>
-                        <button type="button" onclick="showSection('sec-register')" class="btn btn-secondary btn-sm" style="font-size: 12px; justify-content: center;"><i class="fa-solid fa-user-plus"></i> Register</button>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 20px;">
-                    <a href="#" class="nav-link" data-section="sec-home" style="font-size: 13px; color: var(--gray-600); font-weight: 600;">
-                        <i class="fa-solid fa-arrow-left"></i> Back to Hospital Homepage
+                <div style="text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                    <a href="#" class="nav-link" data-section="sec-home" style="font-size: 13px; color: var(--gray-600); font-weight: 600; text-decoration: none;">
+                        <i class="fa-solid fa-arrow-left"></i> Return to Hospital Homepage
                     </a>
                 </div>
             </div>
@@ -1071,12 +1103,57 @@
             }, 4000);
         }
 
-        function fillQuickLogin(email, pwd, role) {
-            document.getElementById('loginEmail').value = email;
-            document.getElementById('loginPassword').value = pwd;
-            if (role) {
-                document.getElementById('loginRole').value = role;
+        function selectRoleTab(role, email, pwd) {
+            const roleElem = document.getElementById('loginRole');
+            const emailElem = document.getElementById('loginEmail');
+            const pwdElem = document.getElementById('loginPassword');
+
+            if (roleElem) roleElem.value = role;
+            if (emailElem && email) emailElem.value = email;
+            if (pwdElem && pwd) pwdElem.value = pwd;
+
+            updateRoleCardVisuals(role);
+        }
+
+        function syncRoleTabFromSelect(role) {
+            const defaultCredentials = {
+                'admin': { email: 'admin@hospital.com', pwd: 'admin123' },
+                'doctor': { email: 'doctor@hospital.com', pwd: 'doctor123' },
+                'receptionist': { email: 'reception@hospital.com', pwd: 'reception123' },
+                'pharmacist': { email: 'pharma@hospital.com', pwd: 'pharma123' },
+                'patient': { email: 'patient@hospital.com', pwd: 'patient123' }
+            };
+
+            if (defaultCredentials[role]) {
+                document.getElementById('loginEmail').value = defaultCredentials[role].email;
+                document.getElementById('loginPassword').value = defaultCredentials[role].pwd;
             }
+
+            updateRoleCardVisuals(role);
+        }
+
+        function updateRoleCardVisuals(selectedRole) {
+            const roles = ['admin', 'doctor', 'receptionist', 'pharmacist', 'patient'];
+            roles.forEach(r => {
+                const card = document.getElementById('role-card-' + r);
+                if (card) {
+                    if (r === selectedRole) {
+                        card.style.border = '2px solid var(--brand-blue)';
+                        card.style.background = 'rgba(2, 132, 199, 0.08)';
+                        card.style.transform = 'translateY(-2px)';
+                        card.style.boxShadow = '0 6px 16px rgba(2, 132, 199, 0.15)';
+                    } else {
+                        card.style.border = '2px solid var(--gray-200)';
+                        card.style.background = 'var(--white)';
+                        card.style.transform = 'translateY(0)';
+                        card.style.boxShadow = 'none';
+                    }
+                }
+            });
+        }
+
+        function fillQuickLogin(email, pwd, role) {
+            selectRoleTab(role, email, pwd);
             handlePortalLogin();
         }
 
