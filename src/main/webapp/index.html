@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Hospital Management System - Modern Multi-Specialty Medical Center</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230284C7'/><path d='M50 20v60M20 50h60' stroke='%23ffffff' stroke-width='16' stroke-linecap='round'/></svg>">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -398,7 +399,7 @@
                 <div class="service-card">
                     <div class="service-card-icon" style="background: rgba(2, 132, 199, 0.1); color: #0369A1;"><i class="fa-solid fa-lungs"></i></div>
                     <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Pulmonology & Respiratory Care</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Asthma, COPD, sleep apnea, lung biopsy, and critical ICU respiratory care led by Dr. Harsha (9y Exp).</p>
+                    <p style="color: var(--gray-600); font-size: 14px;">Asthma, COPD, sleep apnea, lung biopsy, and critical respiratory care led by Dr. Harsha (9y Exp).</p>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon" style="background: rgba(245, 158, 11, 0.1); color: #B45309;"><i class="fa-solid fa-dna"></i></div>
@@ -775,6 +776,225 @@
                 </form>
             </div>
         </div>
+    <!-- Section: Admin Dashboard Portal -->
+    <div id="sec-admin-dashboard" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: #FFFFFF; padding: 24px 32px; border-radius: var(--radius-xl); margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-md);">
+                <div>
+                    <div style="font-size: 12px; font-weight: 700; color: #38BDF8; letter-spacing: 1px; margin-bottom: 4px;">ADMINISTRATOR EXECUTIVE CONTROL</div>
+                    <h2 style="font-size: 24px; font-weight: 800; margin: 0;">Master Hospital Administration Dashboard</h2>
+                    <div style="font-size: 13px; color: #94A3B8; margin-top: 4px;">Logged in as: <strong>admin@hospital.com</strong> (System Administrator)</div>
+                </div>
+                <button onclick="logoutPortal()" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF; padding: 8px 16px; font-size: 13px;"><i class="fa-solid fa-right-from-bracket"></i> Logout Portal</button>
+            </div>
+
+            <div class="dashboard-grid" style="margin-bottom: 28px;">
+                <div class="stat-card"><div><div class="stat-label">Active Doctor Faculty</div><div class="stat-number">8 Faculty</div></div><div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Specialty Centers</div><div class="stat-number">8 Departments</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Registered Patients</div><div class="stat-number">18,500+</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-procedures"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Monthly Revenue</div><div class="stat-number" style="color: var(--brand-emerald);">₹4,25,800</div></div><div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-indian-rupee-sign"></i></div></div>
+            </div>
+
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Doctor Faculty Roster (Ordered 1 to 8)</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">All registered medical specialists in strict faculty ordering</p>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th>#</th><th>ID</th><th>Doctor Name</th><th>Specialization</th><th>Experience</th><th>Consult Fee</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>#DOC-1</td><td style="font-weight:700;">Dr. Neha <span class="badge badge-senior">Senior Head</span></td><td>Heart Surgeon</td><td>16 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹900</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>2</strong></td><td>#DOC-2</td><td style="font-weight:700;">Dr. Shobana</td><td>Orthopedic Surgeon</td><td>10 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹750</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>3</strong></td><td>#DOC-3</td><td style="font-weight:700;">Dr. Sruthi</td><td>Dermatologist & Cosmetologist</td><td>5 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹600</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>4</strong></td><td>#DOC-4</td><td style="font-weight:700;">Dr. Jagadeesh</td><td>Gastroenterologist</td><td>7 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹650</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>5</strong></td><td>#DOC-5</td><td style="font-weight:700;">Dr. Jaswanth</td><td>Pediatric Cardiologist</td><td>8 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹700</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>6</strong></td><td>#DOC-6</td><td style="font-weight:700;">Dr. Harsha</td><td>Pulmonologist & Critical Care</td><td>9 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹750</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>7</strong></td><td>#DOC-7</td><td style="font-weight:700;">Dr. Haasith</td><td>Endocrinologist & Diabetologist</td><td>11 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹780</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                            <tr><td><strong>8</strong></td><td>#DOC-8</td><td style="font-weight:700;">Dr. Kamalesh</td><td>Neurosurgeon</td><td>12 Yrs</td><td style="color:var(--brand-emerald); font-weight:800;">₹800</td><td><span class="badge badge-confirmed">Active</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Doctor Dashboard Portal -->
+    <div id="sec-doctor-dashboard" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div style="background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%); color: #FFFFFF; padding: 24px 32px; border-radius: var(--radius-xl); margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-md);">
+                <div>
+                    <div style="font-size: 12px; font-weight: 700; color: #BAE6FD; letter-spacing: 1px; margin-bottom: 4px;">DOCTOR CLINICAL CONSULTATION PORTAL</div>
+                    <h2 style="font-size: 24px; font-weight: 800; margin: 0;">Dr. Neha – Consultation Schedule</h2>
+                    <div style="font-size: 13px; color: #E0F2FE; margin-top: 4px;">Senior Heart Surgeon & Head of Cardiology | 16 Years Exp | OPD: Mon-Fri 10:00 AM</div>
+                </div>
+                <button onclick="logoutPortal()" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; padding: 8px 16px; font-size: 13px;"><i class="fa-solid fa-right-from-bracket"></i> Logout Portal</button>
+            </div>
+
+            <div class="dashboard-grid" style="margin-bottom: 28px;">
+                <div class="stat-card"><div><div class="stat-label">Today's Appointments</div><div class="stat-number">6 Patients</div></div><div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Emergency Consults</div><div class="stat-number" style="color: var(--danger);">2 Critical</div></div><div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);"><i class="fa-solid fa-heart-pulse"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Completed Today</div><div class="stat-number" style="color: var(--brand-emerald);">4 OPD</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-circle-check"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Patient Feedback</div><div class="stat-number" style="color: var(--warning);">4.9 ⭐</div></div><div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-star"></i></div></div>
+            </div>
+
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-clipboard-user" style="color: var(--brand-blue);"></i> Today's OPD Consultation Queue</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Patient appointments scheduled for today</p>
+                    </div>
+                    <button onclick="showToast('✅ Prescription editor initialized for next patient!')" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> New Prescription</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th>Appt ID</th><th>Patient Name</th><th>Age / Gender</th><th>Time Slot</th><th>Chief Symptoms</th><th>Status</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>#APT-101</td><td style="font-weight:700;">John Doe</td><td>35 Yrs / Male</td><td>10:30 AM</td><td>Mild chest tightness after exercise</td><td><span class="badge badge-completed">Completed</span></td><td><button onclick="showToast('Viewing EHR file for John Doe')" class="btn btn-outline btn-sm">EHR File</button></td></tr>
+                            <tr><td>#APT-102</td><td style="font-weight:700;">Anita Roy</td><td>29 Yrs / Female</td><td>11:15 AM</td><td>Post-surgery ECG review & follow-up</td><td><span class="badge badge-confirmed">In OPD</span></td><td><button onclick="showToast('Opening consultation notes for Anita Roy')" class="btn btn-primary btn-sm">Consult</button></td></tr>
+                            <tr><td>#APT-103</td><td style="font-weight:700;">Robert Smith</td><td>52 Yrs / Male</td><td>12:00 PM</td><td>Hypertension screening & lipid test</td><td><span class="badge badge-pending">Waiting</span></td><td><button onclick="showToast('Calling patient Robert Smith into OPD')" class="btn btn-outline btn-sm">Call Patient</button></td></tr>
+                            <tr><td>#APT-104</td><td style="font-weight:700;">Emily Davis</td><td>41 Yrs / Female</td><td>02:30 PM</td><td>Cardiac echocardiogram consultation</td><td><span class="badge badge-pending">Waiting</span></td><td><button onclick="showToast('Calling patient Emily Davis into OPD')" class="btn btn-outline btn-sm">Call Patient</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Receptionist Dashboard Portal -->
+    <div id="sec-receptionist-dashboard" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div style="background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%); color: #FFFFFF; padding: 24px 32px; border-radius: var(--radius-xl); margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-md);">
+                <div>
+                    <div style="font-size: 12px; font-weight: 700; color: #99F6E4; letter-spacing: 1px; margin-bottom: 4px;">FRONT DESK & TOKEN DESK</div>
+                    <h2 style="font-size: 24px; font-weight: 800; margin: 0;">Receptionist Front Desk Control</h2>
+                    <div style="font-size: 13px; color: #CCFBF1; margin-top: 4px;">Logged in as: <strong>reception@hospital.com</strong> (Sarah Jenkins)</div>
+                </div>
+                <button onclick="logoutPortal()" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; padding: 8px 16px; font-size: 13px;"><i class="fa-solid fa-right-from-bracket"></i> Logout Portal</button>
+            </div>
+
+            <div class="dashboard-grid" style="margin-bottom: 28px;">
+                <div class="stat-card"><div><div class="stat-label">Today Walk-ins</div><div class="stat-number">42 Patients</div></div><div class="stat-icon"><i class="fa-solid fa-users"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Tokens Issued</div><div class="stat-number">38 Tokens</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-ticket"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Doctors Available</div><div class="stat-number" style="color: var(--brand-emerald);">8 Doctors</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-user-doctor"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">ICU Beds Free</div><div class="stat-number" style="color: #38BDF8;">28 / 35</div></div><div class="stat-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);"><i class="fa-solid fa-bed-pulse"></i></div></div>
+            </div>
+
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-id-card-clip" style="color: var(--brand-teal);"></i> Reception Walk-in Intake & OPD Queue</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Patient check-in and token issuance control</p>
+                    </div>
+                    <button onclick="showSection('sec-register')" class="btn btn-primary btn-sm"><i class="fa-solid fa-user-plus"></i> New Patient Intake</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th>Token #</th><th>Patient Name</th><th>Assigned Specialist Doctor</th><th>Phone</th><th>Status</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>#OPD-401</strong></td><td style="font-weight:700;">John Doe</td><td>1. Dr. Neha (Heart Surgeon)</td><td>9876543216</td><td><span class="badge badge-completed">Completed</span></td><td><button onclick="showToast('Printing receipt for John Doe')" class="btn btn-outline btn-sm">Print Receipt</button></td></tr>
+                            <tr><td><strong>#OPD-402</strong></td><td style="font-weight:700;">Anita Roy</td><td>2. Dr. Shobana (Orthopedic)</td><td>9876543217</td><td><span class="badge badge-confirmed">In Consultation</span></td><td><button onclick="showToast('Token #OPD-402 checked in')" class="btn btn-outline btn-sm">Check In</button></td></tr>
+                            <tr><td><strong>#OPD-403</strong></td><td style="font-weight:700;">Suresh Kumar</td><td>6. Dr. Harsha (Pulmonologist)</td><td>9876543221</td><td><span class="badge badge-pending">Waiting</span></td><td><button onclick="showToast('Token #OPD-403 called to OPD #6')" class="btn btn-primary btn-sm">Call Token</button></td></tr>
+                            <tr><td><strong>#OPD-404</strong></td><td style="font-weight:700;">Kavitha Reddy</td><td>7. Dr. Haasith (Endocrinologist)</td><td>9876543222</td><td><span class="badge badge-pending">Waiting</span></td><td><button onclick="showToast('Token #OPD-404 called to OPD #7')" class="btn btn-primary btn-sm">Call Token</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Pharmacist Dashboard Portal -->
+    <div id="sec-pharmacist-dashboard" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div style="background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%); color: #FFFFFF; padding: 24px 32px; border-radius: var(--radius-xl); margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-md);">
+                <div>
+                    <div style="font-size: 12px; font-weight: 700; color: #DDD6FE; letter-spacing: 1px; margin-bottom: 4px;">PHARMACY INVENTORY & DISPENSING</div>
+                    <h2 style="font-size: 24px; font-weight: 800; margin: 0;">Pharmacist Control Desk</h2>
+                    <div style="font-size: 13px; color: #EDE9FE; margin-top: 4px;">Logged in as: <strong>pharma@hospital.com</strong> (Michael Vance)</div>
+                </div>
+                <button onclick="logoutPortal()" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; padding: 8px 16px; font-size: 13px;"><i class="fa-solid fa-right-from-bracket"></i> Logout Portal</button>
+            </div>
+
+            <div class="dashboard-grid" style="margin-bottom: 28px;">
+                <div class="stat-card"><div><div class="stat-label">Total Medicine Stock</div><div class="stat-number">150 Types</div></div><div class="stat-icon" style="background: rgba(124, 58, 237, 0.1); color: #7C3AED;"><i class="fa-solid fa-pills"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Low Stock Alerts</div><div class="stat-number" style="color: var(--danger);">2 Items</div></div><div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);"><i class="fa-solid fa-triangle-exclamation"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Prescriptions Today</div><div class="stat-number" style="color: var(--brand-emerald);">64 Dispensed</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-prescription-bottle-medical"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Today Sales</div><div class="stat-number" style="color: var(--brand-blue);">₹18,450</div></div><div class="stat-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);"><i class="fa-solid fa-receipt"></i></div></div>
+            </div>
+
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-boxes-stacked" style="color: #7C3AED;"></i> Pharmacy Inventory Stock Control</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Medicine availability and reorder monitoring</p>
+                    </div>
+                    <button onclick="showToast('Opening stock update window...')" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Stock</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th>ID</th><th>Medicine Name</th><th>Category</th><th>Manufacturer</th><th>Price</th><th>Stock Quantity</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>#MED-1</td><td style="font-weight:700;">Paracetamol 650mg</td><td>Analgesic</td><td>Cipla</td><td>₹25</td><td><span class="badge badge-completed">150 Units</span></td><td><button onclick="showToast('Dispensing Paracetamol 650mg')" class="btn btn-outline btn-sm">Dispense</button></td></tr>
+                            <tr><td>#MED-2</td><td style="font-weight:700;">Amoxicillin 500mg</td><td>Antibiotic</td><td>Sun Pharma</td><td>₹85</td><td><span class="badge badge-completed">80 Units</span></td><td><button onclick="showToast('Dispensing Amoxicillin 500mg')" class="btn btn-outline btn-sm">Dispense</button></td></tr>
+                            <tr><td>#MED-3</td><td style="font-weight:700;">Atorvastatin 10mg</td><td>Cardiovascular</td><td>Lupin</td><td>₹120</td><td><span class="badge badge-completed">200 Units</span></td><td><button onclick="showToast('Dispensing Atorvastatin 10mg')" class="btn btn-outline btn-sm">Dispense</button></td></tr>
+                            <tr><td>#MED-4</td><td style="font-weight:700;">Pantoprazole 40mg</td><td>Antacid</td><td>Torrent</td><td>₹45</td><td><span class="badge badge-senior">25 Units (Low)</span></td><td><button onclick="showToast('Reordering Pantoprazole stock')" class="btn btn-primary btn-sm">Reorder</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Patient Dashboard Portal -->
+    <div id="sec-patient-dashboard" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #FFFFFF; padding: 24px 32px; border-radius: var(--radius-xl); margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: var(--shadow-md);">
+                <div>
+                    <div style="font-size: 12px; font-weight: 700; color: #A7F3D0; letter-spacing: 1px; margin-bottom: 4px;">PATIENT ELECTRONIC HEALTH RECORD (EHR)</div>
+                    <h2 style="font-size: 24px; font-weight: 800; margin: 0;">John Doe – Personal Health Portal</h2>
+                    <div style="font-size: 13px; color: #D1FAE5; margin-top: 4px;">EHR ID: <strong>#EHR-99420</strong> | Blood Group: <strong>O +ve</strong> | Emergency Phone: <strong>9876500001</strong></div>
+                </div>
+                <button onclick="logoutPortal()" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; padding: 8px 16px; font-size: 13px;"><i class="fa-solid fa-right-from-bracket"></i> Logout Portal</button>
+            </div>
+
+            <div class="dashboard-grid" style="margin-bottom: 28px;">
+                <div class="stat-card"><div><div class="stat-label">Consultations</div><div class="stat-number">4 Visits</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-user-doctor"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Active Prescriptions</div><div class="stat-number" style="color: var(--brand-teal);">2 Active</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-prescription"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Lab Test Reports</div><div class="stat-number" style="color: var(--brand-blue);">3 Reports</div></div><div class="stat-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);"><i class="fa-solid fa-file-medical"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Billing Balance</div><div class="stat-number" style="color: var(--brand-emerald);">₹0 Paid</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-circle-check"></i></div></div>
+            </div>
+
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--brand-emerald);"></i> Medical History & Prescription Download</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Your verified digital health records</p>
+                    </div>
+                    <button onclick="showSection('sec-home')" class="btn btn-primary btn-sm"><i class="fa-solid fa-calendar-plus"></i> Book New OPD</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th>Appt ID</th><th>Doctor</th><th>Specialization</th><th>Date</th><th>Chief Complaint</th><th>Status</th><th>Prescription</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>#APT-101</td><td style="font-weight:700;">Dr. Neha</td><td>Heart Surgeon</td><td>Oct 03, 2026</td><td>Chest tightness after exercise</td><td><span class="badge badge-completed">Completed</span></td><td><button onclick="showToast('Downloading digital prescription PDF for #APT-101')" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download Rx</button></td></tr>
+                            <tr><td>#APT-088</td><td style="font-weight:700;">Dr. Harsha</td><td>Pulmonologist</td><td>Sep 20, 2026</td><td>Seasonal asthma consultation</td><td><span class="badge badge-completed">Completed</span></td><td><button onclick="showToast('Downloading digital prescription PDF for #APT-088')" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Download Rx</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Modern Footer -->
@@ -829,59 +1049,90 @@
             });
         });
 
+        function showToast(message, type = 'info') {
+            const existing = document.getElementById('toastNotification');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.id = 'toastNotification';
+            toast.style.cssText = 'position: fixed; bottom: 24px; right: 24px; z-index: 9999; background: #0F172A; color: #FFFFFF; padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-left: 4px solid ' + (type === 'success' ? '#10B981' : type === 'danger' ? '#EF4444' : '#38BDF8') + '; transition: all 0.3s ease; opacity: 0; transform: translateY(20px);';
+            toast.innerHTML = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
         function fillQuickLogin(email, pwd, role) {
             document.getElementById('loginEmail').value = email;
             document.getElementById('loginPassword').value = pwd;
             if (role) {
                 document.getElementById('loginRole').value = role;
             }
+            handlePortalLogin();
         }
 
         function handlePortalLogin(e) {
-            const email = document.getElementById('loginEmail').value;
-            const role = document.getElementById('loginRole').value;
+            if (e) e.preventDefault();
+            const email = document.getElementById('loginEmail').value || 'doctor@hospital.com';
+            const role = document.getElementById('loginRole').value || 'doctor';
 
-            // If running under live server environment (Node or Tomcat), navigate to appropriate path
-            if (window.location.protocol.startsWith('http')) {
-                let targetUrl = 'login';
-                if (role === 'admin') targetUrl = 'admin/dashboard';
-                else if (role === 'doctor') targetUrl = 'doctor/dashboard';
-                else if (role === 'receptionist') targetUrl = 'receptionist/dashboard';
-                else if (role === 'pharmacist') targetUrl = 'pharmacist/dashboard';
-                else if (role === 'patient') targetUrl = 'patient/dashboard';
+            const isLiveNodeServer = window.location.hostname === 'localhost' && window.location.port === '3000';
+
+            if (isLiveNodeServer) {
+                let targetUrl = '/login';
+                if (role === 'admin') targetUrl = '/admin/dashboard';
+                else if (role === 'doctor') targetUrl = '/doctor/dashboard';
+                else if (role === 'receptionist') targetUrl = '/receptionist/dashboard';
+                else if (role === 'pharmacist') targetUrl = '/pharmacist/dashboard';
+                else if (role === 'patient') targetUrl = '/patient/dashboard';
                 
                 window.location.href = targetUrl;
-                e.preventDefault();
                 return false;
             }
 
-            // Static preview fallback
-            e.preventDefault();
-            alert('✅ Portal Sign In Successful!\n\nEmail: ' + email + '\nPortal Role: ' + role.toUpperCase() + '\n\nAccess granted to secure health dashboard.');
+            // Single-Page Portal Dashboard View Switcher (GitHub Pages & Static Web)
+            const dashboardId = 'sec-' + role + '-dashboard';
+            const targetDashboard = document.getElementById(dashboardId);
+
+            if (targetDashboard) {
+                showSection(dashboardId);
+                showToast('✅ Welcome to ' + role.toUpperCase() + ' Portal Dashboard!', 'success');
+            } else {
+                alert('✅ Portal Login Successful!\n\nEmail: ' + email + '\nRole: ' + role.toUpperCase());
+            }
             return false;
         }
 
+        function logoutPortal() {
+            showSection('sec-login');
+            showToast('Logged out of Digital Portal successfully.', 'info');
+        }
+
         function handlePatientRegistration(e) {
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
+            if (e) e.preventDefault();
+            const name = document.getElementById('regName').value || 'New Patient';
+            const email = document.getElementById('regEmail').value || 'patient@hospital.com';
 
-            if (window.location.protocol.startsWith('http')) {
-                // Submit form normally to servlet/server
-                return true;
-            }
-
-            e.preventDefault();
-            alert('✅ Patient Profile Created!\n\nName: ' + name + '\nEmail: ' + email + '\n\nYou can now sign in using the Portal Login.');
+            showToast('✅ Patient Account Created! Welcome ' + name + '.', 'success');
             showSection('sec-login');
             return false;
         }
 
         function handleQuickBooking(e) {
-            e.preventDefault();
+            if (e) e.preventDefault();
             const docSelect = document.getElementById('opdDoctorRoot');
             const docName = docSelect.options[docSelect.selectedIndex].text;
-            const patientName = document.getElementById('opdNameRoot').value;
-            alert('✅ OPD Appointment Token Confirmed!\n\nPatient: ' + patientName + '\nDoctor: ' + docName + '\nToken #OPD-' + Math.floor(1000 + Math.random() * 9000));
+            const patientName = document.getElementById('opdNameRoot').value || 'Patient';
+            showToast('✅ OPD Token #OPD-' + Math.floor(1000 + Math.random() * 9000) + ' Generated for ' + patientName + ' with ' + docName, 'success');
         }
 
         function filterDoctors() {
