@@ -672,3 +672,193 @@ a:hover {
     padding: 0 !important;
   }
 }
+
+/* ==========================================================================
+   Advanced Animations & Dynamic Hover Actions
+   ========================================================================== */
+
+/* Keyframe Definitions */
+@keyframes floatPulse {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes heartbeatPulse {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+@keyframes shimmerSlide {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Application Page Entrance Animation */
+.page-section {
+  animation: fadeInScale 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero Badge Animated Pulse */
+.hero-badge {
+  animation: floatPulse 4s ease-in-out infinite;
+}
+
+/* Heart & Medical Icon Animations */
+.fa-heart-pulse, .fa-truck-medical, .fa-heart-circle-bolt {
+  display: inline-block;
+  animation: heartbeatPulse 2.5s infinite ease-in-out;
+}
+
+/* Doctor Cards Enhanced 3D Hover Actions */
+.doctor-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.22), 0 0 0 2px var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.doctor-card:hover .doctor-avatar {
+  transform: scale(1.1) rotate(6deg);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+}
+
+.doctor-card:hover .doctor-order-badge {
+  background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%);
+  transform: scale(1.15) rotate(-6deg);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+}
+
+/* Stat Cards Hover Action */
+.stat-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 30px -8px rgba(15, 23, 42, 0.12);
+}
+
+.stat-card:hover::before {
+  width: 8px;
+  background: linear-gradient(180deg, var(--brand-blue) 0%, var(--brand-teal) 100%);
+  transition: width 0.25s ease;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.15) rotate(5deg);
+  transition: transform 0.3s ease;
+}
+
+/* Service Cards Hover Action */
+.service-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -8px rgba(2, 132, 199, 0.18);
+  border-color: var(--brand-blue);
+}
+
+.service-card:hover .service-card-icon {
+  transform: scale(1.18) rotate(-6deg);
+  transition: transform 0.3s ease;
+  background: var(--hero-gradient);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+}
+
+/* Buttons Hover Icon Shift & Shimmer Action */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn i {
+  transition: transform 0.25s ease;
+}
+
+.btn:hover i {
+  transform: translateX(4px);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.45);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.45);
+}
+
+/* Form Input Glow Action */
+.form-control {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.form-control:hover {
+  border-color: var(--gray-300);
+}
+
+.form-control:focus {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18);
+}
+
+/* Badges Hover Action */
+.badge {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Navigation Links Animated Underline */
+.public-navbar nav a.nav-link {
+  transition: color 0.2s ease;
+}
+
+.public-navbar nav a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-teal) 100%);
+  border-radius: 4px;
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.public-navbar nav a.nav-link:hover::after,
+.public-navbar nav a.nav-link.active::after {
+  width: 100%;
+}
+
