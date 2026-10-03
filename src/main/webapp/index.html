@@ -14,257 +14,494 @@
     <!-- Public Modern Navigation Bar -->
     <header class="public-navbar">
         <div class="nav-brand-group">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="220" height="48" style="display: block;">
-                <defs>
-                    <linearGradient id="logoShield" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#0F172A"/>
-                        <stop offset="50%" stop-color="#0284C7"/>
-                        <stop offset="100%" stop-color="#0D9488"/>
-                    </linearGradient>
-                    <linearGradient id="logoPulse" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#38BDF8"/>
-                        <stop offset="100%" stop-color="#34D399"/>
-                    </linearGradient>
-                    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0284C7" flood-opacity="0.3"/>
-                    </filter>
-                </defs>
-                <g filter="url(#logoGlow)">
-                    <rect x="6" y="6" width="56" height="56" rx="16" fill="url(#logoShield)" />
-                    <rect x="29" y="18" width="10" height="32" rx="3" fill="#FFFFFF"/>
-                    <rect x="18" y="29" width="32" height="10" rx="3" fill="#FFFFFF"/>
-                    <path d="M 12,34 L 23,34 L 27,24 L 32,44 L 37,28 L 41,36 L 46,34 L 56,34" fill="none" stroke="url(#logoPulse)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-                <text x="76" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#0F172A" letter-spacing="-0.5">
-                    SMART<tspan fill="#0284C7">HOSPITAL</tspan>
-                </text>
-                <text x="77" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0D9488" letter-spacing="1.5">
-                    NEXT-GEN MEDICAL CENTER
-                </text>
-            </svg>
+            <a href="/home" style="display: flex; align-items: center; text-decoration: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="220" height="48" style="display: block;">
+                    <defs>
+                        <linearGradient id="logoShield" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0F172A"/>
+                            <stop offset="50%" stop-color="#0284C7"/>
+                            <stop offset="100%" stop-color="#0D9488"/>
+                        </linearGradient>
+                        <linearGradient id="logoPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#38BDF8"/>
+                            <stop offset="100%" stop-color="#34D399"/>
+                        </linearGradient>
+                        <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0284C7" flood-opacity="0.3"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#logoGlow)">
+                        <rect x="6" y="6" width="56" height="56" rx="16" fill="url(#logoShield)" />
+                        <rect x="29" y="18" width="10" height="32" rx="3" fill="#FFFFFF"/>
+                        <rect x="18" y="29" width="32" height="10" rx="3" fill="#FFFFFF"/>
+                        <path d="M 12,34 L 23,34 L 27,24 L 32,44 L 37,28 L 41,36 L 46,34 L 56,34" fill="none" stroke="url(#logoPulse)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <text x="76" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#0F172A" letter-spacing="-0.5">
+                        SMART<tspan fill="#0284C7">HOSPITAL</tspan>
+                    </text>
+                    <text x="77" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0D9488" letter-spacing="1.5">
+                        NEXT-GEN MEDICAL CENTER
+                    </text>
+                </svg>
+            </a>
         </div>
         <nav>
-            <a href="home" class="active">Home</a>
-            <a href="about">About</a>
-            <a href="services">Services</a>
-            <a href="doctors">Doctors Directory</a>
-            <a href="departments">Departments</a>
-            <a href="contact">Contact</a>
-            <a href="login" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
+            <a href="/home" class="nav-link active" data-section="sec-home">Home</a>
+            <a href="/about" class="nav-link" data-section="sec-about">About</a>
+            <a href="/services" class="nav-link" data-section="sec-services">Services</a>
+            <a href="/doctors" class="nav-link" data-section="sec-doctors">Doctors Directory</a>
+            <a href="/departments" class="nav-link" data-section="sec-departments">Departments</a>
+            <a href="/contact" class="nav-link" data-section="sec-contact">Contact</a>
+            <a href="/login" class="btn btn-primary nav-link" data-section="sec-login"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
         </nav>
     </header>
 
-    <!-- Ultra-Modern Hero Banner -->
-    <section class="hero-banner">
-        <div class="hero-badge">
-            <i class="fa-solid fa-shield-halved"></i> Multi-Specialty Clinical Excellence & Digital Care
+    <!-- Section: Home -->
+    <div id="sec-home" class="page-section">
+        <!-- Ultra-Modern Hero Banner -->
+        <section class="hero-banner">
+            <div class="hero-badge">
+                <i class="fa-solid fa-shield-halved"></i> Multi-Specialty Clinical Excellence & Digital Care
+            </div>
+            <h1>Next-Generation Smart Hospital Management System</h1>
+            <p>Providing state-of-the-art cardiac surgery, orthopedics, cosmetology, gastroenterology, pediatric cardiology, and neurosurgery with seamless digital health record integration.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="/register" class="btn btn-primary nav-link" data-section="sec-register" style="background: #FFFFFF; color: #0F172A; font-size: 15px; padding: 14px 28px;">
+                    <i class="fa-solid fa-user-plus" style="color: #0284C7;"></i> Patient Registration
+                </a>
+                <a href="/login" class="btn btn-outline nav-link" data-section="sec-login" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
+                    <i class="fa-solid fa-stethoscope"></i> Staff & Doctor Portal
+                </a>
+            </div>
+        </section>
+
+        <!-- Page Body Container -->
+        <div class="page-body">
+            <!-- Stat Counter Grid -->
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Specialist Doctors</div>
+                        <div class="stat-number">6 Specialists</div>
+                    </div>
+                    <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Clinical Departments</div>
+                        <div class="stat-number">6 Centers</div>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Emergency Helpline</div>
+                        <div class="stat-number" style="font-size: 20px;">24/7 Active</div>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-headset"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Patient Portals</div>
+                        <div class="stat-number">Instant Sync</div>
+                    </div>
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-laptop-medical"></i></div>
+                </div>
+            </div>
+
+            <!-- Featured Specialist Doctors Section (Strict 1-6 Order) -->
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Directory</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 6 with qualifications and experience</p>
+                    </div>
+                    <a href="/doctors" class="btn btn-outline btn-sm nav-link" data-section="sec-doctors">Full Directory</a>
+                </div>
+
+                <div class="doctor-grid">
+                    <!-- Doctor 1: Dr. Neha -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">1</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Neha</div>
+                                <div class="doctor-spec">Heart Surgeon</div>
+                                <span class="badge badge-senior" style="margin-top: 4px;">SENIOR HEART SURGEON & HEAD</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MS, M.Ch (Cardiothoracic)</span></div>
+                            <div><label>Experience</label><span>16 Years</span></div>
+                            <div><label>Department</label><span>Cardiology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹900</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+
+                    <!-- Doctor 2: Dr. Shobana -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">2</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-bone"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Shobana</div>
+                                <div class="doctor-spec">Orthopedic Surgeon</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Joint Replacement Specialist</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MS (Ortho), Joint Fellow</span></div>
+                            <div><label>Experience</label><span>10 Years</span></div>
+                            <div><label>Department</label><span>Orthopedics</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹750</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+
+                    <!-- Doctor 3: Dr. Sruthi -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">3</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-spa"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Sruthi</div>
+                                <div class="doctor-spec">Dermatologist & Cosmetologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Laser & Aesthetics Expert</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Dermatology, DVL)</span></div>
+                            <div><label>Experience</label><span>5 Years</span></div>
+                            <div><label>Department</label><span>Dermatology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹600</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+
+                    <!-- Doctor 4: Dr. Jagadeesh -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">4</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-stomach"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Jagadeesh</div>
+                                <div class="doctor-spec">Gastroenterologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Hepatology & Endoscopy</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Gen Med), DM (Gastro)</span></div>
+                            <div><label>Experience</label><span>7 Years</span></div>
+                            <div><label>Department</label><span>Gastroenterology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹650</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+
+                    <!-- Doctor 5: Dr. Jaswanth -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">5</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-child-rearing"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Jaswanth</div>
+                                <div class="doctor-spec">Pediatric Cardiologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Congenital Heart Care</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Ped), DM (Pedia Cardio)</span></div>
+                            <div><label>Experience</label><span>8 Years</span></div>
+                            <div><label>Department</label><span>Pediatric Cardiology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹700</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+
+                    <!-- Doctor 6: Dr. Kamalesh -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">6</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-brain"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Kamalesh</div>
+                                <div class="doctor-spec">Neurosurgeon</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Brain & Spine Surgery</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Neurology), M.Ch (Neuro)</span></div>
+                            <div><label>Experience</label><span>12 Years</span></div>
+                            <div><label>Department</label><span>Neurology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹800</span></div>
+                        </div>
+                        <a href="/login" class="btn btn-primary btn-sm nav-link" data-section="sec-login" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h1>Next-Generation Smart Hospital Management System</h1>
-        <p>Providing state-of-the-art cardiac surgery, orthopedics, cosmetology, gastroenterology, pediatric cardiology, and neurosurgery with seamless digital health record integration.</p>
-        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-            <a href="register" class="btn btn-primary" style="background: #FFFFFF; color: #0F172A; font-size: 15px; padding: 14px 28px;">
-                <i class="fa-solid fa-user-plus" style="color: #0284C7;"></i> Patient Registration
-            </a>
-            <a href="login" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
-                <i class="fa-solid fa-stethoscope"></i> Staff & Doctor Portal
-            </a>
-        </div>
-    </section>
+    </div>
 
-    <!-- Page Body Container -->
-    <div class="page-body">
-
-        <!-- Stat Counter Grid -->
-        <div class="dashboard-grid">
-            <div class="stat-card">
-                <div>
-                    <div class="stat-label">Specialist Doctors</div>
-                    <div class="stat-number">6 Specialists</div>
-                </div>
-                <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
-            </div>
-            <div class="stat-card">
-                <div>
-                    <div class="stat-label">Clinical Departments</div>
-                    <div class="stat-number">6 Centers</div>
-                </div>
-                <div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div>
-            </div>
-            <div class="stat-card">
-                <div>
-                    <div class="stat-label">Emergency Helpline</div>
-                    <div class="stat-number" style="font-size: 20px;">24/7 Active</div>
-                </div>
-                <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-headset"></i></div>
-            </div>
-            <div class="stat-card">
-                <div>
-                    <div class="stat-label">Patient Portals</div>
-                    <div class="stat-number">Instant Sync</div>
-                </div>
-                <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-laptop-medical"></i></div>
+    <!-- Section: About -->
+    <div id="sec-about" class="page-section" style="display: none;">
+        <div class="page-body" style="max-width: 1000px;">
+            <div class="card-panel">
+                <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 20px;"><i class="fa-solid fa-hospital" style="color: var(--brand-blue);"></i> About Smart Hospital Center</h2>
+                <p style="margin-bottom: 20px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
+                    Smart Hospital is a modern multi-specialty healthcare institution led by senior <strong>Heart Surgeon Dr. Neha</strong> (16 Years Exp), alongside <strong>Dr. Shobana</strong> (Orthopedic Surgeon, 10y), <strong>Dr. Sruthi</strong> (Dermatologist & Cosmetologist, 5y), <strong>Dr. Jagadeesh</strong> (Gastroenterologist, 7y), <strong>Dr. Jaswanth</strong> (Pediatric Cardiologist, 8y), and <strong>Dr. Kamalesh</strong> (Neurosurgeon, 12y).
+                </p>
+                <p style="margin-bottom: 24px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
+                    This full-stack system was engineered as an Academic Major Project demonstrating Java Web development standards, MVC architecture, DAO design patterns, secure database integration via JDBC/H2, and role-based portal security.
+                </p>
             </div>
         </div>
+    </div>
 
-        <!-- Featured Specialist Doctors Section (Strict 1-6 Order) -->
-        <div class="card-panel">
-            <div class="card-header">
-                <div>
-                    <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Directory</h2>
-                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 6 with qualifications and experience</p>
-                </div>
-                <a href="doctors" class="btn btn-outline btn-sm">Full Directory</a>
-            </div>
-
-            <div class="doctor-grid">
-
-                <!-- Doctor 1: Dr. Neha -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">1</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-heart-pulse"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Neha</div>
-                            <div class="doctor-spec">Heart Surgeon</div>
-                            <span class="badge badge-senior" style="margin-top: 4px;">SENIOR HEART SURGEON & HEAD</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MS, M.Ch (Cardiothoracic)</span></div>
-                        <div><label>Experience</label><span>16 Years</span></div>
-                        <div><label>Department</label><span>Cardiology</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹900</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-                <!-- Doctor 2: Dr. Shobana -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">2</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-bone"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Shobana</div>
-                            <div class="doctor-spec">Orthopedic Surgeon</div>
-                            <span class="badge badge-confirmed" style="margin-top: 4px;">Joint Replacement Specialist</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MS (Ortho), Joint Fellow</span></div>
-                        <div><label>Experience</label><span>10 Years</span></div>
-                        <div><label>Department</label><span>Orthopedics</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹750</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-                <!-- Doctor 3: Dr. Sruthi -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">3</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-spa"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Sruthi</div>
-                            <div class="doctor-spec">Dermatologist & Cosmetologist</div>
-                            <span class="badge badge-confirmed" style="margin-top: 4px;">Laser & Aesthetics Expert</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MD (Dermatology, DVL)</span></div>
-                        <div><label>Experience</label><span>5 Years</span></div>
-                        <div><label>Department</label><span>Dermatology</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹600</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-                <!-- Doctor 4: Dr. Jagadeesh -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">4</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-stomach"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Jagadeesh</div>
-                            <div class="doctor-spec">Gastroenterologist</div>
-                            <span class="badge badge-confirmed" style="margin-top: 4px;">Hepatology & Endoscopy</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MD (Gen Med), DM (Gastro)</span></div>
-                        <div><label>Experience</label><span>7 Years</span></div>
-                        <div><label>Department</label><span>Gastroenterology</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹650</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-                <!-- Doctor 5: Dr. Jaswanth -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">5</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-child-rearing"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Jaswanth</div>
-                            <div class="doctor-spec">Pediatric Cardiologist</div>
-                            <span class="badge badge-confirmed" style="margin-top: 4px;">Congenital Heart Care</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MD (Ped), DM (Pedia Cardio)</span></div>
-                        <div><label>Experience</label><span>8 Years</span></div>
-                        <div><label>Department</label><span>Pediatric Cardiology</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹700</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-                <!-- Doctor 6: Dr. Kamalesh -->
-                <div class="doctor-card">
-                    <div class="doctor-order-badge">6</div>
-                    <div class="doctor-card-header">
-                        <div class="doctor-avatar"><i class="fa-solid fa-brain"></i></div>
-                        <div>
-                            <div class="doctor-name">Dr. Kamalesh</div>
-                            <div class="doctor-spec">Neurosurgeon</div>
-                            <span class="badge badge-confirmed" style="margin-top: 4px;">Brain & Spine Surgery</span>
-                        </div>
-                    </div>
-                    <div class="doctor-meta">
-                        <div><label>Qualification</label><span>MD (Neurology), M.Ch (Neuro)</span></div>
-                        <div><label>Experience</label><span>12 Years</span></div>
-                        <div><label>Department</label><span>Neurology</span></div>
-                        <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹800</span></div>
-                    </div>
-                    <a href="login" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Clinical Departments Grid -->
-        <div class="card-panel">
-            <div class="card-header">
-                <h2 class="card-title"><i class="fa-solid fa-hospital" style="color: var(--brand-teal);"></i> Specialized Medical Centers</h2>
-            </div>
+    <!-- Section: Services -->
+    <div id="sec-services" class="page-section" style="display: none;">
+        <div class="page-body">
+            <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Centers & Advanced Healthcare Services</h2>
             <div class="grid-3">
                 <div class="service-card">
                     <div class="service-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Cardiovascular Surgery</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Open heart surgery, coronary bypass, and vascular procedures led by Dr. Neha (16y exp).</p>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Cardiac & Vascular Surgery</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Open heart surgery and vascular interventions led by Senior Heart Surgeon Dr. Neha (16y Exp).</p>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-bone"></i></div>
-                    <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Orthopedics & Spine</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Robotic joint replacement and complex fracture surgery led by Dr. Shobana (10y exp).</p>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Orthopedic Joint Surgery</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Robotic joint replacement and spine care led by Dr. Shobana (10y Exp).</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-brain"></i></div>
-                    <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Neuroscience Center</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Brain tumor resection and spinal neurosurgery led by Dr. Kamalesh (12y exp).</p>
+                    <div class="service-card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-child-rearing"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Pediatric Cardiology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Congenital heart defect treatments for infants led by Dr. Jaswanth (8y Exp).</p>
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- Section: Doctors Directory -->
+    <div id="sec-doctors" class="page-section" style="display: none;">
+        <div class="page-body">
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-6)</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Faculty order strictly maintained 1 through 6</p>
+                    </div>
+                </div>
+
+                <div class="doctor-grid">
+                    <!-- Doctor 1 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">1</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Neha</div>
+                                <div class="doctor-spec">Heart Surgeon</div>
+                                <span class="badge badge-senior" style="margin-top: 4px;">SENIOR HEART SURGEON & HEAD</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MS, M.Ch (Cardiothoracic)</span></div>
+                            <div><label>Experience</label><span>16 Years</span></div>
+                            <div><label>Department</label><span>Cardiology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹900</span></div>
+                        </div>
+                    </div>
+                    <!-- Doctor 2 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">2</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-bone"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Shobana</div>
+                                <div class="doctor-spec">Orthopedic Surgeon</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Joint Replacement Specialist</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MS (Ortho), Joint Fellow</span></div>
+                            <div><label>Experience</label><span>10 Years</span></div>
+                            <div><label>Department</label><span>Orthopedics</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹750</span></div>
+                        </div>
+                    </div>
+                    <!-- Doctor 3 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">3</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-spa"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Sruthi</div>
+                                <div class="doctor-spec">Dermatologist & Cosmetologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Laser & Aesthetics Expert</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Dermatology, DVL)</span></div>
+                            <div><label>Experience</label><span>5 Years</span></div>
+                            <div><label>Department</label><span>Dermatology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹600</span></div>
+                        </div>
+                    </div>
+                    <!-- Doctor 4 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">4</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-stomach"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Jagadeesh</div>
+                                <div class="doctor-spec">Gastroenterologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Hepatology & Endoscopy</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Gen Med), DM (Gastro)</span></div>
+                            <div><label>Experience</label><span>7 Years</span></div>
+                            <div><label>Department</label><span>Gastroenterology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹650</span></div>
+                        </div>
+                    </div>
+                    <!-- Doctor 5 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">5</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-child-rearing"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Jaswanth</div>
+                                <div class="doctor-spec">Pediatric Cardiologist</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Congenital Heart Care</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Ped), DM (Pedia Cardio)</span></div>
+                            <div><label>Experience</label><span>8 Years</span></div>
+                            <div><label>Department</label><span>Pediatric Cardiology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹700</span></div>
+                        </div>
+                    </div>
+                    <!-- Doctor 6 -->
+                    <div class="doctor-card">
+                        <div class="doctor-order-badge">6</div>
+                        <div class="doctor-card-header">
+                            <div class="doctor-avatar"><i class="fa-solid fa-brain"></i></div>
+                            <div>
+                                <div class="doctor-name">Dr. Kamalesh</div>
+                                <div class="doctor-spec">Neurosurgeon</div>
+                                <span class="badge badge-confirmed" style="margin-top: 4px;">Brain & Spine Surgery</span>
+                            </div>
+                        </div>
+                        <div class="doctor-meta">
+                            <div><label>Qualification</label><span>MD (Neurology), M.Ch (Neuro)</span></div>
+                            <div><label>Experience</label><span>12 Years</span></div>
+                            <div><label>Department</label><span>Neurology</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹800</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Departments -->
+    <div id="sec-departments" class="page-section" style="display: none;">
+        <div class="page-body">
+            <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Departments</h2>
+            <div class="grid-3">
+                <div class="card-panel" style="margin-bottom: 0;">
+                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Cardiology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Heart health, cardiac surgery, and vascular treatment.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Neha (Heart Surgeon)</span></div>
+                </div>
+                <div class="card-panel" style="margin-bottom: 0;">
+                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-bone"></i></div>
+                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Orthopedics</h3>
+                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Bone, joint replacement, and musculoskeletal surgery.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Shobana (Orthopedic Surgeon)</span></div>
+                </div>
+                <div class="card-panel" style="margin-bottom: 0;">
+                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-spa"></i></div>
+                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Dermatology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Advanced skin care, laser surgery, and cosmetic dermatology.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Sruthi (Dermatologist & Cosmetologist)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Contact -->
+    <div id="sec-contact" class="page-section" style="display: none;">
+        <div class="page-body" style="max-width: 960px;">
+            <div class="card-panel">
+                <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 24px;"><i class="fa-solid fa-headset" style="color: var(--brand-blue);"></i> Emergency & Contact Center</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                    <div>
+                        <h4 style="margin-bottom: 8px; font-size: 16px;">Address:</h4>
+                        <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 20px;">123 Healthcare Boulevard, Tech City, Karnataka 560001</p>
+                        <h4 style="margin-bottom: 8px; font-size: 16px;">24/7 Emergency Helpline:</h4>
+                        <p style="color: var(--danger); font-weight: 800; font-size: 20px; margin-bottom: 20px;"><i class="fa-solid fa-phone-volume"></i> 1800-123-9999 / 102</p>
+                        <h4 style="margin-bottom: 8px; font-size: 16px;">Email Support:</h4>
+                        <p style="color: var(--gray-600); font-size: 14px;">contact@smarthospital.org</p>
+                    </div>
+                    <div>
+                        <form onsubmit="alert('Thank you for contacting Smart Hospital.'); return false;">
+                            <div class="form-group"><label>Your Name</label><input type="text" class="form-control" required placeholder="Full name"></div>
+                            <div class="form-group"><label>Email Address</label><input type="email" class="form-control" required placeholder="Email"></div>
+                            <div class="form-group"><label>Message</label><textarea class="form-control" rows="3" required placeholder="Write message..."></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Login Portal -->
+    <div id="sec-login" class="page-section" style="display: none;">
+        <div style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <div style="width: 100%; max-width: 480px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);">Portal Sign In</h2>
+                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Select your user role portal to access dashboard</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px;">
+                    <a href="/admin/dashboard" class="btn btn-primary" style="justify-content: center;"><i class="fa-solid fa-user-gear"></i> Access Admin Portal</a>
+                    <a href="/doctor/dashboard" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-stethoscope"></i> Access Doctor Portal (Dr. Neha)</a>
+                    <a href="/receptionist/dashboard" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-hospital-user"></i> Access Receptionist Portal</a>
+                    <a href="/pharmacist/dashboard" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-prescription"></i> Access Pharmacist Portal</a>
+                    <a href="/patient/dashboard" class="btn btn-secondary" style="justify-content: center;"><i class="fa-solid fa-user-injured"></i> Access Patient Portal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Register Portal -->
+    <div id="sec-register" class="page-section" style="display: none;">
+        <div style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <div style="width: 100%; max-width: 580px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);"><i class="fa-solid fa-user-plus" style="color: var(--brand-blue);"></i> Patient Registration</h2>
+                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Create your personal digital medical record profile</p>
+                </div>
+                <form action="/register" method="post" onsubmit="alert('Registration submitted successfully! Please sign in.'); return false;">
+                    <div class="form-row">
+                        <div class="form-group"><label>Full Name *</label><input type="text" class="form-control" required placeholder="John Doe"></div>
+                        <div class="form-group"><label>Email Address *</label><input type="email" class="form-control" required placeholder="john@example.com"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Password *</label><input type="password" class="form-control" required placeholder="••••••••"></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" class="form-control" required placeholder="10-digit mobile"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Registration</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Modern Footer -->
@@ -274,14 +511,42 @@
                 <strong>Smart Hospital Management System</strong> &copy; 2026 | Major Academic Project Edition
             </div>
             <div style="display: flex; gap: 20px; font-weight: 600;">
-                <a href="home">Home</a>
-                <a href="doctors">Doctors</a>
-                <a href="departments">Departments</a>
-                <a href="contact">Emergency Contact</a>
+                <a href="/home" class="nav-link" data-section="sec-home">Home</a>
+                <a href="/doctors" class="nav-link" data-section="sec-doctors">Doctors</a>
+                <a href="/departments" class="nav-link" data-section="sec-departments">Departments</a>
+                <a href="/contact" class="nav-link" data-section="sec-contact">Emergency Contact</a>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Navigation Router Script for Zero-404 Experience -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.page-section');
+
+            function showSection(sectionId) {
+                sections.forEach(sec => sec.style.display = 'none');
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const secId = this.getAttribute('data-section');
+                    if (secId && document.getElementById(secId)) {
+                        e.preventDefault();
+                        showSection(secId);
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
