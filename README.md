@@ -1,22 +1,64 @@
-# Smart Hospital Management System (Student Major Project Edition)
+# Smart Hospital Management System
 
-Java web-based Hospital Management System — patients, appointments, billing, prescriptions, and staff management.
+## Project Overview
+The **Smart Hospital Management System** is a complete, enterprise-ready Java Full-Stack web application designed for academic major projects, portfolio showcases, and technical interviews. It provides a centralized digital healthcare portal for managing patients, doctors, OPD appointment scheduling, medical diagnoses, electronic prescriptions, pharmacy inventory, billing invoicing, and executive reporting.
 
-Hospital Management System is a Java EE web application (Servlets + JSP) backed by MySQL. It provides user authentication and modules for patient registration, appointment scheduling, billing, prescription management, and basic reporting.
-
----
-
-## 🌟 Technology Stack
-
-* **Frontend:** HTML5, CSS3 (Modern Medical Theme), JavaScript (Vanilla), JSP, JSTL
-* **Backend:** Java 17/11, Servlets (javax.servlet), JDBC, POJO Models, DAO Pattern
-* **Database:** MySQL Database (`schema.sql` & `data.sql` included) + Embedded H2 Database auto-fallback
-* **Build Tool:** Apache Maven
-* **Server:** Apache Tomcat 9 / 10 compatible WAR packaging
+The project is built using standard Java Web technologies (Servlets, JSP, JDBC, DAO pattern, MVC architecture) without complex frameworks, making it clean, easy to understand, and lightweight.
 
 ---
 
-## 🏗️ Architecture & Package Structure
+## Features
+* **Role-Based Portal Security**: Multi-tier authentication filter system protecting specialized portals for Administrators, Doctors, Receptionists, Pharmacists, and Patients.
+* **Executive Administrative Dashboard**: Metrics overview including total patients, active doctors, daily appointment queues, pharmacy inventory health, and financial revenue trackers.
+* **Patient Management & Registration**: Self-service patient portal registration and receptionist intake form with medical history recording.
+* **Doctor OPD Management & Consultation**: Doctor portal for viewing scheduled patient appointments, submitting diagnoses, recommending diagnostic tests, and creating electronic prescriptions.
+* **Electronic Prescription & Pharmacy Control**: Automated link between doctor prescriptions and pharmacy inventory stock control, including low-stock alerts.
+* **Billing & Invoicing**: Automated bill generation for doctor consultation fees, diagnostic test charges, and pharmacy charges with printable receipt support (`@media print`).
+* **Auto-Fallback Database Utility**: Automatic transition to an embedded H2 database with pre-seeded data if MySQL is unavailable locally.
+
+---
+
+## User Roles
+
+| Role | Default Username | Default Password | Access Rights |
+|---|---|---|---|
+| **Admin** | `admin@hospital.com` | `admin123` | Complete administrative authority over users, doctors, departments, inventory, and revenue reports. |
+| **Doctor** | `doctor@hospital.com` | `doctor123` | Consultation queue, patient medical records, diagnosis writer, and prescription creation. |
+| **Receptionist** | `reception@hospital.com` | `reception123` | Patient intake, appointment booking, token slip generation, and consultation billing. |
+| **Pharmacist** | `pharma@hospital.com` | `pharma123` | Prescription fulfillment queue, medicine inventory stock updates, and pharmacy invoicing. |
+| **Patient** | `patient@hospital.com` | `patient123` | Self registration, booking appointment requests, profile management, viewing prescriptions, and invoices. |
+
+---
+
+## Technology Stack
+* **Java**: Java 11 / 17
+* **Servlets**: Java Servlet API (`javax.servlet`)
+* **JSP**: JavaServer Pages & JSTL (JavaServer Pages Standard Tag Library)
+* **JDBC**: Java Database Connectivity with `PreparedStatement` and SQL injection defense
+* **MySQL**: MySQL 8.0+ Database Server
+* **Maven**: Apache Maven build automation & dependency manager
+* **Apache Tomcat**: Apache Tomcat 9 / 10 application server
+* **HTML5**: Semantic web structure
+* **CSS3**: Custom modern clinical design system with responsive layouts
+* **JavaScript**: Client-side validation and interactive UI controls
+
+---
+
+## Architecture
+The application follows standard 3-Tier Enterprise MVC (Model-View-Controller) Architecture:
+
+* **Controller Layer (`com.hospital.controller`)**: Role-specific Servlets handling HTTP requests, parameters, session validation, and view forwarding.
+* **Service Layer (`com.hospital.service`)**: Business logic orchestrators linking controllers to DAO implementations and transactional operations.
+* **DAO Layer (`com.hospital.dao`)**: Data Access Object interfaces defining CRUD contracts.
+* **DAO Implementation Layer (`com.hospital.dao.impl`)**: JDBC implementations executing optimized SQL statements using `PreparedStatement` and resource management.
+* **Model Layer (`com.hospital.model`)**: Plain Old Java Objects (POJO) encapsulation beans representing domain entities (User, Patient, Doctor, Appointment, Bill, Medicine, etc.).
+* **Filter Layer (`com.hospital.filter`)**: HTTP WebFilters enforcing authentication, role authorization, and request UTF-8 encoding.
+* **Utility Layer (`com.hospital.util`)**: Helper classes for Database Connections (`DBUtil`), Password Hashing SHA-256 (`PasswordUtil`), and Input Validation (`ValidationUtil`).
+* **JSP View Layer (`WEB-INF/views`)**: Server-rendered JSP templates organized securely inside `WEB-INF` by access role.
+
+---
+
+## Project Structure
 
 ```
 SmartHospitalManagement/
@@ -24,71 +66,126 @@ SmartHospitalManagement/
 ├── schema.sql
 ├── data.sql
 ├── README.md
-└── src/
-    ├── main/
-    │   ├── java/
-    │   │   └── com/hospital/
-    │   │       ├── model/             # POJO Bean Model Classes
-    │   │       ├── dao/               # Data Access Object Interfaces
-    │   │       ├── dao/impl/          # JDBC Implementations (PreparedStatements)
-    │   │       ├── service/           # Business Logic Layer
-    │   │       ├── controller/        # Role-based Servlets
-    │   │       ├── filter/            # Authentication & Encoding Filters
-    │   │       └── util/              # DBUtil, PasswordUtil (SHA-256), ValidationUtil
-    │   ├── resources/
-    │   │   └── db.properties          # Database Configuration
-    │   └── webapp/
-    │       ├── assets/                # Medical CSS & JS
-    │       └── WEB-INF/
-    │           ├── web.xml
-    │           └── views/             # JSP Views per Role (Admin, Doctor, Receptionist, Pharmacist, Patient, Public)
+├── .gitignore
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/hospital/
+│       │       ├── controller/
+│       │       │   ├── AdminServlet.java
+│       │       │   ├── AuthServlet.java
+│       │       │   ├── DoctorServlet.java
+│       │       │   ├── PatientServlet.java
+│       │       │   ├── PharmacistServlet.java
+│       │       │   ├── PublicServlet.java
+│       │       │   └── ReceptionistServlet.java
+│       │       ├── dao/
+│       │       │   ├── AppointmentDAO.java
+│       │       │   ├── BillingDAO.java
+│       │       │   ├── DepartmentDAO.java
+│       │       │   ├── DiagnosisDAO.java
+│       │       │   ├── DoctorDAO.java
+│       │       │   ├── MedicineDAO.java
+│       │       │   ├── PatientDAO.java
+│       │       │   ├── PrescriptionDAO.java
+│       │       │   ├── UserDAO.java
+│       │       │   └── impl/
+│       │       ├── filter/
+│       │       │   ├── AuthFilter.java
+│       │       │   └── EncodingFilter.java
+│       │       ├── model/
+│       │       │   ├── Appointment.java
+│       │       │   ├── Bill.java
+│       │       │   ├── BillItem.java
+│       │       │   ├── Department.java
+│       │       │   ├── Diagnosis.java
+│       │       │   ├── Doctor.java
+│       │       │   ├── Medicine.java
+│       │       │   ├── Patient.java
+│       │       │   ├── Prescription.java
+│       │       │   ├── PrescriptionItem.java
+│       │       │   ├── Role.java
+│       │       │   └── User.java
+│       │       ├── service/
+│       │       │   ├── AuthService.java
+│       │       │   ├── BillingService.java
+│       │       │   └── HospitalService.java
+│       │       └── util/
+│       │           ├── DBUtil.java
+│       │           ├── PasswordUtil.java
+│       │           └── ValidationUtil.java
+│       ├── resources/
+│       │   ├── db.properties.example
+│       │   └── db.properties (git ignored)
+│       └── webapp/
+│           ├── index.jsp
+│           ├── assets/
+│           │   ├── css/
+│           │   │   └── style.css
+│           │   ├── js/
+│           │   │   └── main.js
+│           │   └── images/
+│           └── WEB-INF/
+│               ├── web.xml
+│               └── views/
+│                   ├── admin/
+│                   ├── common/
+│                   ├── doctor/
+│                   ├── patient/
+│                   ├── pharmacist/
+│                   ├── public/
+│                   └── receptionist/
 ```
 
 ---
 
-## 👥 User Roles & Credentials
+## Database Setup
 
-The system comes pre-loaded with demonstration accounts (`data.sql` / auto-seeded):
+1. **Create Database**:
+   Create a MySQL database named `hospital_db`:
+   ```sql
+   CREATE DATABASE hospital_db;
+   USE hospital_db;
+   ```
+2. **Run Table Schema Script**:
+   Execute `schema.sql` to construct all relational tables:
+   ```bash
+   mysql -u root -p hospital_db < schema.sql
+   ```
+3. **Run Seed Data Script**:
+   Execute `data.sql` to populate initial roles, admin user, specialist doctors, departments, and medicines:
+   ```bash
+   mysql -u root -p hospital_db < data.sql
+   ```
+4. **Configure Database Credentials**:
+   Copy `src/main/resources/db.properties.example` to `src/main/resources/db.properties` and configure your database credentials:
+   ```properties
+   db.driver=com.mysql.cj.jdbc.Driver
+   db.url=jdbc:mysql://localhost:3306/hospital_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+   db.user=root
+   db.password=your_mysql_password
+   ```
 
-| Role | Email | Password | Access Rights |
-|---|---|---|---|
-| **Administrator** | `admin@hospital.com` | `admin123` | Full System Control, Doctors, Patients, Depts, Medicines, Financial Revenue, Reports |
-| **Doctor** | `doctor@hospital.com` | `doctor123` | OPD Queue, Patient History, Diagnosis Entry, Electronic Prescriptions |
-| **Receptionist** | `reception@hospital.com` | `reception123` | Patient Registration, Doctor Schedule Booking, Invoicing, Token Slip Printing |
-| **Pharmacist** | `pharma@hospital.com` | `pharma123` | Prescriptions Queue, Inventory Stock Management, Stock Deductions |
-| **Patient** | `patient@hospital.com` | `patient123` | Self Registration, Profile, Booking Request, Prescription Download, Invoices |
+*(Note: Never commit real database passwords or credentials to version control.)*
 
 ---
 
-## 🚀 How to Build & Run
+## Running Locally
 
-### Method A: Build WAR file for Apache Tomcat
-1. Compile and package using Maven:
+1. **Build the WAR package using Maven**:
    ```bash
    mvn clean package
    ```
-2. Deploy the generated `target/SmartHospitalManagement.war` to your Apache Tomcat `webapps/` folder.
-3. Access in browser: `http://localhost:8080/SmartHospitalManagement`
-
-### Method B: Database Setup (MySQL)
-1. Import `schema.sql` into MySQL Workbench or command line:
-   ```sql
-   source d:/Hospital Management System/schema.sql;
-   ```
-2. Import `data.sql` for demo seed data:
-   ```sql
-   source d:/Hospital Management System/data.sql;
-   ```
-3. Update `src/main/resources/db.properties` with your MySQL username and password if different from `root`/`root`.
-
-*(Note: If MySQL is not running on port 3306, `DBUtil` automatically falls back to embedded in-memory H2 database with auto-seeded data so you can test the application seamlessly without database errors!)*
+2. **Locate Generated WAR**:
+   The build process produces `target/SmartHospitalManagement.war`.
+3. **Deploy to Apache Tomcat**:
+   Copy `SmartHospitalManagement.war` to your Apache Tomcat `webapps/` directory and start Tomcat (`bin/startup.bat` or `bin/startup.sh`).
+4. **Open Application**:
+   Navigate to `http://localhost:8080/SmartHospitalManagement` in your browser.
 
 ---
 
-## 📋 Key Features & Modules
+## GitHub Repository
+GitHub is used as the source-code repository for version control, code review, and project history.
 
-1. **Role-Based Authentication & WebFilter Security**: Protected endpoints preventing unauthorized route navigation.
-2. **Executive Admin Dashboard**: Real-time counter metrics for patients, active doctors, today's appointments, and total revenue collections.
-3. **Electronic Prescription Writer**: Doctors select medicines from stock, specify dosage (e.g. 500mg), frequency (e.g. 1-0-1), duration (5 Days), and advice.
-4. **Pharmacy Inventory & Auto-Deduction**: Real-time stock alerts for low inventory (<= 50 units) and automatic stock updates upon billing.
-5. **Printable Invoices & OPD Slips**: Dedicated CSS `@media print` rules for generating clean, paper-ready appointment slips and billing receipts.
+*Note: GitHub Pages is designed only for static HTML/CSS/JS websites and cannot run Java Servlets, JSP templates, JDBC database connections, MySQL servers, or Apache Tomcat. To host the live running web application, deploy the generated WAR package to a Java-compatible cloud server or Tomcat hosting platform.*

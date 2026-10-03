@@ -86,29 +86,36 @@ public class DBUtil {
                 st.execute("INSERT INTO roles (role_id, role_name) VALUES (1, 'Administrator'), (2, 'Doctor'), (3, 'Receptionist'), (4, 'Pharmacist'), (5, 'Patient');");
                 st.execute("INSERT INTO users (user_id, name, email, password, phone, role_id) VALUES " +
                         "(1, 'System Administrator', 'admin@hospital.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '9876543210', 1), " +
-                        "(2, 'Dr. Rajesh Sharma', 'doctor@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543211', 2), " +
-                        "(3, 'Dr. Priya Nair', 'priya@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543212', 2), " +
-                        "(4, 'Dr. Ankit Patel', 'ankit@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543213', 2), " +
-                        "(5, 'Sarah Jenkins', 'reception@hospital.com', 'a937a0c0e5a882a859e9c8dfb2f15e8b4e7a0e5b7b9015c7e16346294d13c79c', '9876543214', 3), " +
-                        "(6, 'Michael Vance', 'pharma@hospital.com', 'c8303f83d9d3004d3e8e24484b35ef58406566085a53930b8d5a1b3c9597793d', '9876543215', 4), " +
-                        "(7, 'John Doe', 'patient@hospital.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543216', 5), " +
-                        "(8, 'Anita Roy', 'anita@gmail.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543217', 5);");
+                        "(2, 'Dr. Neha', 'doctor@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543211', 2), " +
+                        "(3, 'Dr. Shobana', 'shobana@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543213', 2), " +
+                        "(4, 'Dr. Sruthi', 'sruthi@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543218', 2), " +
+                        "(5, 'Dr. Jagadeesh', 'jagadeesh@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543215', 2), " +
+                        "(6, 'Dr. Jaswanth', 'jaswanth@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543214', 2), " +
+                        "(7, 'Dr. Kamalesh', 'kamalesh@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543212', 2), " +
+                        "(8, 'Sarah Jenkins', 'reception@hospital.com', 'a937a0c0e5a882a859e9c8dfb2f15e8b4e7a0e5b7b9015c7e16346294d13c79c', '9876543219', 3), " +
+                        "(9, 'Michael Vance', 'pharma@hospital.com', 'c8303f83d9d3004d3e8e24484b35ef58406566085a53930b8d5a1b3c9597793d', '9876543220', 4), " +
+                        "(10, 'John Doe', 'patient@hospital.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543216', 5), " +
+                        "(11, 'Anita Roy', 'anita@gmail.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543217', 5);");
 
                 st.execute("INSERT INTO departments (dept_id, dept_name, description, head_doctor_name) VALUES " +
-                        "(1, 'Cardiology', 'Heart health, cardiac diagnostics, and vascular treatment.', 'Dr. Rajesh Sharma'), " +
-                        "(2, 'Neurology', 'Disorders of the brain, spinal cord, and nervous system.', 'Dr. Priya Nair'), " +
-                        "(3, 'Orthopedics', 'Bone, joint, ligament, and musculoskeletal surgery & therapy.', 'Dr. Ankit Patel'), " +
-                        "(4, 'Pediatrics', 'Comprehensive medical care for infants, children, and adolescents.', 'Dr. Kavita Verma'), " +
-                        "(5, 'General Medicine', 'Primary care, routine diagnostics, and overall adult healthcare.', 'Dr. Rajesh Sharma');");
+                        "(1, 'Cardiology', 'Heart health, cardiac surgery, and vascular treatment.', 'Dr. Neha'), " +
+                        "(2, 'Orthopedics', 'Bone, joint, ligament, and musculoskeletal surgery & therapy.', 'Dr. Shobana'), " +
+                        "(3, 'Dermatology', 'Advanced skin, laser surgery, and cosmetic dermatology.', 'Dr. Sruthi'), " +
+                        "(4, 'Gastroenterology', 'Digestive health, endoscopy, liver care, and hepatology.', 'Dr. Jagadeesh'), " +
+                        "(5, 'Pediatric Cardiology', 'Comprehensive medical care for infants and children with heart conditions.', 'Dr. Jaswanth'), " +
+                        "(6, 'Neurology', 'Disorders of the brain, spinal cord, and neurosurgery.', 'Dr. Kamalesh');");
 
                 st.execute("INSERT INTO doctors (doctor_id, user_id, name, qualification, specialization, experience_years, phone, email, dept_id, consultation_fee, status) VALUES " +
-                        "(1, 2, 'Dr. Rajesh Sharma', 'MD, DM (Cardiology)', 'Cardiology', 14, '9876543211', 'doctor@hospital.com', 1, 700.00, 'Active'), " +
-                        "(2, 3, 'Dr. Priya Nair', 'MD (Neurology), M.Ch', 'Neurology', 10, '9876543212', 'priya@hospital.com', 2, 800.00, 'Active'), " +
-                        "(3, 4, 'Dr. Ankit Patel', 'MS (Orthopedics)', 'Orthopedics', 8, '9876543213', 'ankit@hospital.com', 3, 600.00, 'Active');");
+                        "(1, 2, 'Dr. Neha', 'MS, M.Ch (Cardiothoracic Surgery)', 'Heart Surgeon', 16, '9876543211', 'doctor@hospital.com', 1, 900.00, 'Active'), " +
+                        "(2, 3, 'Dr. Shobana', 'MS (Orthopedics), Joint Replacement Fellow', 'Orthopedic Surgeon', 10, '9876543213', 'shobana@hospital.com', 2, 750.00, 'Active'), " +
+                        "(3, 4, 'Dr. Sruthi', 'MD (Dermatology, Venereology & Leprosy)', 'Dermatologist & Cosmetologist', 5, '9876543218', 'sruthi@hospital.com', 3, 600.00, 'Active'), " +
+                        "(4, 5, 'Dr. Jagadeesh', 'MD (Gen Med), DM (Gastroenterology)', 'Gastroenterologist', 7, '9876543215', 'jagadeesh@hospital.com', 4, 650.00, 'Active'), " +
+                        "(5, 6, 'Dr. Jaswanth', 'MD (Pediatrics), DM (Pediatric Cardiology)', 'Pediatric Cardiologist', 8, '9876543214', 'jaswanth@hospital.com', 5, 700.00, 'Active'), " +
+                        "(6, 7, 'Dr. Kamalesh', 'MD (Neurology), M.Ch (Neurosurgery)', 'Neurosurgeon', 12, '9876543212', 'kamalesh@hospital.com', 6, 800.00, 'Active');");
 
                 st.execute("INSERT INTO patients (patient_id, user_id, name, gender, age, blood_group, phone, address, email, emergency_contact) VALUES " +
-                        "(1, 7, 'John Doe', 'Male', 35, 'O+', '9876543216', '123 MG Road, Bangalore', 'patient@hospital.com', '9876500001'), " +
-                        "(2, 8, 'Anita Roy', 'Female', 29, 'A+', '9876543217', '45 Park Street, Kolkata', 'anita@gmail.com', '9876500002'), " +
+                        "(1, 10, 'John Doe', 'Male', 35, 'O+', '9876543216', '123 MG Road, Bangalore', 'patient@hospital.com', '9876500001'), " +
+                        "(2, 11, 'Anita Roy', 'Female', 29, 'A+', '9876543217', '45 Park Street, Kolkata', 'anita@gmail.com', '9876500002'), " +
                         "(3, NULL, 'Robert Smith', 'Male', 52, 'B+', '9876543218', '78 Nehru Place, New Delhi', 'robert@yahoo.com', '9876500003'), " +
                         "(4, NULL, 'Emily Davis', 'Female', 41, 'AB+', '9876543219', '12 Jubilee Hills, Hyderabad', 'emily@gmail.com', '9876500004');");
 
@@ -123,9 +130,9 @@ public class DBUtil {
 
                 st.execute("INSERT INTO appointments (appointment_id, patient_id, doctor_id, appointment_date, appointment_time, symptoms, status) VALUES " +
                         "(1, 1, 1, CURRENT_DATE(), '10:30 AM', 'Mild chest tightness after physical exercise and shortness of breath.', 'Completed'), " +
-                        "(2, 2, 2, CURRENT_DATE(), '11:15 AM', 'Frequent migraines, dizziness, and mild sensitivity to light.', 'Confirmed'), " +
-                        "(3, 3, 3, CURRENT_DATE(), '02:00 PM', 'Severe lower back pain when bending down.', 'Pending'), " +
-                        "(4, 4, 1, CURRENT_DATE(), '04:30 PM', 'Routine hypertension checkup.', 'Pending');");
+                        "(2, 2, 2, CURRENT_DATE(), '11:15 AM', 'Severe lower back pain when bending down.', 'Confirmed'), " +
+                        "(3, 3, 6, CURRENT_DATE(), '02:00 PM', 'Frequent migraines and dizziness.', 'Pending'), " +
+                        "(4, 4, 5, CURRENT_DATE(), '04:30 PM', 'Child heart rate evaluation.', 'Pending');");
 
                 st.execute("INSERT INTO diagnosis (diagnosis_id, appointment_id, patient_id, doctor_id, symptoms, diagnosis_detail, recommended_tests, doctor_notes) VALUES " +
                         "(1, 1, 1, 1, 'Chest tightness, fatigue', 'Mild Angina Pectoris / Exercise Induced Muscle Stress', 'ECG, Lipid Profile', 'Patient advised 2 weeks rest, low sodium diet, and follow-up ECG.');");
@@ -138,10 +145,10 @@ public class DBUtil {
                         "(2, 1, 1, '650mg', '1-0-1 (Morning-Night)', '5 Days', 'As needed for pain');");
 
                 st.execute("INSERT INTO bills (bill_id, patient_id, appointment_id, consultation_fee, medicine_charges, test_charges, total_amount, payment_status, payment_method, bill_date) VALUES " +
-                        "(1, 1, 1, 700.00, 145.00, 500.00, 1345.00, 'Paid', 'Credit Card', CURRENT_TIMESTAMP());");
+                        "(1, 1, 1, 900.00, 145.00, 500.00, 1545.00, 'Paid', 'Credit Card', CURRENT_TIMESTAMP());");
 
                 st.execute("INSERT INTO bill_items (bill_item_id, bill_id, item_name, quantity, unit_price, total_price) VALUES " +
-                        "(1, 1, 'Doctor Consultation Fee', 1, 700.00, 700.00), " +
+                        "(1, 1, 'Doctor Consultation Fee', 1, 900.00, 900.00), " +
                         "(2, 1, 'Atorvastatin 10mg', 1, 120.00, 120.00), " +
                         "(3, 1, 'Paracetamol 650mg', 1, 25.00, 25.00), " +
                         "(4, 1, 'ECG Diagnostic Test', 1, 500.00, 500.00);");

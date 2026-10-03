@@ -1,9 +1,11 @@
-# Maven / Java
+# Maven Build Artifacts
 target/
+/target/
 *.class
 *.jar
+*.war
 
-# IDEs
+# IDE Configuration
 .idea/
 *.iml
 .classpath
@@ -11,14 +13,21 @@ target/
 .settings/
 .vscode/
 
-# OS
+# OS Specific
 .DS_Store
+Thumbs.db
 
-# Database properties (keep local secrets out of repo)
+# Database Credentials & Local Config
 src/main/resources/db.properties
+db.properties
 
-# Logs
+# Log files
 logs/
+*.log
 
-# Build
-/target/
+# Node.js demo scripts
+server.js
+next.txt
+index.html
+src/main/webapp/next.txt
+src/main/webapp/index.html

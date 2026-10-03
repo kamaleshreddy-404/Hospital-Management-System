@@ -60,6 +60,7 @@ public class HospitalService {
     public Appointment getAppointmentById(int id) { return appointmentDAO.findById(id); }
     public List<Appointment> getAppointmentsByDoctor(int doctorId) { return appointmentDAO.findByDoctorId(doctorId); }
     public List<Appointment> getTodayAppointmentsByDoctor(int doctorId) { return appointmentDAO.findTodayAppointmentsByDoctor(doctorId); }
+    public List<Appointment> getTodayAppointmentsAll() { return appointmentDAO.findTodayAppointmentsAll(); }
     public List<Appointment> getAppointmentsByPatient(int patientId) { return appointmentDAO.findByPatientId(patientId); }
     public boolean bookAppointment(Appointment app) { return appointmentDAO.create(app); }
     public boolean updateAppointmentStatus(int apptId, String status) { return appointmentDAO.updateStatus(apptId, status); }
