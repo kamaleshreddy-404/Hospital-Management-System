@@ -25,9 +25,7 @@ db.properties
 logs/
 *.log
 
-# Node.js demo scripts
+# Node.js demo scripts (local standalone server)
 server.js
 next.txt
-index.html
 src/main/webapp/next.txt
-src/main/webapp/index.html
