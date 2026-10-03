@@ -65,7 +65,7 @@
             <a href="#" class="nav-link" data-section="sec-departments">Departments</a>
             <a href="#" class="nav-link" data-section="sec-packages">Health Packages</a>
             <a href="#" class="nav-link" data-section="sec-contact">Emergency & Contact</a>
-            <a href="WEB-INF/views/public/login.jsp" class="btn btn-primary" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
+            <a href="#" class="btn btn-primary nav-link" data-section="sec-login" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
         </nav>
     </header>
 
@@ -83,7 +83,7 @@
                         <a href="#" class="btn btn-primary nav-link" data-section="sec-register" style="background: #FFFFFF; color: #0F172A; font-size: 15px; padding: 14px 28px;">
                             <i class="fa-solid fa-user-plus" style="color: #0284C7;"></i> Register Patient Profile
                         </a>
-                        <a href="WEB-INF/views/public/login.jsp" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
+                        <a href="#" class="btn btn-outline nav-link" data-section="sec-login" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
                             <i class="fa-solid fa-stethoscope"></i> Staff & Doctor Portal
                         </a>
                     </div>
@@ -137,7 +137,6 @@
                 </div>
 
                 <div class="doctor-grid">
-                    <!-- Doctor 1 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">1</div>
                         <div class="doctor-card-header">
@@ -155,7 +154,6 @@
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹900</span></div>
                         </div>
                     </div>
-                    <!-- Doctor 2 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">2</div>
                         <div class="doctor-card-header">
@@ -173,7 +171,6 @@
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹750</span></div>
                         </div>
                     </div>
-                    <!-- Doctor 3 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">3</div>
                         <div class="doctor-card-header">
@@ -191,7 +188,6 @@
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹600</span></div>
                         </div>
                     </div>
-                    <!-- Doctor 4 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">4</div>
                         <div class="doctor-card-header">
@@ -209,7 +205,6 @@
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹650</span></div>
                         </div>
                     </div>
-                    <!-- Doctor 5 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">5</div>
                         <div class="doctor-card-header">
@@ -227,7 +222,6 @@
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹700</span></div>
                         </div>
                     </div>
-                    <!-- Doctor 6 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">6</div>
                         <div class="doctor-card-header">
@@ -397,6 +391,7 @@
                             <div><label>OPD Schedule</label><span>Mon-Fri 10:00 AM - 01:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹900</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                     <div class="doctor-card" data-name="shobana" data-spec="orthopedic joint surgery">
                         <div class="doctor-order-badge">2</div>
@@ -414,6 +409,7 @@
                             <div><label>OPD Schedule</label><span>Mon-Sat 11:00 AM - 02:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹750</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                     <div class="doctor-card" data-name="sruthi" data-spec="dermatologist cosmetology skin">
                         <div class="doctor-order-badge">3</div>
@@ -431,6 +427,7 @@
                             <div><label>OPD Schedule</label><span>Tue-Sun 02:00 PM - 05:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹600</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                     <div class="doctor-card" data-name="jagadeesh" data-spec="gastroenterologist stomach liver">
                         <div class="doctor-order-badge">4</div>
@@ -448,6 +445,7 @@
                             <div><label>OPD Schedule</label><span>Mon-Fri 12:00 PM - 03:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹650</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                     <div class="doctor-card" data-name="jaswanth" data-spec="pediatric cardiologist child heart">
                         <div class="doctor-order-badge">5</div>
@@ -465,6 +463,7 @@
                             <div><label>OPD Schedule</label><span>Mon-Sat 04:00 PM - 07:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹700</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                     <div class="doctor-card" data-name="kamalesh" data-spec="neurosurgeon brain spine">
                         <div class="doctor-order-badge">6</div>
@@ -482,6 +481,7 @@
                             <div><label>OPD Schedule</label><span>Mon-Fri 05:00 PM - 08:00 PM</span></div>
                             <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹800</span></div>
                         </div>
+                        <button onclick="showSection('sec-login')" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 10px;"><i class="fa-solid fa-calendar-check"></i> Book Consultation</button>
                     </div>
                 </div>
             </div>
@@ -587,17 +587,59 @@
 
     <!-- Section: Login Portal -->
     <div id="sec-login" class="page-section" style="display: none;">
-        <div style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <div style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px;">
             <div style="width: 100%; max-width: 480px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
                 <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="width: 56px; height: 56px; background: rgba(2, 132, 199, 0.1); color: var(--brand-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 12px;">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
                     <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
-                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Select your role portal to open dashboard</p>
+                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Sign in to access your secure role-based medical dashboard</p>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
-                    <a href="WEB-INF/views/public/login.jsp" class="btn btn-primary" style="justify-content: center;"><i class="fa-solid fa-user-gear"></i> Access Admin Portal</a>
-                    <a href="WEB-INF/views/public/login.jsp" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-stethoscope"></i> Access Doctor Portal (Dr. Neha)</a>
-                    <a href="WEB-INF/views/public/login.jsp" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-hospital-user"></i> Access Receptionist Portal</a>
-                    <a href="WEB-INF/views/public/login.jsp" class="btn btn-secondary" style="justify-content: center;"><i class="fa-solid fa-user-injured"></i> Access Patient Portal</a>
+
+                <form action="login" method="post" onsubmit="handlePortalLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail"><i class="fa-solid fa-envelope" style="color: var(--brand-blue);"></i> Email Address *</label>
+                        <input type="email" id="loginEmail" name="email" class="form-control" required placeholder="name@hospital.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword"><i class="fa-solid fa-key" style="color: var(--brand-blue);"></i> Password *</label>
+                        <input type="password" id="loginPassword" name="password" class="form-control" required placeholder="••••••••">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginRole"><i class="fa-solid fa-user-shield" style="color: var(--brand-blue);"></i> User Role Portal *</label>
+                        <select id="loginRole" name="role" class="form-control" style="font-weight: 600;">
+                            <option value="admin">Administrator Portal</option>
+                            <option value="doctor" selected>Doctor Portal (Dr. Neha - Senior Heart Surgeon)</option>
+                            <option value="receptionist">Receptionist Desk Portal</option>
+                            <option value="pharmacist">Pharmacist Inventory Portal</option>
+                            <option value="patient">Patient Medical EHR Portal</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 15px; margin-top: 8px;">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login to Digital Portal
+                    </button>
+                </form>
+
+                <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--gray-200); font-size: 13px;">
+                    <p style="font-weight: 700; color: var(--gray-700); margin-bottom: 10px; text-align: center;">⚡ Quick Demo Login Shortcuts:</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                        <button type="button" onclick="fillQuickLogin('admin@hospital.com', 'admin123', 'admin')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-user-gear"></i> Admin</button>
+                        <button type="button" onclick="fillQuickLogin('doctor@hospital.com', 'doctor123', 'doctor')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-stethoscope"></i> Doctor</button>
+                        <button type="button" onclick="fillQuickLogin('reception@hospital.com', 'reception123', 'receptionist')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-desktop"></i> Reception</button>
+                        <button type="button" onclick="fillQuickLogin('pharma@hospital.com', 'pharma123', 'pharmacist')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-pills"></i> Pharma</button>
+                        <button type="button" onclick="fillQuickLogin('patient@hospital.com', 'patient123', 'patient')" class="btn btn-outline btn-sm" style="font-size: 12px;"><i class="fa-solid fa-user-injured"></i> Patient</button>
+                        <button type="button" onclick="showSection('sec-register')" class="btn btn-secondary btn-sm" style="font-size: 12px; justify-content: center;"><i class="fa-solid fa-user-plus"></i> Register</button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="nav-link" data-section="sec-home" style="font-size: 13px; color: var(--gray-600); font-weight: 600;">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Hospital Homepage
+                    </a>
                 </div>
             </div>
         </div>
@@ -611,23 +653,23 @@
                     <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);"><i class="fa-solid fa-user-plus" style="color: var(--brand-blue);"></i> Patient Registration Profile</h2>
                     <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Create your personal digital medical record profile</p>
                 </div>
-                <form onsubmit="alert('Registration submitted successfully! You can now sign in.'); showSection('sec-login'); return false;">
+                <form action="register" method="post" onsubmit="handlePatientRegistration(event)">
                     <div class="form-row">
-                        <div class="form-group"><label>Full Name *</label><input type="text" class="form-control" required placeholder="John Doe"></div>
-                        <div class="form-group"><label>Email Address *</label><input type="email" class="form-control" required placeholder="john@example.com"></div>
+                        <div class="form-group"><label>Full Name *</label><input type="text" id="regName" name="name" class="form-control" required placeholder="John Doe"></div>
+                        <div class="form-group"><label>Email Address *</label><input type="email" id="regEmail" name="email" class="form-control" required placeholder="john@example.com"></div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label>Password *</label><input type="password" class="form-control" required placeholder="••••••••"></div>
-                        <div class="form-group"><label>Phone Number *</label><input type="tel" class="form-control" required placeholder="10-digit mobile"></div>
+                        <div class="form-group"><label>Password *</label><input type="password" id="regPassword" name="password" class="form-control" required placeholder="••••••••"></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" id="regPhone" name="phone" class="form-control" required placeholder="10-digit mobile"></div>
                     </div>
                     <div class="form-row">
                         <div class="form-group"><label>Blood Group</label>
-                            <select class="form-control">
+                            <select id="regBlood" name="bloodGroup" class="form-control">
                                 <option>O +ve</option><option>A +ve</option><option>B +ve</option><option>AB +ve</option>
                                 <option>O -ve</option><option>A -ve</option><option>B -ve</option><option>AB -ve</option>
                             </select>
                         </div>
-                        <div class="form-group"><label>Age</label><input type="number" class="form-control" placeholder="25"></div>
+                        <div class="form-group"><label>Age</label><input type="number" id="regAge" name="age" class="form-control" placeholder="25"></div>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;">Submit Registration</button>
                 </form>
@@ -652,7 +694,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Navigation Router Script -->
+    <!-- Interactive Navigation Router & Auth Script -->
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.page-section');
@@ -686,6 +728,53 @@
                 });
             });
         });
+
+        function fillQuickLogin(email, pwd, role) {
+            document.getElementById('loginEmail').value = email;
+            document.getElementById('loginPassword').value = pwd;
+            if (role) {
+                document.getElementById('loginRole').value = role;
+            }
+        }
+
+        function handlePortalLogin(e) {
+            const email = document.getElementById('loginEmail').value;
+            const role = document.getElementById('loginRole').value;
+
+            // If running under live server environment (Node or Tomcat), navigate to appropriate path
+            if (window.location.protocol.startsWith('http')) {
+                let targetUrl = 'login';
+                if (role === 'admin') targetUrl = 'admin/dashboard';
+                else if (role === 'doctor') targetUrl = 'doctor/dashboard';
+                else if (role === 'receptionist') targetUrl = 'receptionist/dashboard';
+                else if (role === 'pharmacist') targetUrl = 'pharmacist/dashboard';
+                else if (role === 'patient') targetUrl = 'patient/dashboard';
+                
+                window.location.href = targetUrl;
+                e.preventDefault();
+                return false;
+            }
+
+            // Static preview fallback
+            e.preventDefault();
+            alert('✅ Portal Sign In Successful!\n\nEmail: ' + email + '\nPortal Role: ' + role.toUpperCase() + '\n\nAccess granted to secure health dashboard.');
+            return false;
+        }
+
+        function handlePatientRegistration(e) {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+
+            if (window.location.protocol.startsWith('http')) {
+                // Submit form normally to servlet/server
+                return true;
+            }
+
+            e.preventDefault();
+            alert('✅ Patient Profile Created!\n\nName: ' + name + '\nEmail: ' + email + '\n\nYou can now sign in using the Portal Login.');
+            showSection('sec-login');
+            return false;
+        }
 
         function handleQuickBooking(e) {
             e.preventDefault();
