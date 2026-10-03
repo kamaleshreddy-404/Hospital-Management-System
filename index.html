@@ -698,15 +698,15 @@
                     <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Sign in to access your secure role-based medical dashboard</p>
                 </div>
 
-                <form action="login" method="post" onsubmit="handlePortalLogin(event)">
+                <form action="#" method="post" onsubmit="event.preventDefault(); handlePortalLogin(event); return false;">
                     <div class="form-group">
                         <label for="loginEmail"><i class="fa-solid fa-envelope" style="color: var(--brand-blue);"></i> Email Address *</label>
-                        <input type="email" id="loginEmail" name="email" class="form-control" required placeholder="name@hospital.com">
+                        <input type="email" id="loginEmail" name="email" class="form-control" required placeholder="name@hospital.com" value="doctor@hospital.com">
                     </div>
 
                     <div class="form-group">
                         <label for="loginPassword"><i class="fa-solid fa-key" style="color: var(--brand-blue);"></i> Password *</label>
-                        <input type="password" id="loginPassword" name="password" class="form-control" required placeholder="••••••••">
+                        <input type="password" id="loginPassword" name="password" class="form-control" required placeholder="••••••••" value="doctor123">
                     </div>
 
                     <div class="form-group">
