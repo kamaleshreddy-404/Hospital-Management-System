@@ -10,7 +10,7 @@ INSERT INTO roles (role_id, role_name) VALUES
 (5, 'Patient')
 ON DUPLICATE KEY UPDATE role_name=VALUES(role_name);
 
--- 2. Users (Ordered according to Doctor List: Neha, Shobana, Sruthi, Jagadeesh, Jaswanth, Kamalesh)
+-- 2. Users (Ordered according to Doctor List: Neha, Shobana, Sruthi, Jagadeesh, Jaswanth, Harsha, Haasith, Kamalesh)
 INSERT INTO users (user_id, name, email, password, phone, role_id) VALUES
 (1, 'System Administrator', 'admin@hospital.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '9876543210', 1),
 (2, 'Dr. Neha', 'doctor@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543211', 2),
@@ -18,11 +18,13 @@ INSERT INTO users (user_id, name, email, password, phone, role_id) VALUES
 (4, 'Dr. Sruthi', 'sruthi@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543218', 2),
 (5, 'Dr. Jagadeesh', 'jagadeesh@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543215', 2),
 (6, 'Dr. Jaswanth', 'jaswanth@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543214', 2),
-(7, 'Dr. Kamalesh', 'kamalesh@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543212', 2),
-(8, 'Sarah Jenkins', 'reception@hospital.com', 'a937a0c0e5a882a859e9c8dfb2f15e8b4e7a0e5b7b9015c7e16346294d13c79c', '9876543219', 3),
-(9, 'Michael Vance', 'pharma@hospital.com', 'c8303f83d9d3004d3e8e24484b35ef58406566085a53930b8d5a1b3c9597793d', '9876543220', 4),
-(10, 'John Doe', 'patient@hospital.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543216', 5),
-(11, 'Anita Roy', 'anita@gmail.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543217', 5)
+(7, 'Dr. Harsha', 'harsha@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543221', 2),
+(8, 'Dr. Haasith', 'haasith@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543222', 2),
+(9, 'Dr. Kamalesh', 'kamalesh@hospital.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '9876543212', 2),
+(10, 'Sarah Jenkins', 'reception@hospital.com', 'a937a0c0e5a882a859e9c8dfb2f15e8b4e7a0e5b7b9015c7e16346294d13c79c', '9876543219', 3),
+(11, 'Michael Vance', 'pharma@hospital.com', 'c8303f83d9d3004d3e8e24484b35ef58406566085a53930b8d5a1b3c9597793d', '9876543220', 4),
+(12, 'John Doe', 'patient@hospital.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543216', 5),
+(13, 'Anita Roy', 'anita@gmail.com', '9559c77ef52fb9a7e6bf2a35368a5c4d0a9202ff9478f7e2d93e1ef6f364024b', '9876543217', 5)
 ON DUPLICATE KEY UPDATE email=VALUES(email);
 
 -- 3. Departments
@@ -32,23 +34,27 @@ INSERT INTO departments (dept_id, dept_name, description, head_doctor_name) VALU
 (3, 'Dermatology & Cosmetic Care', 'Skin care, laser dermatology, and cosmetic surgery.', 'Dr. Sruthi'),
 (4, 'Gastroenterology', 'Digestive health, liver care, endoscopy, and hepatology.', 'Dr. Jagadeesh'),
 (5, 'Pediatric Cardiology', 'Pediatric heart care, congenital defects, and neonatal care.', 'Dr. Jaswanth'),
-(6, 'Neurology', 'Brain, spinal cord, and neurosurgical procedures.', 'Dr. Kamalesh')
+(6, 'Pulmonology', 'Advanced respiratory care, asthma, COPD, and critical care pulmonology.', 'Dr. Harsha'),
+(7, 'Endocrinology', 'Diabetes management, thyroid disorders, and metabolic hormone care.', 'Dr. Haasith'),
+(8, 'Neurology', 'Brain, spinal cord, and neurosurgical procedures.', 'Dr. Kamalesh')
 ON DUPLICATE KEY UPDATE dept_name=VALUES(dept_name);
 
--- 4. Doctors (Strict Order: 1. Dr. Neha, 2. Dr. Shobana, 3. Dr. Sruthi, 4. Dr. Jagadeesh, 5. Dr. Jaswanth, 6. Dr. Kamalesh)
+-- 4. Doctors (Strict Order: 1. Dr. Neha, 2. Dr. Shobana, 3. Dr. Sruthi, 4. Dr. Jagadeesh, 5. Dr. Jaswanth, 6. Dr. Harsha, 7. Dr. Haasith, 8. Dr. Kamalesh)
 INSERT INTO doctors (doctor_id, user_id, name, qualification, specialization, experience_years, phone, email, dept_id, consultation_fee, status) VALUES
 (1, 2, 'Dr. Neha', 'MS, M.Ch (Cardiothoracic Surgery)', 'Heart Surgeon', 16, '9876543211', 'doctor@hospital.com', 1, 900.00, 'Active'),
 (2, 3, 'Dr. Shobana', 'MS (Orthopedics), Joint Replacement Fellow', 'Orthopedic Surgeon', 10, '9876543213', 'shobana@hospital.com', 2, 750.00, 'Active'),
 (3, 4, 'Dr. Sruthi', 'MD (Dermatology, Venereology & Leprosy)', 'Dermatologist & Cosmetologist', 5, '9876543218', 'sruthi@hospital.com', 3, 600.00, 'Active'),
 (4, 5, 'Dr. Jagadeesh', 'MD (Gen Med), DM (Gastroenterology)', 'Gastroenterologist', 7, '9876543215', 'jagadeesh@hospital.com', 4, 650.00, 'Active'),
 (5, 6, 'Dr. Jaswanth', 'MD (Pediatrics), DM (Pediatric Cardiology)', 'Pediatric Cardiologist', 8, '9876543214', 'jaswanth@hospital.com', 5, 700.00, 'Active'),
-(6, 7, 'Dr. Kamalesh', 'MD (Neurology), M.Ch (Neurosurgery)', 'Neurosurgeon', 12, '9876543212', 'kamalesh@hospital.com', 6, 800.00, 'Active')
+(6, 7, 'Dr. Harsha', 'MD (Gen Med), DM (Pulmonology)', 'Pulmonologist & Critical Care', 9, '9876543221', 'harsha@hospital.com', 6, 750.00, 'Active'),
+(7, 8, 'Dr. Haasith', 'MD (Gen Med), DM (Endocrinology)', 'Endocrinologist & Diabetologist', 11, '9876543222', 'haasith@hospital.com', 7, 780.00, 'Active'),
+(8, 9, 'Dr. Kamalesh', 'MD (Neurology), M.Ch (Neurosurgery)', 'Neurosurgeon', 12, '9876543212', 'kamalesh@hospital.com', 8, 800.00, 'Active')
 ON DUPLICATE KEY UPDATE doctor_id=VALUES(doctor_id);
 
 -- 5. Patients
 INSERT INTO patients (patient_id, user_id, name, gender, age, blood_group, phone, address, email, emergency_contact) VALUES
-(1, 10, 'John Doe', 'Male', 35, 'O+', '9876543216', '123 MG Road, Bangalore', 'patient@hospital.com', '9876500001'),
-(2, 11, 'Anita Roy', 'Female', 29, 'A+', '9876543217', '45 Park Street, Kolkata', 'anita@gmail.com', '9876500002'),
+(1, 12, 'John Doe', 'Male', 35, 'O+', '9876543216', '123 MG Road, Bangalore', 'patient@hospital.com', '9876500001'),
+(2, 13, 'Anita Roy', 'Female', 29, 'A+', '9876543217', '45 Park Street, Kolkata', 'anita@gmail.com', '9876500002'),
 (3, NULL, 'Robert Smith', 'Male', 52, 'B+', '9876543218', '78 Nehru Place, New Delhi', 'robert@yahoo.com', '9876500003'),
 (4, NULL, 'Emily Davis', 'Female', 41, 'AB+', '9876543219', '12 Jubilee Hills, Hyderabad', 'emily@gmail.com', '9876500004')
 ON DUPLICATE KEY UPDATE patient_id=VALUES(patient_id);

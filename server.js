@@ -7,7 +7,7 @@ const PORT = 3000;
 const PUBLIC_DIR = path.join(__dirname, 'src', 'main', 'webapp');
 
 // In-memory mock database state for live interactive web server demo
-// Strict Doctor Order: 1. Dr. Neha, 2. Dr. Shobana, 3. Dr. Sruthi, 4. Dr. Jagadeesh, 5. Dr. Jaswanth, 6. Dr. Kamalesh
+// Strict Doctor Order: 1. Dr. Neha, 2. Dr. Shobana, 3. Dr. Sruthi, 4. Dr. Jagadeesh, 5. Dr. Jaswanth, 6. Dr. Harsha, 7. Dr. Haasith, 8. Dr. Kamalesh
 const state = {
     users: [
         { id: 1, name: 'System Administrator', email: 'admin@hospital.com', roleId: 1, roleName: 'Administrator' },
@@ -16,10 +16,12 @@ const state = {
         { id: 4, name: 'Dr. Sruthi', email: 'sruthi@hospital.com', roleId: 2, roleName: 'Doctor' },
         { id: 5, name: 'Dr. Jagadeesh', email: 'jagadeesh@hospital.com', roleId: 2, roleName: 'Doctor' },
         { id: 6, name: 'Dr. Jaswanth', email: 'jaswanth@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 7, name: 'Dr. Kamalesh', email: 'kamalesh@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 8, name: 'Sarah Jenkins', email: 'reception@hospital.com', roleId: 3, roleName: 'Receptionist' },
-        { id: 9, name: 'Michael Vance', email: 'pharma@hospital.com', roleId: 4, roleName: 'Pharmacist' },
-        { id: 10, name: 'John Doe', email: 'patient@hospital.com', roleId: 5, roleName: 'Patient' }
+        { id: 7, name: 'Dr. Harsha', email: 'harsha@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 8, name: 'Dr. Haasith', email: 'haasith@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 9, name: 'Dr. Kamalesh', email: 'kamalesh@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 10, name: 'Sarah Jenkins', email: 'reception@hospital.com', roleId: 3, roleName: 'Receptionist' },
+        { id: 11, name: 'Michael Vance', email: 'pharma@hospital.com', roleId: 4, roleName: 'Pharmacist' },
+        { id: 12, name: 'John Doe', email: 'patient@hospital.com', roleId: 5, roleName: 'Patient' }
     ],
     doctors: [
         { id: 1, name: 'Dr. Neha', qualification: 'MS, M.Ch (Cardiothoracic Surgery)', specialization: 'Heart Surgeon', exp: 16, fee: 900, status: 'Active (Senior Doctor & Dept Head)', dept: 'Cardiology', icon: 'fa-heart-pulse', opd: 'Mon-Fri 10:00 AM' },
@@ -27,7 +29,9 @@ const state = {
         { id: 3, name: 'Dr. Sruthi', qualification: 'MD (Dermatology, Venereology & Leprosy)', specialization: 'Dermatologist & Cosmetologist', exp: 5, fee: 600, status: 'Active', dept: 'Dermatology', icon: 'fa-spa', opd: 'Tue-Sun 02:00 PM' },
         { id: 4, name: 'Dr. Jagadeesh', qualification: 'MD (Gen Med), DM (Gastroenterology)', specialization: 'Gastroenterologist', exp: 7, fee: 650, status: 'Active', dept: 'Gastroenterology', icon: 'fa-stomach', opd: 'Mon-Fri 12:00 PM' },
         { id: 5, name: 'Dr. Jaswanth', qualification: 'MD (Pediatrics), DM (Pediatric Cardiology)', specialization: 'Pediatric Cardiologist', exp: 8, fee: 700, status: 'Active', dept: 'Pediatric Cardiology', icon: 'fa-child-rearing', opd: 'Mon-Sat 04:00 PM' },
-        { id: 6, name: 'Dr. Kamalesh', qualification: 'MD (Neurology), M.Ch (Neurosurgery)', specialization: 'Neurosurgeon', exp: 12, fee: 800, status: 'Active', dept: 'Neurology', icon: 'fa-brain', opd: 'Mon-Fri 05:00 PM' }
+        { id: 6, name: 'Dr. Harsha', qualification: 'MD (Gen Med), DM (Pulmonology)', specialization: 'Pulmonologist & Critical Care', exp: 9, fee: 750, status: 'Active', dept: 'Pulmonology', icon: 'fa-lungs', opd: 'Mon-Sat 04:30 PM' },
+        { id: 7, name: 'Dr. Haasith', qualification: 'MD (Gen Med), DM (Endocrinology)', specialization: 'Endocrinologist & Diabetologist', exp: 11, fee: 780, status: 'Active', dept: 'Endocrinology', icon: 'fa-dna', opd: 'Mon-Fri 05:00 PM' },
+        { id: 8, name: 'Dr. Kamalesh', qualification: 'MD (Neurology), M.Ch (Neurosurgery)', specialization: 'Neurosurgeon', exp: 12, fee: 800, status: 'Active', dept: 'Neurology', icon: 'fa-brain', opd: 'Mon-Fri 05:30 PM' }
     ],
     patients: [
         { id: 1, name: 'John Doe', gender: 'Male', age: 35, blood: 'O+', phone: '9876543216', emergency: '9876500001', address: '123 MG Road, Bangalore' },
@@ -39,7 +43,9 @@ const state = {
         { id: 3, name: 'Dermatology', desc: 'Advanced skin care, laser surgery, aesthetic procedures, and cosmetic dermatology.', head: 'Dr. Sruthi (Dermatologist & Cosmetologist)', icon: 'fa-spa' },
         { id: 4, name: 'Gastroenterology', desc: 'Digestive health, liver care, endoscopy, colonoscopy, and hepatology.', head: 'Dr. Jagadeesh (Gastroenterologist)', icon: 'fa-stomach' },
         { id: 5, name: 'Pediatric Cardiology', desc: 'Pediatric heart care, congenital defect correction, and neonatal cardiology.', head: 'Dr. Jaswanth (Pediatric Cardiologist)', icon: 'fa-child-rearing' },
-        { id: 6, name: 'Neurology', desc: 'Disorders of the brain, spinal cord fusion, stroke care, and neurosurgery.', head: 'Dr. Kamalesh (Neurosurgeon)', icon: 'fa-brain' }
+        { id: 6, name: 'Pulmonology', desc: 'Advanced respiratory care, asthma management, COPD, and critical care pulmonology.', head: 'Dr. Harsha (Pulmonologist & Critical Care)', icon: 'fa-lungs' },
+        { id: 7, name: 'Endocrinology', desc: 'Diabetes management, thyroid disorders, and metabolic hormone care.', head: 'Dr. Haasith (Endocrinologist & Diabetologist)', icon: 'fa-dna' },
+        { id: 8, name: 'Neurology', desc: 'Disorders of the brain, spinal cord fusion, stroke care, and neurosurgery.', head: 'Dr. Kamalesh (Neurosurgeon)', icon: 'fa-brain' }
     ],
     packages: [
         { id: 1, name: 'Full Body Executive Checkup', tests: '65 Essential Tests: CBC, Lipid Profile, Liver Function, Kidney Function, HbA1c, ECG', price: 1499 },
@@ -287,8 +293,8 @@ const server = http.createServer((req, res) => {
 
         <div class="page-body">
             <div class="dashboard-grid">
-                <div class="stat-card"><div><div class="stat-label">Specialist Doctors</div><div class="stat-number">6 Faculty</div></div><div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div></div>
-                <div class="stat-card"><div><div class="stat-label">Clinical Departments</div><div class="stat-number">6 Centers</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Specialist Doctors</div><div class="stat-number">8 Faculty</div></div><div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Clinical Departments</div><div class="stat-number">8 Centers</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div></div>
                 <div class="stat-card"><div><div class="stat-label">ICU & Emergency</div><div class="stat-number" style="font-size: 22px; color: var(--brand-emerald);">24/7 Active</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-heart-circle-bolt"></i></div></div>
                 <div class="stat-card"><div><div class="stat-label">Patients Cured</div><div class="stat-number">15,000+</div></div><div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-hospital-user"></i></div></div>
             </div>
@@ -296,8 +302,8 @@ const server = http.createServer((req, res) => {
             <div class="card-panel">
                 <div class="card-header">
                     <div>
-                        <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-6)</h2>
-                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 6 with qualifications and experience</p>
+                        <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-8)</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 8 with qualifications and experience</p>
                     </div>
                     <a href="/doctors" class="btn btn-outline btn-sm">Full Directory</a>
                 </div>
@@ -411,7 +417,7 @@ const server = http.createServer((req, res) => {
             <div class="card-panel">
                 <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 20px;"><i class="fa-solid fa-hospital" style="color: var(--brand-blue);"></i> About Smart Hospital Center</h2>
                 <p style="margin-bottom: 20px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
-                    Smart Hospital is a premier multi-specialty healthcare institution led by senior <strong>Heart Surgeon Dr. Neha</strong> (16 Years Exp), alongside <strong>Dr. Shobana</strong> (Orthopedic Surgeon, 10y), <strong>Dr. Sruthi</strong> (Dermatologist & Cosmetologist, 5y), <strong>Dr. Jagadeesh</strong> (Gastroenterologist, 7y), <strong>Dr. Jaswanth</strong> (Pediatric Cardiologist, 8y), and <strong>Dr. Kamalesh</strong> (Neurosurgeon, 12y).
+                    Smart Hospital is a premier multi-specialty healthcare institution led by senior <strong>Heart Surgeon Dr. Neha</strong> (16 Years Exp), alongside <strong>Dr. Shobana</strong> (Orthopedic Surgeon, 10y), <strong>Dr. Sruthi</strong> (Dermatologist & Cosmetologist, 5y), <strong>Dr. Jagadeesh</strong> (Gastroenterologist, 7y), <strong>Dr. Jaswanth</strong> (Pediatric Cardiologist, 8y), <strong>Dr. Harsha</strong> (Pulmonologist & Critical Care, 9y), <strong>Dr. Haasith</strong> (Endocrinologist & Diabetologist, 11y), and <strong>Dr. Kamalesh</strong> (Neurosurgeon, 12y).
                 </p>
                 <p style="margin-bottom: 24px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
                     This full-stack system was engineered as an Academic Major Project demonstrating Java Web development standards, MVC architecture, DAO design patterns, secure database integration via JDBC/H2, and role-based portal security.
@@ -444,6 +450,21 @@ const server = http.createServer((req, res) => {
                     <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Pediatric Cardiology</h3>
                     <p style="color: var(--gray-600); font-size: 14px;">Congenital heart defect treatments for infants led by Dr. Jaswanth (8y Exp).</p>
                 </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);"><i class="fa-solid fa-lungs"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Pulmonology & Critical Care</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Asthma, COPD, pulmonary rehab, and critical care led by Dr. Harsha (9y Exp).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(124, 58, 237, 0.1); color: #7C3AED;"><i class="fa-solid fa-dna"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Endocrinology & Diabetology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Diabetes control, thyroid disorders, and metabolic care led by Dr. Haasith (11y Exp).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(139, 92, 246, 0.1); color: #8B5CF6;"><i class="fa-solid fa-brain"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Neurology & Neurosurgery</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Brain tumor surgery, spine surgery, and stroke care led by Dr. Kamalesh (12y Exp).</p>
+                </div>
             </div>
         </div>
         `, 'services');
@@ -451,15 +472,15 @@ const server = http.createServer((req, res) => {
         return res.end(html);
     }
 
-    // 6. Doctors Directory Page (Strict Ordered List: Neha, Shobana, Sruthi, Jagadeesh, Jaswanth, Kamalesh)
+    // 6. Doctors Directory Page (Strict Ordered List: 1-8)
     if (pathname === '/doctors') {
         const html = renderLayout('Doctors Directory - Smart HMS', `
         <div class="page-body">
             <div class="card-panel">
                 <div class="card-header">
                     <div>
-                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-6)</h2>
-                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Faculty order strictly maintained 1 through 6</p>
+                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-8)</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Faculty order strictly maintained 1 through 8</p>
                     </div>
                 </div>
 
@@ -634,7 +655,7 @@ const server = http.createServer((req, res) => {
                 <div class="stat-card"><div><div class="stat-label">Total Revenue</div><div class="stat-number" style="color: var(--brand-emerald);">₹1,545</div></div><div class="stat-icon" style="background: rgba(2, 132, 199, 0.1); color: var(--brand-blue);"><i class="fa-solid fa-indian-rupee-sign"></i></div></div>
             </div>
             <div class="card-panel">
-                <h3 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Registered Doctor Roster (Ordered 1-6)</h3>
+                <h3 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Registered Doctor Roster (Ordered 1-8)</h3>
                 <div class="table-responsive">
                     <table class="custom-table">
                         <thead><tr><th>#</th><th>ID</th><th>Doctor Name</th><th>Specialization</th><th>Experience</th><th>Fee</th></tr></thead>
