@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Hospital Management System - Modern Medical Portal</title>
+    <title>Smart Hospital Management System - Modern Multi-Specialty Medical Center</title>
     <link rel="stylesheet" href="src/main/webapp/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,10 +11,22 @@
 </head>
 <body>
 
+    <!-- Top Emergency Contact Notification Bar -->
+    <div style="background: #0F172A; color: #94A3B8; font-size: 13px; padding: 10px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1E293B; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+            <span style="color: #EF4444; font-weight: 700;"><i class="fa-solid fa-truck-medical"></i> 24/7 Emergency Helpline: <strong>1800-123-9999 / 102</strong></span>
+            <span><i class="fa-solid fa-droplet" style="color: #EF4444;"></i> Blood Bank Status: <strong style="color: #10B981;">O+, A+, B+, AB+ Available</strong></span>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center; font-weight: 600; flex-wrap: wrap;">
+            <span><i class="fa-solid fa-bed-pulse" style="color: #38BDF8;"></i> ICU Beds: <strong style="color: #38BDF8;">28/35 Available</strong></span>
+            <span><i class="fa-solid fa-clock"></i> OPD Hours: Mon-Sat 8:00 AM - 8:00 PM</span>
+        </div>
+    </div>
+
     <!-- Public Modern Navigation Bar -->
     <header class="public-navbar">
         <div class="nav-brand-group">
-            <a href="src/main/webapp/index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <a href="#" class="nav-link" data-section="sec-home" style="display: flex; align-items: center; text-decoration: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="220" height="48" style="display: block;">
                     <defs>
                         <linearGradient id="logoShield" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -47,75 +59,85 @@
         </div>
         <nav>
             <a href="#" class="nav-link active" data-section="sec-home">Home</a>
-            <a href="#" class="nav-link" data-section="sec-about">About</a>
+            <a href="#" class="nav-link" data-section="sec-about">About Us</a>
             <a href="#" class="nav-link" data-section="sec-services">Services</a>
             <a href="#" class="nav-link" data-section="sec-doctors">Doctors Directory</a>
             <a href="#" class="nav-link" data-section="sec-departments">Departments</a>
-            <a href="#" class="nav-link" data-section="sec-contact">Contact</a>
-            <a href="#" class="btn btn-primary nav-link" data-section="sec-login"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
+            <a href="#" class="nav-link" data-section="sec-packages">Health Packages</a>
+            <a href="#" class="nav-link" data-section="sec-contact">Emergency & Contact</a>
+            <a href="#" class="btn btn-primary nav-link" data-section="sec-login" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
         </nav>
     </header>
 
     <!-- Section: Home -->
     <div id="sec-home" class="page-section">
-        <section class="hero-banner">
-            <div class="hero-badge">
-                <i class="fa-solid fa-shield-halved"></i> Multi-Specialty Clinical Excellence & Digital Care
-            </div>
-            <h1>Next-Generation Smart Hospital Management System</h1>
-            <p>Providing state-of-the-art cardiac surgery, orthopedics, cosmetology, gastroenterology, pediatric cardiology, and neurosurgery with seamless digital health record integration.</p>
-            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="#" class="btn btn-primary nav-link" data-section="sec-register" style="background: #FFFFFF; color: #0F172A; font-size: 15px; padding: 14px 28px;">
-                    <i class="fa-solid fa-user-plus" style="color: #0284C7;"></i> Patient Registration
-                </a>
-                <a href="#" class="btn btn-outline nav-link" data-section="sec-login" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
-                    <i class="fa-solid fa-stethoscope"></i> Staff & Doctor Portal
-                </a>
+        <section class="hero-banner" style="text-align: left; padding: 60px 48px 80px;">
+            <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+                <div>
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-shield-halved"></i> NABH Accredited Multi-Specialty Hospital
+                    </div>
+                    <h1 style="font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 18px;">Advanced Medical Care & Specialist Doctor Consultation</h1>
+                    <p style="font-size: 17px; opacity: 0.92; margin-bottom: 28px; line-height: 1.7;">Empowering cardiac surgery, joint replacements, laser dermatology, gastroenterology, pediatric cardiology, and neurosurgery with 24/7 emergency care and digital health records.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary nav-link" data-section="sec-register" style="background: #FFFFFF; color: #0F172A; font-size: 15px; padding: 14px 28px;">
+                            <i class="fa-solid fa-user-plus" style="color: #0284C7;"></i> Register Patient Profile
+                        </a>
+                        <a href="#" class="btn btn-outline nav-link" data-section="sec-login" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF; font-size: 15px; padding: 14px 28px;">
+                            <i class="fa-solid fa-stethoscope"></i> Staff & Doctor Portal
+                        </a>
+                    </div>
+                </div>
+
+                <div style="background: #FFFFFF; color: #0F172A; border-radius: var(--radius-xl); padding: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.25);">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 6px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-calendar-plus" style="color: var(--brand-blue);"></i> Instant OPD Booking Token
+                    </h3>
+                    <p style="font-size: 13px; color: var(--gray-500); margin-bottom: 20px;">Get your consultation queue token instantly</p>
+                    
+                    <form onsubmit="handleQuickBooking(event)">
+                        <div class="form-group">
+                            <label>Select Specialist Doctor *</label>
+                            <select id="opdDoctorRoot" class="form-control" required style="font-weight: 600;">
+                                <option value="1">1. Dr. Neha (Heart Surgeon - 16y Exp, ₹900)</option>
+                                <option value="2">2. Dr. Shobana (Orthopedic Surgeon - 10y Exp, ₹750)</option>
+                                <option value="3">3. Dr. Sruthi (Dermatologist & Cosmetologist - 5y Exp, ₹600)</option>
+                                <option value="4">4. Dr. Jagadeesh (Gastroenterologist - 7y Exp, ₹650)</option>
+                                <option value="5">5. Dr. Jaswanth (Pediatric Cardiologist - 8y Exp, ₹700)</option>
+                                <option value="6">6. Dr. Kamalesh (Neurosurgeon - 12y Exp, ₹800)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Patient Name *</label><input type="text" id="opdNameRoot" class="form-control" placeholder="John Doe" required></div>
+                            <div class="form-group"><label>Phone *</label><input type="tel" id="opdPhoneRoot" class="form-control" placeholder="Mobile" required></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 15px;">
+                            <i class="fa-solid fa-check-circle"></i> Generate OPD Token
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
 
         <div class="page-body">
-            <div class="dashboard-grid">
-                <div class="stat-card">
-                    <div>
-                        <div class="stat-label">Specialist Doctors</div>
-                        <div class="stat-number">6 Specialists</div>
-                    </div>
-                    <div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div>
-                </div>
-                <div class="stat-card">
-                    <div>
-                        <div class="stat-label">Clinical Departments</div>
-                        <div class="stat-number">6 Centers</div>
-                    </div>
-                    <div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div>
-                </div>
-                <div class="stat-card">
-                    <div>
-                        <div class="stat-label">Emergency Helpline</div>
-                        <div class="stat-number" style="font-size: 20px;">24/7 Active</div>
-                    </div>
-                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-headset"></i></div>
-                </div>
-                <div class="stat-card">
-                    <div>
-                        <div class="stat-label">Patient Portals</div>
-                        <div class="stat-number">Instant Sync</div>
-                    </div>
-                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-laptop-medical"></i></div>
-                </div>
+            <div class="dashboard-grid" style="margin-bottom: 40px;">
+                <div class="stat-card"><div><div class="stat-label">Specialist Doctors</div><div class="stat-number">6 Faculty</div></div><div class="stat-icon"><i class="fa-solid fa-user-doctor"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Clinical Departments</div><div class="stat-number">6 Centers</div></div><div class="stat-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-building-user"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">ICU & Emergency</div><div class="stat-number" style="font-size: 22px; color: var(--brand-emerald);">24/7 Active</div></div><div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-heart-circle-bolt"></i></div></div>
+                <div class="stat-card"><div><div class="stat-label">Patients Cured</div><div class="stat-number">15,000+</div></div><div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-hospital-user"></i></div></div>
             </div>
 
-            <div class="card-panel">
+            <!-- Doctor Faculty Showcase Section -->
+            <div class="card-panel" style="margin-bottom: 40px;">
                 <div class="card-header">
                     <div>
-                        <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Directory</h2>
-                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 6 with qualifications and experience</p>
+                        <h2 class="card-title"><i class="fa-solid fa-user-md" style="color: var(--brand-blue);"></i> Specialist Doctors Roster (Ordered 1 to 6)</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Official medical faculty ordered 1 to 6 with qualifications, OPD schedule, and experience</p>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm nav-link" data-section="sec-doctors">Full Directory</a>
                 </div>
 
                 <div class="doctor-grid">
+                    <!-- Doctor 1 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">1</div>
                         <div class="doctor-card-header">
@@ -129,10 +151,11 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MS, M.Ch (Cardiothoracic)</span></div>
                             <div><label>Experience</label><span>16 Years</span></div>
-                            <div><label>Department</label><span>Cardiology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹900</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 10:00 AM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹900</span></div>
                         </div>
                     </div>
+                    <!-- Doctor 2 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">2</div>
                         <div class="doctor-card-header">
@@ -146,10 +169,11 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MS (Ortho), Joint Fellow</span></div>
                             <div><label>Experience</label><span>10 Years</span></div>
-                            <div><label>Department</label><span>Orthopedics</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹750</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Sat 11:00 AM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹750</span></div>
                         </div>
                     </div>
+                    <!-- Doctor 3 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">3</div>
                         <div class="doctor-card-header">
@@ -163,10 +187,11 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Dermatology, DVL)</span></div>
                             <div><label>Experience</label><span>5 Years</span></div>
-                            <div><label>Department</label><span>Dermatology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹600</span></div>
+                            <div><label>OPD Schedule</label><span>Tue-Sun 02:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹600</span></div>
                         </div>
                     </div>
+                    <!-- Doctor 4 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">4</div>
                         <div class="doctor-card-header">
@@ -180,10 +205,11 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Gen Med), DM (Gastro)</span></div>
                             <div><label>Experience</label><span>7 Years</span></div>
-                            <div><label>Department</label><span>Gastroenterology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹650</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 12:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹650</span></div>
                         </div>
                     </div>
+                    <!-- Doctor 5 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">5</div>
                         <div class="doctor-card-header">
@@ -197,10 +223,11 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Ped), DM (Pedia Cardio)</span></div>
                             <div><label>Experience</label><span>8 Years</span></div>
-                            <div><label>Department</label><span>Pediatric Cardiology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹700</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Sat 04:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹700</span></div>
                         </div>
                     </div>
+                    <!-- Doctor 6 -->
                     <div class="doctor-card">
                         <div class="doctor-order-badge">6</div>
                         <div class="doctor-card-header">
@@ -214,9 +241,58 @@
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Neurology), M.Ch (Neuro)</span></div>
                             <div><label>Experience</label><span>12 Years</span></div>
-                            <div><label>Department</label><span>Neurology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹800</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 05:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹800</span></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostic Health Packages Grid -->
+            <div class="card-panel">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title"><i class="fa-solid fa-vials" style="color: var(--brand-teal);"></i> Preventive Diagnostic Packages</h2>
+                        <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Comprehensive health checkup plans with sample home pickup available</p>
+                    </div>
+                    <a href="#" class="nav-link" data-section="sec-packages" style="font-size: 14px; font-weight: 700; color: var(--brand-blue);">View All Packages &rarr;</a>
+                </div>
+                <div class="grid-3">
+                    <div class="service-card" style="border-top: 4px solid var(--brand-blue);">
+                        <div class="badge badge-senior" style="float: right;">POPULAR</div>
+                        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Full Body Checkup</h3>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--brand-emerald); margin-bottom: 12px;">₹1,499 <span style="font-size: 14px; color: var(--gray-500); text-decoration: line-through;">₹3,000</span></div>
+                        <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px; color: var(--gray-700); margin-bottom: 20px;">
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Complete Blood Count (CBC - 24 parameters)</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Lipid Profile & Cholesterol Panel</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Kidney (KFT) & Liver Function (LFT)</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Fasting Blood Sugar & HbA1c</li>
+                        </ul>
+                        <button onclick="alert('Package booked! Our team will contact you for sample collection.')" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Package</button>
+                    </div>
+                    <div class="service-card" style="border-top: 4px solid var(--brand-teal);">
+                        <div class="badge badge-confirmed" style="float: right;">CARDIAC</div>
+                        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Cardiac Shield</h3>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--brand-emerald); margin-bottom: 12px;">₹2,199 <span style="font-size: 14px; color: var(--gray-500); text-decoration: line-through;">₹4,500</span></div>
+                        <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px; color: var(--gray-700); margin-bottom: 20px;">
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> 2D Echo & ECG Test</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Cardiac Treadmill Stress Test (TMT)</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> High-Sensitivity CRP & Lipid Profile</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Consultation with Dr. Neha</li>
+                        </ul>
+                        <button onclick="alert('Cardiac Package booked! Our team will contact you.')" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Package</button>
+                    </div>
+                    <div class="service-card" style="border-top: 4px solid #8B5CF6;">
+                        <div class="badge badge-confirmed" style="float: right; background: #F3E8FF; color: #7C3AED;">NEURO</div>
+                        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Neuro-Spine Panel</h3>
+                        <div style="font-size: 28px; font-weight: 800; color: var(--brand-emerald); margin-bottom: 12px;">₹3,499 <span style="font-size: 14px; color: var(--gray-500); text-decoration: line-through;">₹6,000</span></div>
+                        <ul style="list-style: none; padding: 0; line-height: 2; font-size: 14px; color: var(--gray-700); margin-bottom: 20px;">
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> MRI Brain & Spine Screening Scan</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Nerve Conduction Study (NCS)</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Vitamin B12 & D3 Assessment</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--brand-emerald);"></i> Consultation with Dr. Kamalesh</li>
+                        </ul>
+                        <button onclick="alert('Neuro Package booked! Our team will contact you.')" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Package</button>
                     </div>
                 </div>
             </div>
@@ -225,15 +301,28 @@
 
     <!-- Section: About -->
     <div id="sec-about" class="page-section" style="display: none;">
-        <div class="page-body" style="max-width: 1000px;">
-            <div class="card-panel">
-                <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 20px;"><i class="fa-solid fa-hospital" style="color: var(--brand-blue);"></i> About Smart Hospital Center</h2>
+        <div class="page-body" style="max-width: 1040px;">
+            <div class="card-panel" style="margin-bottom: 30px;">
+                <h2 style="font-size: 32px; font-weight: 800; color: var(--gray-900); margin-bottom: 16px;">
+                    <i class="fa-solid fa-hospital" style="color: var(--brand-blue);"></i> About Smart Hospital Management System
+                </h2>
                 <p style="margin-bottom: 20px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
-                    Smart Hospital is a modern multi-specialty healthcare institution led by senior <strong>Heart Surgeon Dr. Neha</strong> (16 Years Exp), alongside <strong>Dr. Shobana</strong> (Orthopedic Surgeon, 10y), <strong>Dr. Sruthi</strong> (Dermatologist & Cosmetologist, 5y), <strong>Dr. Jagadeesh</strong> (Gastroenterologist, 7y), <strong>Dr. Jaswanth</strong> (Pediatric Cardiologist, 8y), and <strong>Dr. Kamalesh</strong> (Neurosurgeon, 12y).
+                    Smart Hospital is a state-of-the-art multi-specialty healthcare institution dedicated to providing compassionate, evidence-based medical treatment. Led by senior <strong>Heart Surgeon Dr. Neha</strong> (16 Years Experience), our institution unites world-class specialists including <strong>Dr. Shobana</strong> (Orthopedic Surgery), <strong>Dr. Sruthi</strong> (Dermatology & Aesthetics), <strong>Dr. Jagadeesh</strong> (Gastroenterology), <strong>Dr. Jaswanth</strong> (Pediatric Cardiology), and <strong>Dr. Kamalesh</strong> (Neurosurgery).
                 </p>
-                <p style="margin-bottom: 24px; line-height: 1.8; font-size: 16px; color: var(--gray-700);">
-                    This full-stack system was engineered as an Academic Major Project demonstrating Java Web development standards, MVC architecture, DAO design patterns, secure database integration via JDBC/H2, and role-based portal security.
-                </p>
+                <div class="grid-3" style="margin-top: 30px;">
+                    <div style="background: var(--gray-100); padding: 24px; border-radius: var(--radius-md); border-left: 4px solid var(--brand-blue);">
+                        <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;"><i class="fa-solid fa-eye" style="color: var(--brand-blue);"></i> Our Vision</h4>
+                        <p style="font-size: 14px; color: var(--gray-600);">To revolutionize regional healthcare through digital medical record management, minimal wait times, and precision surgical outcomes.</p>
+                    </div>
+                    <div style="background: var(--gray-100); padding: 24px; border-radius: var(--radius-md); border-left: 4px solid var(--brand-teal);">
+                        <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;"><i class="fa-solid fa-bullseye" style="color: var(--brand-teal);"></i> Our Mission</h4>
+                        <p style="font-size: 14px; color: var(--gray-600);">Delivering 24/7 emergency response, transparent treatment plans, affordable diagnostic checkups, and seamless digital portal access.</p>
+                    </div>
+                    <div style="background: var(--gray-100); padding: 24px; border-radius: var(--radius-md); border-left: 4px solid var(--brand-emerald);">
+                        <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;"><i class="fa-solid fa-award" style="color: var(--brand-emerald);"></i> Accreditation</h4>
+                        <p style="font-size: 14px; color: var(--gray-600);">NABH Accredited Hospital, NABL Certified Diagnostic Labs, and ISO 9001:2026 Quality Healthcare Certified.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -241,22 +330,37 @@
     <!-- Section: Services -->
     <div id="sec-services" class="page-section" style="display: none;">
         <div class="page-body">
-            <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Centers & Advanced Healthcare Services</h2>
+            <h2 style="font-size: 30px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Centers & Advanced Medical Services</h2>
             <div class="grid-3">
                 <div class="service-card">
                     <div class="service-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
                     <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Cardiac & Vascular Surgery</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Open heart surgery and vascular interventions led by Senior Heart Surgeon Dr. Neha (16y Exp).</p>
+                    <p style="color: var(--gray-600); font-size: 14px;">Open heart surgery, coronary artery bypass, heart valve replacement, and angioplasty led by Senior Heart Surgeon Dr. Neha (16y Exp).</p>
                 </div>
                 <div class="service-card">
                     <div class="service-card-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--brand-teal);"><i class="fa-solid fa-bone"></i></div>
                     <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Orthopedic Joint Surgery</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Robotic joint replacement and spine care led by Dr. Shobana (10y Exp).</p>
+                    <p style="color: var(--gray-600); font-size: 14px;">Total knee and hip replacement, arthroscopic ligament reconstruction, and trauma care led by Dr. Shobana (10y Exp).</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-child-rearing"></i></div>
+                    <div class="service-card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--brand-emerald);"><i class="fa-solid fa-spa"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Dermatology & Cosmetology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Laser skin resurfacing, anti-aging therapies, acne treatments, and cosmetic aesthetics led by Dr. Sruthi (5y Exp).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);"><i class="fa-solid fa-stomach"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Gastroenterology & Hepatology</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Endoscopy, colonoscopy, fatty liver management, and digestive disorder therapies led by Dr. Jagadeesh (7y Exp).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(56, 189, 248, 0.1); color: #0284C7;"><i class="fa-solid fa-child-rearing"></i></div>
                     <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Pediatric Cardiology</h3>
-                    <p style="color: var(--gray-600); font-size: 14px;">Congenital heart defect treatments for infants led by Dr. Jaswanth (8y Exp).</p>
+                    <p style="color: var(--gray-600); font-size: 14px;">Congenital heart defect diagnosis, pediatric Echo, and infant cardiac care led by Dr. Jaswanth (8y Exp).</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon" style="background: rgba(139, 92, 246, 0.1); color: #7C3AED;"><i class="fa-solid fa-brain"></i></div>
+                    <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Neurosurgery & Spine Center</h3>
+                    <p style="color: var(--gray-600); font-size: 14px;">Microscopic brain tumor surgery, spinal disc surgeries, and stroke emergency care led by Dr. Kamalesh (12y Exp).</p>
                 </div>
             </div>
         </div>
@@ -266,114 +370,117 @@
     <div id="sec-doctors" class="page-section" style="display: none;">
         <div class="page-body">
             <div class="card-panel">
-                <div class="card-header">
+                <div class="card-header" style="flex-wrap: wrap; gap: 16px;">
                     <div>
-                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Specialist Doctors Directory (Ordered 1-6)</h2>
+                        <h2 class="card-title"><i class="fa-solid fa-user-doctor" style="color: var(--brand-blue);"></i> Specialist Doctors Directory</h2>
                         <p style="font-size: 13px; color: var(--gray-500); margin-top: 2px;">Faculty order strictly maintained 1 through 6</p>
+                    </div>
+                    <div style="display: flex; gap: 12px; width: 100%; max-width: 420px;">
+                        <input type="text" id="doctorSearchInput" onkeyup="filterDoctors()" class="form-control" placeholder="Search doctor name or specialty..." style="font-size: 14px;">
                     </div>
                 </div>
 
-                <div class="doctor-grid">
-                    <div class="doctor-card">
+                <div class="doctor-grid" id="doctorDirectoryGrid">
+                    <div class="doctor-card" data-name="neha" data-spec="heart cardiac surgery">
                         <div class="doctor-order-badge">1</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-heart-pulse"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Neha</div>
                                 <div class="doctor-spec">Heart Surgeon</div>
-                                <span class="badge badge-senior" style="margin-top: 4px;">SENIOR HEART SURGEON & HEAD</span>
+                                <span class="badge badge-senior">SENIOR HEART SURGEON & HEAD</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MS, M.Ch (Cardiothoracic)</span></div>
                             <div><label>Experience</label><span>16 Years</span></div>
-                            <div><label>Department</label><span>Cardiology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹900</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 10:00 AM - 01:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹900</span></div>
                         </div>
                     </div>
-                    <div class="doctor-card">
+                    <div class="doctor-card" data-name="shobana" data-spec="orthopedic joint surgery">
                         <div class="doctor-order-badge">2</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-bone"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Shobana</div>
                                 <div class="doctor-spec">Orthopedic Surgeon</div>
-                                <span class="badge badge-confirmed" style="margin-top: 4px;">Joint Replacement Specialist</span>
+                                <span class="badge badge-confirmed">Joint Replacement Specialist</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MS (Ortho), Joint Fellow</span></div>
                             <div><label>Experience</label><span>10 Years</span></div>
-                            <div><label>Department</label><span>Orthopedics</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹750</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Sat 11:00 AM - 02:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹750</span></div>
                         </div>
                     </div>
-                    <div class="doctor-card">
+                    <div class="doctor-card" data-name="sruthi" data-spec="dermatologist cosmetology skin">
                         <div class="doctor-order-badge">3</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-spa"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Sruthi</div>
                                 <div class="doctor-spec">Dermatologist & Cosmetologist</div>
-                                <span class="badge badge-confirmed" style="margin-top: 4px;">Laser & Aesthetics Expert</span>
+                                <span class="badge badge-confirmed">Laser & Aesthetics Expert</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Dermatology, DVL)</span></div>
                             <div><label>Experience</label><span>5 Years</span></div>
-                            <div><label>Department</label><span>Dermatology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹600</span></div>
+                            <div><label>OPD Schedule</label><span>Tue-Sun 02:00 PM - 05:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹600</span></div>
                         </div>
                     </div>
-                    <div class="doctor-card">
+                    <div class="doctor-card" data-name="jagadeesh" data-spec="gastroenterologist stomach liver">
                         <div class="doctor-order-badge">4</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-stomach"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Jagadeesh</div>
                                 <div class="doctor-spec">Gastroenterologist</div>
-                                <span class="badge badge-confirmed" style="margin-top: 4px;">Hepatology & Endoscopy</span>
+                                <span class="badge badge-confirmed">Hepatology & Endoscopy</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Gen Med), DM (Gastro)</span></div>
                             <div><label>Experience</label><span>7 Years</span></div>
-                            <div><label>Department</label><span>Gastroenterology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹650</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 12:00 PM - 03:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹650</span></div>
                         </div>
                     </div>
-                    <div class="doctor-card">
+                    <div class="doctor-card" data-name="jaswanth" data-spec="pediatric cardiologist child heart">
                         <div class="doctor-order-badge">5</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-child-rearing"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Jaswanth</div>
                                 <div class="doctor-spec">Pediatric Cardiologist</div>
-                                <span class="badge badge-confirmed" style="margin-top: 4px;">Congenital Heart Care</span>
+                                <span class="badge badge-confirmed">Congenital Heart Care</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Ped), DM (Pedia Cardio)</span></div>
                             <div><label>Experience</label><span>8 Years</span></div>
-                            <div><label>Department</label><span>Pediatric Cardiology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹700</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Sat 04:00 PM - 07:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹700</span></div>
                         </div>
                     </div>
-                    <div class="doctor-card">
+                    <div class="doctor-card" data-name="kamalesh" data-spec="neurosurgeon brain spine">
                         <div class="doctor-order-badge">6</div>
                         <div class="doctor-card-header">
                             <div class="doctor-avatar"><i class="fa-solid fa-brain"></i></div>
                             <div>
                                 <div class="doctor-name">Dr. Kamalesh</div>
                                 <div class="doctor-spec">Neurosurgeon</div>
-                                <span class="badge badge-confirmed" style="margin-top: 4px;">Brain & Spine Surgery</span>
+                                <span class="badge badge-confirmed">Brain & Spine Surgery</span>
                             </div>
                         </div>
                         <div class="doctor-meta">
                             <div><label>Qualification</label><span>MD (Neurology), M.Ch (Neuro)</span></div>
                             <div><label>Experience</label><span>12 Years</span></div>
-                            <div><label>Department</label><span>Neurology</span></div>
-                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald);">₹800</span></div>
+                            <div><label>OPD Schedule</label><span>Mon-Fri 05:00 PM - 08:00 PM</span></div>
+                            <div><label>Consult Fee</label><span style="color: var(--brand-emerald); font-weight: 700;">₹800</span></div>
                         </div>
                     </div>
                 </div>
@@ -384,25 +491,64 @@
     <!-- Section: Departments -->
     <div id="sec-departments" class="page-section" style="display: none;">
         <div class="page-body">
-            <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Departments</h2>
+            <h2 style="font-size: 30px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Clinical Departments & Specialized Wings</h2>
             <div class="grid-3">
-                <div class="card-panel" style="margin-bottom: 0;">
-                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Cardiology</h3>
-                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Heart health, cardiac surgery, and vascular treatment.</p>
-                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Neha (Heart Surgeon)</span></div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-heart-pulse" style="color: #EF4444;"></i> Cardiology Center</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">Equipped with digital flat-panel Cath Lab and dedicated Cardiac ICU.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--brand-blue);">Department Head: Dr. Neha (16y Exp)</div>
                 </div>
-                <div class="card-panel" style="margin-bottom: 0;">
-                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-bone"></i></div>
-                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Orthopedics</h3>
-                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Bone, joint replacement, and musculoskeletal surgery.</p>
-                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Shobana (Orthopedic Surgeon)</span></div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-bone" style="color: var(--brand-teal);"></i> Orthopedics Wing</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">Robotic knee replacement suite and specialized rehabilitation unit.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--brand-teal);">Department Head: Dr. Shobana (10y Exp)</div>
                 </div>
-                <div class="card-panel" style="margin-bottom: 0;">
-                    <div style="font-size: 32px; color: var(--brand-blue); margin-bottom: 12px;"><i class="fa-solid fa-spa"></i></div>
-                    <h3 style="color: var(--gray-900); font-size: 22px; font-weight: 800; margin-bottom: 8px;">Dermatology</h3>
-                    <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 16px;">Advanced skin care, laser surgery, and cosmetic dermatology.</p>
-                    <div style="font-size: 13px; font-weight: 700; color: var(--gray-900); background: var(--gray-100); padding: 8px 12px; border-radius: var(--radius-sm);">Head of Dept: <span style="color: var(--brand-blue);">Dr. Sruthi (Dermatologist & Cosmetologist)</span></div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-spa" style="color: #10B981;"></i> Dermatology Suite</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">Advanced US-FDA approved laser skin technologies and trichology.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: #10B981;">Department Head: Dr. Sruthi (5y Exp)</div>
+                </div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-stomach" style="color: #F59E0B;"></i> Gastroenterology Wing</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">HD Video Endoscopy and ERCP interventional suite.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: #F59E0B;">Department Head: Dr. Jagadeesh (7y Exp)</div>
+                </div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-child-rearing" style="color: #0284C7;"></i> Pediatric Cardiology Wing</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">Neonatal cardiac monitoring and pediatric echocardiography unit.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: #0284C7;">Department Head: Dr. Jaswanth (8y Exp)</div>
+                </div>
+                <div class="card-panel">
+                    <h3 style="font-size: 20px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px;"><i class="fa-solid fa-brain" style="color: #7C3AED;"></i> Neurosurgery Center</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 14px;">Intraoperative neuro-navigation CT and microsurgical suite.</p>
+                    <div style="font-size: 13px; font-weight: 700; color: #7C3AED;">Department Head: Dr. Kamalesh (12y Exp)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Packages -->
+    <div id="sec-packages" class="page-section" style="display: none;">
+        <div class="page-body">
+            <h2 style="font-size: 30px; font-weight: 800; margin-bottom: 24px; color: var(--gray-900);">Diagnostic Health Packages</h2>
+            <div class="grid-3">
+                <div class="card-panel">
+                    <h3>Full Body Checkup</h3>
+                    <div style="font-size:28px; font-weight:800; color:var(--brand-emerald); margin: 8px 0;">₹1,499</div>
+                    <p style="font-size: 13px; color: var(--gray-600); margin-bottom: 16px;">65 parameters included: Complete Hemogram, Lipid Profile, LFT, KFT, Thyroid Screening, Fasting Sugar.</p>
+                    <button onclick="alert('Package booked successfully!')" class="btn btn-primary" style="width:100%; justify-content:center;">Book Now</button>
+                </div>
+                <div class="card-panel">
+                    <h3>Cardiac Shield Comprehensive</h3>
+                    <div style="font-size:28px; font-weight:800; color:var(--brand-emerald); margin: 8px 0;">₹2,199</div>
+                    <p style="font-size: 13px; color: var(--gray-600); margin-bottom: 16px;">2D Echo, TMT, ECG, Troponin-I, hs-CRP, Lipid Profile & Senior Heart Specialist Dr. Neha Consultation.</p>
+                    <button onclick="alert('Package booked successfully!')" class="btn btn-primary" style="width:100%; justify-content:center;">Book Now</button>
+                </div>
+                <div class="card-panel">
+                    <h3>Neuro-Spine Panel</h3>
+                    <div style="font-size:28px; font-weight:800; color:var(--brand-emerald); margin: 8px 0;">₹3,499</div>
+                    <p style="font-size: 13px; color: var(--gray-600); margin-bottom: 16px;">Brain MRI Screening, Spine X-ray, Nerve Conduction Test, B12/D3 Test & Neurosurgeon Dr. Kamalesh Consult.</p>
+                    <button onclick="alert('Package booked successfully!')" class="btn btn-primary" style="width:100%; justify-content:center;">Book Now</button>
                 </div>
             </div>
         </div>
@@ -410,24 +556,28 @@
 
     <!-- Section: Contact -->
     <div id="sec-contact" class="page-section" style="display: none;">
-        <div class="page-body" style="max-width: 960px;">
+        <div class="page-body" style="max-width: 980px;">
             <div class="card-panel">
-                <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 24px;"><i class="fa-solid fa-headset" style="color: var(--brand-blue);"></i> Emergency & Contact Center</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                <h2 style="font-size: 28px; font-weight: 800; color: var(--gray-900); margin-bottom: 24px;">
+                    <i class="fa-solid fa-headset" style="color: var(--brand-blue);"></i> 24/7 Emergency & Customer Contact Center
+                </h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
                     <div>
-                        <h4 style="margin-bottom: 8px; font-size: 16px;">Address:</h4>
+                        <h4 style="margin-bottom: 6px; font-size: 16px; color: var(--gray-900);"><i class="fa-solid fa-location-dot" style="color: var(--brand-blue);"></i> Hospital Location Address:</h4>
                         <p style="color: var(--gray-600); font-size: 14px; margin-bottom: 20px;">123 Healthcare Boulevard, Tech City, Karnataka 560001</p>
-                        <h4 style="margin-bottom: 8px; font-size: 16px;">24/7 Emergency Helpline:</h4>
-                        <p style="color: var(--danger); font-weight: 800; font-size: 20px; margin-bottom: 20px;"><i class="fa-solid fa-phone-volume"></i> 1800-123-9999 / 102</p>
-                        <h4 style="margin-bottom: 8px; font-size: 16px;">Email Support:</h4>
+                        
+                        <h4 style="margin-bottom: 6px; font-size: 16px; color: var(--gray-900);"><i class="fa-solid fa-phone-volume" style="color: var(--danger);"></i> 24/7 Emergency Helpline:</h4>
+                        <p style="color: var(--danger); font-weight: 800; font-size: 20px; margin-bottom: 20px;">1800-123-9999 / 102</p>
+
+                        <h4 style="margin-bottom: 6px; font-size: 16px; color: var(--gray-900);"><i class="fa-solid fa-envelope" style="color: var(--brand-teal);"></i> Email Assistance:</h4>
                         <p style="color: var(--gray-600); font-size: 14px;">contact@smarthospital.org</p>
                     </div>
                     <div>
-                        <form onsubmit="alert('Thank you for contacting Smart Hospital.'); return false;">
-                            <div class="form-group"><label>Your Name</label><input type="text" class="form-control" required placeholder="Full name"></div>
-                            <div class="form-group"><label>Email Address</label><input type="email" class="form-control" required placeholder="Email"></div>
-                            <div class="form-group"><label>Message</label><textarea class="form-control" rows="3" required placeholder="Write message..."></textarea></div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <form onsubmit="alert('Thank you for contacting Smart Hospital. Our helpline desk will call you shortly.'); return false;">
+                            <div class="form-group"><label>Your Name *</label><input type="text" class="form-control" required placeholder="Full Name"></div>
+                            <div class="form-group"><label>Email Address *</label><input type="email" class="form-control" required placeholder="name@example.com"></div>
+                            <div class="form-group"><label>Message / Clinical Inquiry *</label><textarea class="form-control" rows="3" required placeholder="Describe your query or symptom..."></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -440,14 +590,13 @@
         <div style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
             <div style="width: 100%; max-width: 480px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
                 <div style="text-align: center; margin-bottom: 24px;">
-                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);">Portal Sign In</h2>
-                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Select your user role portal to access dashboard</p>
+                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
+                    <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Select your role portal to open dashboard</p>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 12px;">
                     <a href="src/main/webapp/WEB-INF/views/public/login.jsp" class="btn btn-primary" style="justify-content: center;"><i class="fa-solid fa-user-gear"></i> Access Admin Portal</a>
                     <a href="src/main/webapp/WEB-INF/views/public/login.jsp" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-stethoscope"></i> Access Doctor Portal (Dr. Neha)</a>
                     <a href="src/main/webapp/WEB-INF/views/public/login.jsp" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-hospital-user"></i> Access Receptionist Portal</a>
-                    <a href="src/main/webapp/WEB-INF/views/public/login.jsp" class="btn btn-outline" style="justify-content: center;"><i class="fa-solid fa-prescription"></i> Access Pharmacist Portal</a>
                     <a href="src/main/webapp/WEB-INF/views/public/login.jsp" class="btn btn-secondary" style="justify-content: center;"><i class="fa-solid fa-user-injured"></i> Access Patient Portal</a>
                 </div>
             </div>
@@ -459,10 +608,10 @@
         <div style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
             <div style="width: 100%; max-width: 580px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-lg);">
                 <div style="text-align: center; margin-bottom: 24px;">
-                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);"><i class="fa-solid fa-user-plus" style="color: var(--brand-blue);"></i> Patient Registration</h2>
+                    <h2 style="font-size: 22px; font-weight: 800; color: var(--gray-900);"><i class="fa-solid fa-user-plus" style="color: var(--brand-blue);"></i> Patient Registration Profile</h2>
                     <p style="font-size: 13px; color: var(--gray-500); margin-top: 4px;">Create your personal digital medical record profile</p>
                 </div>
-                <form onsubmit="alert('Registration submitted successfully! Please sign in.'); return false;">
+                <form onsubmit="alert('Registration submitted successfully! You can now sign in.'); showSection('sec-login'); return false;">
                     <div class="form-row">
                         <div class="form-group"><label>Full Name *</label><input type="text" class="form-control" required placeholder="John Doe"></div>
                         <div class="form-group"><label>Email Address *</label><input type="email" class="form-control" required placeholder="john@example.com"></div>
@@ -471,22 +620,33 @@
                         <div class="form-group"><label>Password *</label><input type="password" class="form-control" required placeholder="••••••••"></div>
                         <div class="form-group"><label>Phone Number *</label><input type="tel" class="form-control" required placeholder="10-digit mobile"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Registration</button>
+                    <div class="form-row">
+                        <div class="form-group"><label>Blood Group</label>
+                            <select class="form-control">
+                                <option>O +ve</option><option>A +ve</option><option>B +ve</option><option>AB +ve</option>
+                                <option>O -ve</option><option>A -ve</option><option>B -ve</option><option>AB -ve</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Age</label><input type="number" class="form-control" placeholder="25"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;">Submit Registration</button>
                 </form>
             </div>
         </div>
     </div>
 
     <!-- Modern Footer -->
-    <footer style="background: var(--white); border-top: 1px solid var(--gray-200); padding: 32px 40px; text-align: center; color: var(--gray-600); font-size: 14px; margin-top: 60px;">
-        <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <footer style="background: var(--white); border-top: 1px solid var(--gray-200); padding: 36px 40px; color: var(--gray-600); font-size: 14px; margin-top: 60px;">
+        <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <div>
-                <strong>Smart Hospital Management System</strong> &copy; 2026 | Major Academic Project Edition
+                <strong style="color: var(--gray-900);">Smart Hospital Management System</strong> &copy; 2026 | Major Academic Project Edition
+                <div style="font-size: 12px; color: var(--gray-500); margin-top: 4px;">Faculty Order: 1. Dr. Neha | 2. Dr. Shobana | 3. Dr. Sruthi | 4. Dr. Jagadeesh | 5. Dr. Jaswanth | 6. Dr. Kamalesh</div>
             </div>
             <div style="display: flex; gap: 20px; font-weight: 600;">
                 <a href="#" class="nav-link" data-section="sec-home">Home</a>
                 <a href="#" class="nav-link" data-section="sec-doctors">Doctors</a>
                 <a href="#" class="nav-link" data-section="sec-departments">Departments</a>
+                <a href="#" class="nav-link" data-section="sec-packages">Packages</a>
                 <a href="#" class="nav-link" data-section="sec-contact">Emergency Contact</a>
             </div>
         </div>
@@ -494,31 +654,61 @@
 
     <!-- Interactive Navigation Router Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
+        function showSection(sectionId) {
             const sections = document.querySelectorAll('.page-section');
-
-            function showSection(sectionId) {
-                sections.forEach(sec => sec.style.display = 'none');
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.style.display = 'block';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(sec => sec.style.display = 'none');
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     const secId = this.getAttribute('data-section');
                     if (secId && document.getElementById(secId)) {
                         e.preventDefault();
                         showSection(secId);
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        this.classList.add('active');
                     }
                 });
             });
         });
+
+        function handleQuickBooking(e) {
+            e.preventDefault();
+            const docSelect = document.getElementById('opdDoctorRoot');
+            const docName = docSelect.options[docSelect.selectedIndex].text;
+            const patientName = document.getElementById('opdNameRoot').value;
+            alert('✅ OPD Appointment Token Confirmed!\n\nPatient: ' + patientName + '\nDoctor: ' + docName + '\nToken #OPD-' + Math.floor(1000 + Math.random() * 9000));
+        }
+
+        function filterDoctors() {
+            const query = document.getElementById('doctorSearchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('#doctorDirectoryGrid .doctor-card');
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const spec = card.getAttribute('data-spec') || '';
+                const text = card.innerText.toLowerCase();
+                if (name.includes(query) || spec.includes(query) || text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
     <script src="src/main/webapp/assets/js/main.js"></script>
 </body>
