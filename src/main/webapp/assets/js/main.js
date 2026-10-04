@@ -22,6 +22,12 @@ function toggleDarkMode() {
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('themeMode', isDark ? 'dark' : 'light');
     updateThemeToggleUI(isDark);
+
+    // Refresh role card visuals if on login portal page
+    const loginRole = document.getElementById('loginRole');
+    if (loginRole && typeof updateRoleCardVisuals === 'function') {
+        updateRoleCardVisuals(loginRole.value || 'doctor');
+    }
 }
 
 function updateThemeToggleUI(isDark) {

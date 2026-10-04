@@ -93,10 +93,10 @@ body.dark-mode {
   --gray-900: #F8FAFC;
   --gray-800: #F1F5F9;
   --gray-700: #E2E8F0;
-  --gray-600: #94A3B8;
-  --gray-500: #CBD5E1;
-  --gray-300: #334155;
-  --gray-200: #1E293B;
+  --gray-600: #CBD5E1;
+  --gray-500: #94A3B8;
+  --gray-300: #475569;
+  --gray-200: #334155;
   --gray-100: #0F172A;
   --white: #1E293B;
 
@@ -106,21 +106,28 @@ body.dark-mode {
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
+/* Navbars in Dark Mode */
 body.dark-mode .public-navbar,
 body.dark-mode .top-navbar {
   background: rgba(15, 23, 42, 0.95) !important;
   border-bottom: 1px solid #334155 !important;
 }
 
-body.dark-mode .nav-link {
+/* SVG Logo Text in Dark Mode */
+body.dark-mode svg text[fill="#0F172A"] {
+  fill: #FFFFFF !important;
+}
+
+body.dark-mode .public-navbar nav a.nav-link:not(.btn) {
   color: #CBD5E1 !important;
 }
 
-body.dark-mode .nav-link:hover,
-body.dark-mode .nav-link.active {
+body.dark-mode .public-navbar nav a.nav-link:not(.btn):hover,
+body.dark-mode .public-navbar nav a.nav-link:not(.btn).active {
   color: #38BDF8 !important;
 }
 
+/* Cards & Panels in Dark Mode */
 body.dark-mode .card-panel,
 body.dark-mode .stat-card,
 body.dark-mode .doctor-card,
@@ -131,16 +138,187 @@ body.dark-mode .role-selector-card {
   color: #F8FAFC !important;
 }
 
+/* Hero Section Inline Containers */
+body.dark-mode div[style*="background: #FFFFFF"],
+body.dark-mode div[style*="background:#FFFFFF"],
+body.dark-mode div[style*="background: white"],
+body.dark-mode div[style*="background:white"] {
+  background: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+/* Doctor Card Elements in Dark Mode */
 body.dark-mode .doctor-card-header .doctor-name,
 body.dark-mode .card-title,
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
   color: #F8FAFC !important;
 }
 
+body.dark-mode .doctor-meta {
+  background: #0F172A !important;
+  border: 1px solid #334155 !important;
+}
+
+body.dark-mode .doctor-meta div label {
+  color: #94A3B8 !important;
+}
+
+body.dark-mode .doctor-meta div span {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .doctor-avatar {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(13, 148, 136, 0.25) 100%) !important;
+  color: #38BDF8 !important;
+  border-color: #334155 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25) !important;
+}
+
+body.dark-mode .doctor-order-badge {
+  background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
+}
+
+/* Badges in Dark Mode */
+body.dark-mode .badge-senior {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #34D399 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+body.dark-mode .badge-confirmed {
+  background: rgba(2, 132, 199, 0.2) !important;
+  color: #38BDF8 !important;
+  border-color: rgba(2, 132, 199, 0.4) !important;
+}
+
+body.dark-mode .badge-completed {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #34D399 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+body.dark-mode .badge-pending {
+  background: rgba(245, 158, 11, 0.2) !important;
+  color: #FBBF24 !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+body.dark-mode .badge-cancelled {
+  background: rgba(239, 68, 68, 0.2) !important;
+  color: #F87171 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+body.dark-mode .badge[style*="background: #E0F2FE"],
+body.dark-mode .badge[style*="background:#E0F2FE"] {
+  background: rgba(2, 132, 199, 0.25) !important;
+  color: #38BDF8 !important;
+  border-color: rgba(2, 132, 199, 0.4) !important;
+}
+
+body.dark-mode .badge[style*="background: #FEF3C7"],
+body.dark-mode .badge[style*="background:#FEF3C7"] {
+  background: rgba(245, 158, 11, 0.25) !important;
+  color: #FBBF24 !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Role Selector Cards in Dark Mode */
+body.dark-mode .role-selector-card {
+  background: #0F172A !important;
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .role-selector-card div {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .role-selector-card div[style*="color: var(--gray-500)"] {
+  color: #94A3B8 !important;
+}
+
+body.dark-mode .role-selector-card i[style*="color: #0F172A"],
+body.dark-mode .role-selector-card i[style*="color:#0F172A"] {
+  color: #38BDF8 !important;
+}
+
+body.dark-mode .role-selector-card.active {
+  background: rgba(2, 132, 199, 0.25) !important;
+  border-color: #38BDF8 !important;
+}
+
+/* Hardcoded Dark Colors Overrides for Dark Mode */
+body.dark-mode div[style*="color: #0F172A"],
+body.dark-mode div[style*="color:#0F172A"],
+body.dark-mode span[style*="color: #0F172A"],
+body.dark-mode span[style*="color:#0F172A"],
+body.dark-mode i[style*="color: #0F172A"],
+body.dark-mode i[style*="color:#0F172A"],
+body.dark-mode h2[style*="color: #0F172A"],
+body.dark-mode h3[style*="color: #0F172A"],
+body.dark-mode h4[style*="color: #0F172A"] {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode div[style*="color: #0369A1"],
+body.dark-mode div[style*="color:#0369A1"],
+body.dark-mode span[style*="color: #0369A1"],
+body.dark-mode span[style*="color:#0369A1"],
+body.dark-mode i[style*="color: #0369A1"],
+body.dark-mode i[style*="color:#0369A1"] {
+  color: #38BDF8 !important;
+}
+
+body.dark-mode div[style*="color: #B45309"],
+body.dark-mode div[style*="color:#B45309"],
+body.dark-mode span[style*="color: #B45309"],
+body.dark-mode span[style*="color:#B45309"],
+body.dark-mode i[style*="color: #B45309"],
+body.dark-mode i[style*="color:#B45309"] {
+  color: #FBBF24 !important;
+}
+
+body.dark-mode div[style*="color: #15803D"],
+body.dark-mode div[style*="color:#15803D"],
+body.dark-mode span[style*="color: #15803D"],
+body.dark-mode span[style*="color:#15803D"] {
+  color: #34D399 !important;
+}
+
+body.dark-mode div[style*="color: #7C3AED"],
+body.dark-mode div[style*="color:#7C3AED"],
+body.dark-mode span[style*="color: #7C3AED"],
+body.dark-mode span[style*="color:#7C3AED"],
+body.dark-mode i[style*="color: #7C3AED"],
+body.dark-mode i[style*="color:#7C3AED"] {
+  color: #C084FC !important;
+}
+
+/* Quick Login Shortcuts Buttons in Dark Mode */
+body.dark-mode button[style*="color: #0F172A"],
+body.dark-mode button[style*="color:#0F172A"] {
+  color: #38BDF8 !important;
+  border-color: #38BDF8 !important;
+}
+
+/* Form Controls in Dark Mode */
 body.dark-mode .form-control {
   background: #0F172A !important;
   color: #F8FAFC !important;
   border-color: #334155 !important;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #64748B !important;
+}
+
+body.dark-mode select.form-control option {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
 }
 
 body.dark-mode .form-control:focus {
@@ -148,6 +326,7 @@ body.dark-mode .form-control:focus {
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25) !important;
 }
 
+/* Tables in Dark Mode */
 body.dark-mode .custom-table th {
   background: #0F172A !important;
   color: #94A3B8 !important;
@@ -159,6 +338,22 @@ body.dark-mode .custom-table td {
   color: #E2E8F0 !important;
 }
 
+body.dark-mode .custom-table td strong {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .custom-table tbody tr:hover {
+  background-color: rgba(51, 65, 85, 0.4) !important;
+}
+
+/* Theme Toggle Button in Dark Mode */
+body.dark-mode #themeToggleBtn {
+  border-color: #F59E0B !important;
+  color: #F8FAFC !important;
+  background: rgba(245, 158, 11, 0.15) !important;
+}
+
+/* Footer in Dark Mode */
 body.dark-mode footer {
   background: #0F172A !important;
   border-top: 1px solid #1E293B !important;

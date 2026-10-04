@@ -1138,18 +1138,19 @@
         }
 
         function updateRoleCardVisuals(selectedRole) {
+            const isDark = document.body.classList.contains('dark-mode');
             const roles = ['admin', 'doctor', 'receptionist', 'pharmacist', 'patient'];
             roles.forEach(r => {
                 const card = document.getElementById('role-card-' + r);
                 if (card) {
                     if (r === selectedRole) {
-                        card.style.border = '2px solid var(--brand-blue)';
-                        card.style.background = 'rgba(2, 132, 199, 0.08)';
+                        card.style.border = isDark ? '2px solid #38BDF8' : '2px solid var(--brand-blue)';
+                        card.style.background = isDark ? 'rgba(2, 132, 199, 0.25)' : 'rgba(2, 132, 199, 0.08)';
                         card.style.transform = 'translateY(-2px)';
-                        card.style.boxShadow = '0 6px 16px rgba(2, 132, 199, 0.15)';
+                        card.style.boxShadow = '0 6px 16px rgba(2, 132, 199, 0.25)';
                     } else {
-                        card.style.border = '2px solid var(--gray-200)';
-                        card.style.background = 'var(--white)';
+                        card.style.border = isDark ? '2px solid #334155' : '2px solid var(--gray-200)';
+                        card.style.background = isDark ? '#0F172A' : 'var(--white)';
                         card.style.transform = 'translateY(0)';
                         card.style.boxShadow = 'none';
                     }
