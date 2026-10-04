@@ -58,7 +58,7 @@
                 </svg>
             </a>
         </div>
-        <nav>
+        <nav style="display: flex; align-items: center; gap: 10px;">
             <a href="#" class="nav-link active" data-section="sec-home">Home</a>
             <a href="#" class="nav-link" data-section="sec-about">About Us</a>
             <a href="#" class="nav-link" data-section="sec-services">Services</a>
@@ -66,6 +66,9 @@
             <a href="#" class="nav-link" data-section="sec-departments">Departments</a>
             <a href="#" class="nav-link" data-section="sec-packages">Health Packages</a>
             <a href="#" class="nav-link" data-section="sec-contact">Emergency & Contact</a>
+            <button id="themeToggleBtn" onclick="toggleDarkMode()" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 20px;">
+                <i class="fa-solid fa-moon" id="themeIcon" style="color: #0284C7;"></i> <span id="themeText">Dark</span>
+            </button>
             <a href="#" class="btn btn-primary nav-link" data-section="sec-login" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
         </nav>
     </header>

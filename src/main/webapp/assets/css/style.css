@@ -55,13 +55,122 @@
   padding: 0;
 }
 
+/* Animated Ambient Background Keyframes */
+@keyframes ambientGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   font-family: var(--font-family);
-  background-color: #F1F5F9;
+  background: linear-gradient(-45deg, #F8FAFC, #E2E8F0, #F1F5F9, #E0F2FE);
+  background-size: 400% 400%;
+  animation: ambientGradientMove 14s ease infinite;
   color: var(--gray-900);
   line-height: 1.6;
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Dark Mode System
+   ========================================================================== */
+body.dark-mode {
+  background: linear-gradient(-45deg, #090D16, #0F172A, #111827, #1E293B);
+  background-size: 400% 400%;
+  animation: ambientGradientMove 14s ease infinite;
+  color: #F8FAFC;
+
+  --gray-900: #F8FAFC;
+  --gray-800: #F1F5F9;
+  --gray-700: #E2E8F0;
+  --gray-600: #94A3B8;
+  --gray-500: #CBD5E1;
+  --gray-300: #334155;
+  --gray-200: #1E293B;
+  --gray-100: #0F172A;
+  --white: #1E293B;
+
+  --glass-bg: rgba(30, 41, 59, 0.9);
+  --glass-border: rgba(51, 65, 85, 0.8);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .public-navbar,
+body.dark-mode .top-navbar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+body.dark-mode .nav-link {
+  color: #CBD5E1 !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: #38BDF8 !important;
+}
+
+body.dark-mode .card-panel,
+body.dark-mode .stat-card,
+body.dark-mode .doctor-card,
+body.dark-mode .service-card,
+body.dark-mode .role-selector-card {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .doctor-card-header .doctor-name,
+body.dark-mode .card-title,
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .form-control {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode .form-control:focus {
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25) !important;
+}
+
+body.dark-mode .custom-table th {
+  background: #0F172A !important;
+  color: #94A3B8 !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode .custom-table td {
+  border-color: #334155 !important;
+  color: #E2E8F0 !important;
+}
+
+body.dark-mode footer {
+  background: #0F172A !important;
+  border-top: 1px solid #1E293B !important;
+  color: #94A3B8 !important;
+}
+
+body.dark-mode footer a {
+  color: #CBD5E1 !important;
+}
+
+body.dark-mode footer strong {
+  color: #F8FAFC !important;
 }
 
 a {

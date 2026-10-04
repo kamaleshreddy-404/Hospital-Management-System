@@ -139,7 +139,7 @@ function renderLayout(title, content, activeTab = 'home', activeRole = 'public')
                 ${SVG_LOGO}
             </a>
         </div>
-        <nav>
+        <nav style="display: flex; align-items: center; gap: 10px;">
             <a href="/home" class="${activeTab === 'home' ? 'active' : ''}">Home</a>
             <a href="/about" class="${activeTab === 'about' ? 'active' : ''}">About Us</a>
             <a href="/services" class="${activeTab === 'services' ? 'active' : ''}">Services</a>
@@ -147,6 +147,9 @@ function renderLayout(title, content, activeTab = 'home', activeRole = 'public')
             <a href="/departments" class="${activeTab === 'departments' ? 'active' : ''}">Departments</a>
             <a href="/packages" class="${activeTab === 'packages' ? 'active' : ''}">Health Packages</a>
             <a href="/contact" class="${activeTab === 'contact' ? 'active' : ''}">Contact</a>
+            <button id="themeToggleBtn" onclick="toggleDarkMode()" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 20px;">
+                <i class="fa-solid fa-moon" id="themeIcon" style="color: #0284C7;"></i> <span id="themeText">Dark</span>
+            </button>
             <a href="/login" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
         </nav>
     </header>
@@ -158,6 +161,9 @@ function renderLayout(title, content, activeTab = 'home', activeRole = 'public')
             </a>
         </div>
         <div class="user-profile-badge">
+            <button id="themeToggleBtn" onclick="toggleDarkMode()" class="btn btn-outline btn-sm" style="margin-right: 12px; padding: 4px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 4px; border-radius: 16px;">
+                <i class="fa-solid fa-moon" id="themeIcon" style="color: #0284C7;"></i> <span id="themeText">Dark</span>
+            </button>
             <div class="avatar-circle">${activeRole.charAt(0).toUpperCase()}</div>
             <div>
                 <div style="font-weight: 700; font-size: 14px;">Demo User (${activeRole})</div>

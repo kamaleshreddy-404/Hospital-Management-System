@@ -11,7 +11,40 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => alert.remove(), 300);
         }, 5000);
     });
+
+    // Initialize theme mode from localStorage
+    initTheme();
 });
+
+// Dark Mode Theme System
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('themeMode', isDark ? 'dark' : 'light');
+    updateThemeToggleUI(isDark);
+}
+
+function updateThemeToggleUI(isDark) {
+    const icon = document.getElementById('themeIcon');
+    const text = document.getElementById('themeText');
+    if (icon) {
+        icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        icon.style.color = isDark ? '#F59E0B' : '#0284C7';
+    }
+    if (text) {
+        text.innerText = isDark ? 'Light' : 'Dark';
+    }
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('themeMode');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        updateThemeToggleUI(true);
+    } else {
+        updateThemeToggleUI(false);
+    }
+}
 
 // Live Table Search Filter
 function filterTable(inputId, tableId) {
