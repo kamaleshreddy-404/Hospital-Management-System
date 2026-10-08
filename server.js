@@ -7,31 +7,31 @@ const PORT = 3000;
 const PUBLIC_DIR = path.join(__dirname, 'src', 'main', 'webapp');
 
 // In-memory mock database state for live interactive web server demo
-// Strict Doctor Order: 1. Dr. Neha, 2. Dr. Shobana, 3. Dr. Sruthi, 4. Dr. Jagadeesh, 5. Dr. Jaswanth, 6. Dr. Harsha, 7. Dr. Haasith, 8. Dr. Kamalesh
+// Strict Doctor Order: 1. Dr. Neha, 2. Dr. Kamalesh, 3. Dr. Jaswanth, 4. Dr. Shobana, 5. Dr. Sruthi, 6. Dr. Jagadeesh, 7. Dr. Haasith, 8. Dr. Harsha
 const state = {
     users: [
         { id: 1, name: 'System Administrator', email: 'admin@hospital.com', roleId: 1, roleName: 'Administrator' },
         { id: 2, name: 'Dr. Neha', email: 'doctor@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 3, name: 'Dr. Shobana', email: 'shobana@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 4, name: 'Dr. Sruthi', email: 'sruthi@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 5, name: 'Dr. Jagadeesh', email: 'jagadeesh@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 6, name: 'Dr. Jaswanth', email: 'jaswanth@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 7, name: 'Dr. Harsha', email: 'harsha@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 3, name: 'Dr. Kamalesh', email: 'kamalesh@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 4, name: 'Dr. Jaswanth', email: 'jaswanth@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 5, name: 'Dr. Shobana', email: 'shobana@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 6, name: 'Dr. Sruthi', email: 'sruthi@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 7, name: 'Dr. Jagadeesh', email: 'jagadeesh@hospital.com', roleId: 2, roleName: 'Doctor' },
         { id: 8, name: 'Dr. Haasith', email: 'haasith@hospital.com', roleId: 2, roleName: 'Doctor' },
-        { id: 9, name: 'Dr. Kamalesh', email: 'kamalesh@hospital.com', roleId: 2, roleName: 'Doctor' },
+        { id: 9, name: 'Dr. Harsha', email: 'harsha@hospital.com', roleId: 2, roleName: 'Doctor' },
         { id: 10, name: 'Sarah Jenkins', email: 'reception@hospital.com', roleId: 3, roleName: 'Receptionist' },
         { id: 11, name: 'Michael Vance', email: 'pharma@hospital.com', roleId: 4, roleName: 'Pharmacist' },
         { id: 12, name: 'John Doe', email: 'patient@hospital.com', roleId: 5, roleName: 'Patient' }
     ],
     doctors: [
         { id: 1, name: 'Dr. Neha', qualification: 'MS, M.Ch (Cardiothoracic Surgery)', specialization: 'Heart Surgeon', exp: 16, fee: 900, status: 'Active (Senior Doctor & Dept Head)', dept: 'Cardiology', icon: 'fa-heart-pulse', opd: 'Mon-Fri 10:00 AM' },
-        { id: 2, name: 'Dr. Shobana', qualification: 'MS (Orthopedics), Joint Replacement Fellow', specialization: 'Orthopedic Surgeon', exp: 10, fee: 750, status: 'Active', dept: 'Orthopedics', icon: 'fa-bone', opd: 'Mon-Sat 11:00 AM' },
-        { id: 3, name: 'Dr. Sruthi', qualification: 'MD (Dermatology, Venereology & Leprosy)', specialization: 'Dermatologist & Cosmetologist', exp: 5, fee: 600, status: 'Active', dept: 'Dermatology', icon: 'fa-spa', opd: 'Tue-Sun 02:00 PM' },
-        { id: 4, name: 'Dr. Jagadeesh', qualification: 'MD (Gen Med), DM (Gastroenterology)', specialization: 'Gastroenterologist', exp: 7, fee: 650, status: 'Active', dept: 'Gastroenterology', icon: 'fa-stomach', opd: 'Mon-Fri 12:00 PM' },
-        { id: 5, name: 'Dr. Jaswanth', qualification: 'MD (Pediatrics), DM (Pediatric Cardiology)', specialization: 'Pediatric Cardiologist', exp: 8, fee: 700, status: 'Active', dept: 'Pediatric Cardiology', icon: 'fa-child-rearing', opd: 'Mon-Sat 04:00 PM' },
-        { id: 6, name: 'Dr. Harsha', qualification: 'MD (Gen Med), DM (Pulmonology)', specialization: 'Pulmonologist & Critical Care', exp: 9, fee: 750, status: 'Active', dept: 'Pulmonology', icon: 'fa-lungs', opd: 'Mon-Sat 04:30 PM' },
+        { id: 2, name: 'Dr. Kamalesh', qualification: 'MD (Neurology), M.Ch (Neurosurgery)', specialization: 'Neurosurgeon', exp: 12, fee: 800, status: 'Active', dept: 'Neurology', icon: 'fa-brain', opd: 'Mon-Fri 05:30 PM' },
+        { id: 3, name: 'Dr. Jaswanth', qualification: 'MD (Pediatrics), DM (Pediatric Cardiology)', specialization: 'Pediatric Cardiologist', exp: 8, fee: 700, status: 'Active', dept: 'Pediatric Cardiology', icon: 'fa-child-rearing', opd: 'Mon-Sat 04:00 PM' },
+        { id: 4, name: 'Dr. Shobana', qualification: 'MS (Orthopedics), Joint Replacement Fellow', specialization: 'Orthopedic Surgeon', exp: 10, fee: 750, status: 'Active', dept: 'Orthopedics', icon: 'fa-bone', opd: 'Mon-Sat 11:00 AM' },
+        { id: 5, name: 'Dr. Sruthi', qualification: 'MD (Dermatology, Venereology & Leprosy)', specialization: 'Dermatologist & Cosmetologist', exp: 5, fee: 600, status: 'Active', dept: 'Dermatology', icon: 'fa-spa', opd: 'Tue-Sun 02:00 PM' },
+        { id: 6, name: 'Dr. Jagadeesh', qualification: 'MD (Gen Med), DM (Gastroenterology)', specialization: 'Gastroenterologist', exp: 7, fee: 650, status: 'Active', dept: 'Gastroenterology', icon: 'fa-stomach', opd: 'Mon-Fri 12:00 PM' },
         { id: 7, name: 'Dr. Haasith', qualification: 'MD (Gen Med), DM (Endocrinology)', specialization: 'Endocrinologist & Diabetologist', exp: 11, fee: 780, status: 'Active', dept: 'Endocrinology', icon: 'fa-dna', opd: 'Mon-Fri 05:00 PM' },
-        { id: 8, name: 'Dr. Kamalesh', qualification: 'MD (Neurology), M.Ch (Neurosurgery)', specialization: 'Neurosurgeon', exp: 12, fee: 800, status: 'Active', dept: 'Neurology', icon: 'fa-brain', opd: 'Mon-Fri 05:30 PM' }
+        { id: 8, name: 'Dr. Harsha', qualification: 'MD (Gen Med), DM (Pulmonology)', specialization: 'Pulmonologist & Critical Care', exp: 9, fee: 750, status: 'Active', dept: 'Pulmonology', icon: 'fa-lungs', opd: 'Mon-Sat 04:30 PM' }
     ],
     patients: [
         { id: 1, name: 'John Doe', gender: 'Male', age: 35, blood: 'O+', phone: '9876543216', emergency: '9876500001', address: '123 MG Road, Bangalore' },

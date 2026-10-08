@@ -131,8 +131,7 @@ body.dark-mode .public-navbar nav a.nav-link:not(.btn).active {
 body.dark-mode .card-panel,
 body.dark-mode .stat-card,
 body.dark-mode .doctor-card,
-body.dark-mode .service-card,
-body.dark-mode .role-selector-card {
+body.dark-mode .service-card {
   background: #1E293B !important;
   border-color: #334155 !important;
   color: #F8FAFC !important;
@@ -228,27 +227,32 @@ body.dark-mode .badge[style*="background:#FEF3C7"] {
 
 /* Role Selector Cards in Dark Mode */
 body.dark-mode .role-selector-card {
-  background: #0F172A !important;
-  border-color: #334155 !important;
-  color: #F8FAFC !important;
+  background: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
 }
 
 body.dark-mode .role-selector-card div {
-  color: #F8FAFC !important;
+  color: #F8FAFC;
 }
 
 body.dark-mode .role-selector-card div[style*="color: var(--gray-500)"] {
-  color: #94A3B8 !important;
+  color: #94A3B8;
 }
 
 body.dark-mode .role-selector-card i[style*="color: #0F172A"],
 body.dark-mode .role-selector-card i[style*="color:#0F172A"] {
-  color: #38BDF8 !important;
+  color: #38BDF8;
+}
+
+body.dark-mode .role-selector-card:hover {
+  border-color: #38BDF8;
 }
 
 body.dark-mode .role-selector-card.active {
-  background: rgba(2, 132, 199, 0.25) !important;
-  border-color: #38BDF8 !important;
+  background: rgba(2, 132, 199, 0.25);
+  border-color: #38BDF8;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
 }
 
 /* Hardcoded Dark Colors Overrides for Dark Mode */
