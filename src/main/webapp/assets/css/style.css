@@ -1170,3 +1170,195 @@ a:hover {
   width: 100%;
 }
 
+/* ==========================================================================
+   Enhanced Portal Login Page Animations, Glassmorphic Grid & Active User Badges
+   ========================================================================== */
+
+/* Role Selector Grid layout - 5 equal columns on desktop */
+.role-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 860px) {
+  .role-selector-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .role-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Role Selector Card Base & Animations */
+.role-selector-card {
+  border: 2px solid var(--gray-200);
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.role-selector-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: var(--brand-blue);
+  box-shadow: 0 12px 24px -6px rgba(2, 132, 199, 0.3);
+}
+
+.role-selector-card.active {
+  background: linear-gradient(145deg, rgba(2, 132, 199, 0.12) 0%, rgba(13, 148, 136, 0.12) 100%);
+  border-color: var(--brand-blue);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px -4px rgba(2, 132, 199, 0.35);
+}
+
+/* Specific Role Accent Styles when Active */
+#role-card-admin.active {
+  border-color: #0F172A;
+  background: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.3);
+}
+#role-card-doctor.active {
+  border-color: #0284C7;
+  background: rgba(2, 132, 199, 0.1);
+  box-shadow: 0 10px 25px -4px rgba(2, 132, 199, 0.35);
+}
+#role-card-receptionist.active {
+  border-color: #0D9488;
+  background: rgba(13, 148, 136, 0.1);
+  box-shadow: 0 10px 25px -4px rgba(13, 148, 136, 0.35);
+}
+#role-card-pharmacist.active {
+  border-color: #7C3AED;
+  background: rgba(124, 58, 237, 0.1);
+  box-shadow: 0 10px 25px -4px rgba(124, 58, 237, 0.35);
+}
+#role-card-patient.active {
+  border-color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.35);
+}
+
+/* Dark Mode Role Cards */
+body.dark-mode .role-selector-card {
+  background: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+body.dark-mode #role-card-admin.active {
+  border-color: #38BDF8;
+  background: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 25px -4px rgba(56, 189, 248, 0.4);
+}
+body.dark-mode #role-card-doctor.active {
+  border-color: #38BDF8;
+  background: rgba(2, 132, 199, 0.25);
+  box-shadow: 0 10px 25px -4px rgba(2, 132, 199, 0.4);
+}
+body.dark-mode #role-card-receptionist.active {
+  border-color: #2DD4BF;
+  background: rgba(13, 148, 136, 0.25);
+  box-shadow: 0 10px 25px -4px rgba(45, 212, 191, 0.4);
+}
+body.dark-mode #role-card-pharmacist.active {
+  border-color: #C084FC;
+  background: rgba(124, 58, 237, 0.25);
+  box-shadow: 0 10px 25px -4px rgba(192, 132, 252, 0.4);
+}
+body.dark-mode #role-card-patient.active {
+  border-color: #34D399;
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 10px 25px -4px rgba(52, 211, 153, 0.4);
+}
+
+/* Icon Pulse animation on active role card */
+@keyframes roleIconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+.role-selector-card.active i {
+  animation: roleIconPulse 2.5s infinite ease-in-out;
+}
+
+/* Portal Container Card Entrance Animation */
+@keyframes portalEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.portal-login-card {
+  width: 100%;
+  max-width: 760px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15);
+  animation: portalEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  position: relative;
+  backdrop-filter: blur(16px);
+}
+
+body.dark-mode .portal-login-card {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* User Session Badge in Header Navbar */
+.user-session-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+  border: 1px solid var(--brand-blue);
+  color: var(--gray-900);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .user-session-badge {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: #38BDF8;
+  color: #F8FAFC;
+}
+
+.btn-nav-logout {
+  background: #EF4444;
+  color: #FFFFFF;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-nav-logout:hover {
+  transform: scale(1.15);
+  background: #DC2626;
+}
+
+

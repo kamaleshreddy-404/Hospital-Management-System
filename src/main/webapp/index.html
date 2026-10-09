@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Hospital Management System - Modern Multi-Specialty Medical Center</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230284C7'/><path d='M50 20v60M20 50h60' stroke='%23ffffff' stroke-width='16' stroke-linecap='round'/></svg>">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="src/main/webapp/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,14 @@
             <button id="themeToggleBtn" onclick="toggleDarkMode()" class="btn btn-outline" style="padding: 6px 14px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; border-radius: 20px;">
                 <i class="fa-solid fa-moon" id="themeIcon" style="color: #0284C7;"></i> <span id="themeText">Dark</span>
             </button>
-            <a href="#" class="btn btn-primary nav-link" data-section="sec-login" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
+            <div id="navUserSessionContainer" style="display: flex; align-items: center; gap: 8px;">
+                <a href="#" id="navPortalLoginBtn" class="btn btn-primary nav-link" data-section="sec-login" style="padding: 8px 18px;"><i class="fa-solid fa-right-to-bracket"></i> Portal Login</a>
+                <div id="navUserBadge" class="user-session-badge" style="display: none;">
+                    <i class="fa-solid fa-circle-user" style="color: var(--brand-blue); font-size: 16px;"></i>
+                    <span><strong id="navUserName">User</strong> (<span id="navUserRole">Role</span>)</span>
+                    <button onclick="logoutPortal()" class="btn-nav-logout" title="Sign Out"><i class="fa-solid fa-power-off"></i></button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -692,55 +699,60 @@
     <!-- Section: Login Portal -->
     <div id="sec-login" class="page-section" style="display: none;">
         <div style="min-height: 85vh; padding: 40px 20px; display: flex; justify-content: center; align-items: center;">
-            <div style="width: 100%; max-width: 760px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-xl);">
+            <div class="portal-login-card">
                 
-                <div style="text-align: center; margin-bottom: 28px;">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(13, 148, 136, 0.15)); color: var(--brand-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 12px; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(2, 132, 199, 0.2), rgba(13, 148, 136, 0.2)); color: var(--brand-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 14px; box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2);">
                         <i class="fa-solid fa-hospital-user"></i>
                     </div>
-                    <h2 style="font-size: 24px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
+                    <h2 style="font-size: 26px; font-weight: 800; color: var(--gray-900);">Digital Hospital Portal Sign In</h2>
                     <p style="font-size: 14px; color: var(--gray-500); margin-top: 4px;">Click your role portal below to select and log in to your medical dashboard</p>
                 </div>
 
-                <!-- Visual 5 Role Selector Cards Grid (Admin, Doctor, Reception, Pharma, Patients) -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 28px;">
+                <!-- Visual 5 Role Selector Cards Grid (5 Equal Columns Desktop) -->
+                <div class="role-selector-grid">
                     <!-- Admin Card -->
                     <div class="role-selector-card" id="role-card-admin" onclick="selectRoleTab('admin', 'admin@hospital.com', 'admin123')">
-                        <div style="font-size: 22px; color: #0F172A; margin-bottom: 6px;"><i class="fa-solid fa-user-gear"></i></div>
+                        <div style="font-size: 24px; color: #0F172A; margin-bottom: 6px;"><i class="fa-solid fa-user-gear"></i></div>
                         <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Admin</div>
                         <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Control Desk</div>
                     </div>
 
                     <!-- Doctor Card -->
                     <div class="role-selector-card active" id="role-card-doctor" onclick="selectRoleTab('doctor', 'doctor@hospital.com', 'doctor123')">
-                        <div style="font-size: 22px; color: var(--brand-blue); margin-bottom: 6px;"><i class="fa-solid fa-stethoscope"></i></div>
+                        <div style="font-size: 24px; color: var(--brand-blue); margin-bottom: 6px;"><i class="fa-solid fa-stethoscope"></i></div>
                         <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Doctor</div>
                         <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">OPD Consults</div>
                     </div>
 
                     <!-- Reception Card -->
                     <div class="role-selector-card" id="role-card-receptionist" onclick="selectRoleTab('receptionist', 'reception@hospital.com', 'reception123')">
-                        <div style="font-size: 22px; color: var(--brand-teal); margin-bottom: 6px;"><i class="fa-solid fa-desktop"></i></div>
+                        <div style="font-size: 24px; color: var(--brand-teal); margin-bottom: 6px;"><i class="fa-solid fa-desktop"></i></div>
                         <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Reception</div>
                         <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Front Desk</div>
                     </div>
 
                     <!-- Pharma Card -->
                     <div class="role-selector-card" id="role-card-pharmacist" onclick="selectRoleTab('pharmacist', 'pharma@hospital.com', 'pharma123')">
-                        <div style="font-size: 22px; color: #7C3AED; margin-bottom: 6px;"><i class="fa-solid fa-pills"></i></div>
+                        <div style="font-size: 24px; color: #7C3AED; margin-bottom: 6px;"><i class="fa-solid fa-pills"></i></div>
                         <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Pharma</div>
                         <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">Stock Desk</div>
                     </div>
 
                     <!-- Patients Card -->
                     <div class="role-selector-card" id="role-card-patient" onclick="selectRoleTab('patient', 'patient@hospital.com', 'patient123')">
-                        <div style="font-size: 22px; color: var(--brand-emerald); margin-bottom: 6px;"><i class="fa-solid fa-user-injured"></i></div>
+                        <div style="font-size: 24px; color: var(--brand-emerald); margin-bottom: 6px;"><i class="fa-solid fa-user-injured"></i></div>
                         <div style="font-weight: 800; font-size: 13px; color: var(--gray-900);">Patients</div>
                         <div style="font-size: 11px; color: var(--gray-500); margin-top: 2px;">EHR Records</div>
                     </div>
                 </div>
 
-                <form action="#" method="post" onsubmit="event.preventDefault(); handlePortalLogin(event); return false;" style="max-width: 480px; margin: 0 auto;">
+                <!-- Active Role Pill Indicator -->
+                <div id="activeRoleIndicatorPill" style="text-align: center; background: rgba(2, 132, 199, 0.08); border: 1px dashed var(--brand-blue); padding: 8px 16px; border-radius: 20px; font-size: 13px; color: var(--gray-700); margin-bottom: 20px; font-weight: 600;">
+                    <i class="fa-solid fa-shield-halved" style="color: var(--brand-blue);"></i> Selected Portal: <strong>Doctor Portal (Dr. Neha - Senior Heart Surgeon)</strong>
+                </div>
+
+                <form action="#" method="post" onsubmit="event.preventDefault(); handlePortalLogin(event); return false;" style="max-width: 500px; margin: 0 auto;">
                     <div class="form-group">
                         <label for="loginEmail"><i class="fa-solid fa-envelope" style="color: var(--brand-blue);"></i> Email Address *</label>
                         <input type="email" id="loginEmail" name="email" class="form-control" required placeholder="name@hospital.com" value="doctor@hospital.com">
@@ -762,17 +774,22 @@
                         </select>
                     </div>
 
-                    <div style="display: flex; gap: 12px; margin-top: 14px;">
-                        <button type="submit" class="btn btn-primary" style="flex: 1; justify-content: center; padding: 13px; font-size: 15px; font-weight: 700;">
+                    <!-- Demo Credentials Hint Badge -->
+                    <div id="quickCredentialHint" style="font-size: 12px; color: var(--gray-500); text-align: right; margin-top: -6px; margin-bottom: 16px;">
+                        <i class="fa-solid fa-circle-info"></i> Demo Credentials: <code>doctor@hospital.com / doctor123</code>
+                    </div>
+
+                    <div style="display: flex; gap: 14px; margin-top: 14px;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; justify-content: center; padding: 14px; font-size: 15px; font-weight: 700;">
                             <i class="fa-solid fa-right-to-bracket"></i> Sign In to Portal Dashboard
                         </button>
-                        <button type="button" onclick="showSection('sec-register')" class="btn btn-secondary" style="padding: 13px 20px;">
+                        <button type="button" onclick="showSection('sec-register')" class="btn btn-secondary" style="padding: 14px 22px; font-size: 15px;">
                             <i class="fa-solid fa-user-plus"></i> Register
                         </button>
                     </div>
                 </form>
 
-                <div style="text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                <div style="text-align: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--gray-200);">
                     <a href="#" class="nav-link" data-section="sec-home" style="font-size: 13px; color: var(--gray-600); font-weight: 600; text-decoration: none;">
                         <i class="fa-solid fa-arrow-left"></i> Return to Hospital Homepage
                     </a>
@@ -1108,6 +1125,96 @@
             }, 4000);
         }
 
+        // --- Dynamic Patient Registration, Login Session & Live Data Hydration ---
+        const DEFAULT_SEED_PATIENTS = [
+            { id: 'PAT-1001', name: 'John Doe', email: 'patient@hospital.com', phone: '9876543216', gender: 'Male', age: 35, blood: 'O+', role: 'patient' },
+            { id: 'PAT-1002', name: 'Anita Roy', email: 'anita@gmail.com', phone: '9876543217', gender: 'Female', age: 29, blood: 'A+', role: 'patient' },
+            { id: 'PAT-1003', name: 'Robert Smith', email: 'robert@yahoo.com', phone: '9876543218', gender: 'Male', age: 52, blood: 'B+', role: 'patient' },
+            { id: 'PAT-1004', name: 'Emily Davis', email: 'emily@gmail.com', phone: '9876543219', gender: 'Female', age: 41, blood: 'AB+', role: 'patient' }
+        ];
+
+        function getRegisteredPatients() {
+            try {
+                const stored = localStorage.getItem('hospitalPatients');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) {}
+            localStorage.setItem('hospitalPatients', JSON.stringify(DEFAULT_SEED_PATIENTS));
+            return DEFAULT_SEED_PATIENTS;
+        }
+
+        function saveRegisteredPatient(newPatient) {
+            const list = getRegisteredPatients();
+            list.unshift(newPatient);
+            localStorage.setItem('hospitalPatients', JSON.stringify(list));
+            updateWebsiteData();
+        }
+
+        function getActivePortalUser() {
+            try {
+                const stored = localStorage.getItem('activePortalUser');
+                if (stored) return JSON.parse(stored);
+            } catch (e) {}
+            return null;
+        }
+
+        function setActivePortalUser(user) {
+            if (user) {
+                localStorage.setItem('activePortalUser', JSON.stringify(user));
+            } else {
+                localStorage.removeItem('activePortalUser');
+            }
+            updateWebsiteData();
+        }
+
+        function updateWebsiteData() {
+            const patients = getRegisteredPatients();
+            const activeUser = getActivePortalUser();
+
+            // 1. Update Patient Count Statistics
+            const baseCount = 18500;
+            const extra = patients.length - DEFAULT_SEED_PATIENTS.length;
+            const formatted = (baseCount + extra).toLocaleString() + '+';
+
+            document.querySelectorAll('#statRegisteredPatients, .stat-patient-count').forEach(el => {
+                el.innerText = formatted;
+            });
+
+            // 2. Update Header Session Badge
+            const loginBtn = document.getElementById('navPortalLoginBtn');
+            const badge = document.getElementById('navUserBadge');
+            const navName = document.getElementById('navUserName');
+            const navRole = document.getElementById('navUserRole');
+
+            if (activeUser) {
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (badge) {
+                    badge.style.display = 'inline-flex';
+                    if (navName) navName.innerText = activeUser.name || activeUser.email;
+                    if (navRole) navRole.innerText = (activeUser.role || 'user').toUpperCase();
+                }
+            } else {
+                if (loginBtn) loginBtn.style.display = 'inline-flex';
+                if (badge) badge.style.display = 'none';
+            }
+
+            // 3. Update Patient EHR Dashboard if active patient
+            if (activeUser && activeUser.role === 'patient') {
+                const pNameEl = document.getElementById('patientDashboardTitle');
+                const pDetailsEl = document.getElementById('patientDashboardDetails');
+                if (pNameEl) pNameEl.innerText = (activeUser.name || 'Patient') + ' – Personal Health Portal';
+                if (pDetailsEl) {
+                    pDetailsEl.innerHTML = 'EHR ID: <strong>#' + (activeUser.id || 'EHR-99420') + '</strong> | Blood Group: <strong>' + (activeUser.blood || 'O+') + '</strong> | Email: <strong>' + activeUser.email + '</strong>';
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateWebsiteData();
+        });
+
         function selectRoleTab(role, email, pwd) {
             const roleElem = document.getElementById('loginRole');
             const emailElem = document.getElementById('loginEmail');
@@ -1139,6 +1246,21 @@
 
         function updateRoleCardVisuals(selectedRole) {
             const roles = ['admin', 'doctor', 'receptionist', 'pharmacist', 'patient'];
+            const roleTitles = {
+                'admin': 'Administrator Executive Portal',
+                'doctor': 'Doctor Portal (Dr. Neha - Senior Heart Surgeon)',
+                'receptionist': 'Receptionist Desk Portal',
+                'pharmacist': 'Pharmacist Inventory Portal',
+                'patient': 'Patient Medical EHR Portal'
+            };
+            const roleCreds = {
+                'admin': 'admin@hospital.com / admin123',
+                'doctor': 'doctor@hospital.com / doctor123',
+                'receptionist': 'reception@hospital.com / reception123',
+                'pharmacist': 'pharma@hospital.com / pharma123',
+                'patient': 'patient@hospital.com / patient123'
+            };
+
             roles.forEach(r => {
                 const card = document.getElementById('role-card-' + r);
                 if (card) {
@@ -1147,12 +1269,18 @@
                     } else {
                         card.classList.remove('active');
                     }
-                    card.style.border = '';
-                    card.style.background = '';
-                    card.style.transform = '';
-                    card.style.boxShadow = '';
                 }
             });
+
+            const pill = document.getElementById('activeRoleIndicatorPill');
+            if (pill && roleTitles[selectedRole]) {
+                pill.innerHTML = '<i class="fa-solid fa-shield-halved" style="color: var(--brand-blue);"></i> Selected Portal: <strong>' + roleTitles[selectedRole] + '</strong>';
+            }
+
+            const hint = document.getElementById('quickCredentialHint');
+            if (hint && roleCreds[selectedRole]) {
+                hint.innerHTML = '<i class="fa-solid fa-circle-info"></i> Demo Credentials: <code>' + roleCreds[selectedRole] + '</code>';
+            }
         }
 
         function fillQuickLogin(email, pwd, role) {
@@ -1165,8 +1293,34 @@
             const email = document.getElementById('loginEmail').value || 'doctor@hospital.com';
             const role = document.getElementById('loginRole').value || 'doctor';
 
-            const isLiveNodeServer = window.location.hostname === 'localhost' && window.location.port === '3000';
+            const patients = getRegisteredPatients();
+            const foundPatient = patients.find(p => p.email.toLowerCase() === email.toLowerCase());
 
+            let userName = 'User';
+            if (foundPatient) {
+                userName = foundPatient.name;
+            } else {
+                const staffNames = {
+                    'admin': 'System Administrator',
+                    'doctor': 'Dr. Neha',
+                    'receptionist': 'Sarah Jenkins',
+                    'pharmacist': 'Michael Vance',
+                    'patient': 'John Doe'
+                };
+                userName = staffNames[role] || 'Authorized User';
+            }
+
+            const userSession = {
+                name: userName,
+                email: email,
+                role: role,
+                id: foundPatient ? foundPatient.id : ('SYS-' + Math.floor(1000 + Math.random() * 9000)),
+                phone: foundPatient ? foundPatient.phone : '9876543210'
+            };
+
+            setActivePortalUser(userSession);
+
+            const isLiveNodeServer = window.location.hostname === 'localhost' && window.location.port === '3000';
             if (isLiveNodeServer) {
                 let targetUrl = '/login';
                 if (role === 'admin') targetUrl = '/admin/dashboard';
@@ -1179,20 +1333,20 @@
                 return false;
             }
 
-            // Single-Page Portal Dashboard View Switcher (GitHub Pages & Static Web)
             const dashboardId = 'sec-' + role + '-dashboard';
             const targetDashboard = document.getElementById(dashboardId);
 
             if (targetDashboard) {
                 showSection(dashboardId);
-                showToast('✅ Welcome to ' + role.toUpperCase() + ' Portal Dashboard!', 'success');
+                showToast('✅ Welcome to ' + role.toUpperCase() + ' Portal Dashboard, ' + userName + '!', 'success');
             } else {
-                alert('✅ Portal Login Successful!\n\nEmail: ' + email + '\nRole: ' + role.toUpperCase());
+                alert('✅ Portal Login Successful!\n\nUser: ' + userName + '\nEmail: ' + email + '\nRole: ' + role.toUpperCase());
             }
             return false;
         }
 
         function logoutPortal() {
+            setActivePortalUser(null);
             showSection('sec-login');
             showToast('Logged out of Digital Portal successfully.', 'info');
         }
@@ -1201,9 +1355,28 @@
             if (e) e.preventDefault();
             const name = document.getElementById('regName').value || 'New Patient';
             const email = document.getElementById('regEmail').value || 'patient@hospital.com';
+            const pwd = document.getElementById('regPassword').value || 'patient123';
+            const phone = document.getElementById('regPhone').value || '9876543210';
+            const blood = document.getElementById('regBlood') ? document.getElementById('regBlood').value : 'O +ve';
+            const age = document.getElementById('regAge') ? document.getElementById('regAge').value : 30;
 
-            showToast('✅ Patient Account Created! Welcome ' + name + '.', 'success');
-            showSection('sec-login');
+            const newPatient = {
+                id: 'PAT-' + Math.floor(1000 + Math.random() * 9000),
+                name: name,
+                email: email,
+                password: pwd,
+                phone: phone,
+                blood: blood,
+                age: age,
+                gender: 'Male',
+                role: 'patient'
+            };
+
+            saveRegisteredPatient(newPatient);
+            setActivePortalUser(newPatient);
+
+            showToast('✅ Registration Complete! Welcome ' + name + '.', 'success');
+            showSection('sec-patient-dashboard');
             return false;
         }
 
@@ -1230,6 +1403,6 @@
             });
         }
     </script>
-    <script src="assets/js/main.js"></script>
+    <script src="src/main/webapp/assets/js/main.js"></script>
 </body>
 </html>
